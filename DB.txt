@@ -1,0 +1,174 @@
+DROP DATABASE IF EXISTS SB_BLOG;
+CREATE DATABASE SB_BLOG;
+USE SB_BLOG;
+
+CREATE TABLE article(
+	id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	regDate DATETIME NOT NULL,
+	updateDate DATETIME NOT NULL,
+	memberId INT UNSIGNED NOT NULL,
+	title VARCHAR(100) NOT NULL,
+	`body` TEXT NOT NULL
+);
+
+ALTER TABLE article ADD COLUMN hitCnt INT UNSIGNED NOT NULL DEFAULT 0;
+
+CREATE TABLE `member`(
+	id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	regDate DATETIME NOT NULL,
+	updateDate DATETIME NOT NULL,
+	loginId VARCHAR(20) NOT NULL UNIQUE,
+	loginPw VARCHAR(100) NOT NULL,
+	authLevel INT UNSIGNED NOT NULL DEFAULT 1 COMMENT '권한 레벨 (일반 = 1, 관리자 = 0)',
+	`name` VARCHAR(20) NOT NULL,
+	nickname VARCHAR(20) NOT NULL,
+	cellphoneNum VARCHAR(20) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    delStatus INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '탈퇴 여부 (탈퇴 전 = 0, 탈퇴 후 = 1)',
+    delDate DATETIME COMMENT '탈퇴 날짜'
+);
+
+CREATE TABLE recommendPoint(
+	id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	memberId INT UNSIGNED NOT NULL,
+	relTypeCode VARCHAR(20) NOT NULL COMMENT '관련 데이터 타입 코드',
+	relId INT UNSIGNED NOT NULL COMMENT '관련 데이터 번호',
+	`point` INT UNSIGNED NOT NULL DEFAULT 0
+);
+
+CREATE TABLE reply(
+	id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	regDate DATETIME NOT NULL,
+	updateDate DATETIME NOT NULL,
+	memberId INT UNSIGNED NOT NULL,
+	relTypeCode VARCHAR(20) NOT NULL COMMENT '관련 데이터 타입 코드',
+	relId INT UNSIGNED NOT NULL COMMENT '관련 데이터 번호',
+	`body` TEXT NOT NULL
+);
+
+INSERT INTO article
+SET regDate = NOW(),
+updateDate = NOW(),
+memberId = 1,
+title = '공지1',
+`body` = '공지1';
+INSERT INTO article
+SET regDate = NOW(),
+updateDate = NOW(),
+memberId = 2,
+title = '제목2',
+`body` = '내용2';
+INSERT INTO article
+SET regDate = NOW(),
+updateDate = NOW(),
+memberId = 2,
+title = '제목3',
+`body` = '내용3';
+
+INSERT INTO `member`
+SET regDate = NOW(),
+updateDate = NOW(),
+loginId = 'admin',
+loginPw = 'admin',
+`name` = '관리자',
+nickname = '관리자',
+cellphoneNum = '010-0000-0000',
+email = 'admin@admin.com';
+
+INSERT INTO `member`
+SET regDate = NOW(),
+updateDate = NOW(),
+loginId = 'test1',
+loginPw = 'test1',
+`name` = '테스트1',
+nickname = '테스트1',
+cellphoneNum = '010-1111-1111',
+email = 'test1@test.com';
+
+INSERT INTO `member`
+SET regDate = NOW(),
+updateDate = NOW(),
+loginId = 'test2',
+loginPw = 'test2',
+`name` = '테스트2',
+nickname = '테스트2',
+cellphoneNum = '010-2222-2222',
+email = 'test2@test.com';
+
+# 2번 회원이 1번 게시물에 좋아요
+INSERT INTO recommendPoint
+SET memberId = 2,
+relTypeCode = 'article',
+relId = 1,
+`point` = 1;
+
+# 2번 회원이 3번 게시물에 좋아요
+INSERT INTO recommendPoint
+SET memberId = 2,
+relTypeCode = 'article',
+relId = 3,
+`point` = 1;
+
+# 3번 회원이 2번 게시물에 좋아요
+INSERT INTO recommendPoint
+SET memberId = 3,
+relTypeCode = 'article',
+relId = 2,
+`point` = 1;
+
+# 3번 회원이 1번 게시물에 좋아요
+INSERT INTO recommendPoint
+SET memberId = 3,
+relTypeCode = 'article',
+relId = 1,
+`point` = 1;
+
+# 2번 회원이 1번 글에 댓글
+INSERT INTO reply
+SET regDate = NOW(),
+updateDate = NOW(),
+memberId = 2,
+relTypeCode = 'article',
+relId = 1,
+`body` = '댓글1';
+
+# 3번 회원이 1번 글에 댓글
+INSERT INTO reply
+SET regDate = NOW(),
+updateDate = NOW(),
+memberId = 3,
+relTypeCode = 'article',
+relId = 1,
+`body` = '댓글2';
+
+# 2번 회원이 3번 글에 댓글
+INSERT INTO reply
+SET regDate = NOW(),
+updateDate = NOW(),
+memberId = 2,
+relTypeCode = 'article',
+relId = 3,
+`body` = '댓글3';
+
+# 3번 회원이 2번 글에 댓글
+INSERT INTO reply
+SET regDate = NOW(),
+updateDate = NOW(),
+memberId = 3,
+relTypeCode = 'article',
+relId = 2,
+`body` = '댓글4';
+
+SELECT * FROM article;
+SELECT * FROM `member`;
+SELECT * FROM recommendPoint;
+SELECT * FROM reply;
+
+/*
+insert into article
+(
+    regDate, updateDate, memberId, title, `body`
+)
+select now(), now(), FLOOR(RAND() * 2) + 1, concat("제목_", FLOOR(RAND() * 10000)), CONCAT("내용_", FLOOR(RAND() * 10000))
+from article;
+*/

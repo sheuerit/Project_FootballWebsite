@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'NPSfontBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/NPSfontBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+html > body, html > body .toast-ui-editor .ProseMirror, html > body .toastui-editor-contents {
+	font-family: 'NPSfontBold';
+	text-underline-position: under;
+}
+
+html > body .toast-ui-editor .ProseMirror, html > body .toastui-editor-contents {
+	font-size: 1.25rem;
+}
+
+.border-bottom-line {
+	border-bottom: 1px solid #afafaf;
+}
+

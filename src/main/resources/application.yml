@@ -1,0 +1,28 @@
+server:
+  port: 8081
+  # 서버 포트 8081 설정
+
+  servlet:    
+    jsp:      
+      init-parameters:        
+        mappedfile: false
+        
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/   
+      # jsp 파일 경로의 접두사 설정
+      
+      suffix: .jsp            
+      # jsp 파일 경로의 접미사 설정
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/SB_BLOG?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=Asia/Seoul&useOldAliasMetadataBehavior=true&zeroDateTimeNehavior=convertToNull
+    username: root
+    password: 
+    # DB 접속 설정
+    
+mybatis:
+  type-aliases-package: com.koreaIT.vBlog.vo
+  
