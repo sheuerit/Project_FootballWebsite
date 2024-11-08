@@ -38,33 +38,33 @@
 	</script>
 	
 	<section class="flex">
-		<div class="w-1/5 flex justify-center border-2 border-slate-50 border-r-slate-200">ad</div>
+		<div class="w-1/5 flex justify-center border-2 border-slate-50 border-r-slate-200">commercial</div>
 		<div class="container mx-auto">
 			<div class="flex justify-center ">
-				<div class="w-1/4 m-6 flex justify-center hover:border-2 border-slate-200 rounded-2xl">
+				<div class="w-1/4 m-6 flex justify-center hover:border-4 border-slate-200 rounded-2xl">
 					<a class="my-5 uefaChampionsLeagueLogo" href="/usr/league/uefaChampionsLeague"></a>
 				</div>
-				<div class="w-1/4 m-6 flex justify-center hover:border-2 border-slate-200 rounded-2xl">
+				<div class="w-1/4 m-6 flex justify-center hover:border-4 border-slate-200 rounded-2xl">
 					<a class="my-5 uefaEuropaLeagueLogo" href="/usr/league/uefaEuropaLeague"></a>
 				</div>
-				<div class="w-1/4 m-6 flex justify-center hover:border-2 border-slate-200 rounded-2xl">
+				<div class="w-1/4 m-6 flex justify-center hover:border-4 border-slate-200 rounded-2xl">
 					<a class="my-5 premierLeagueLogo" href="/usr/league/premierLeague"></a>
 				</div>
-				<div class="w-1/4 m-6 flex justify-center hover:border-2 border-slate-200 rounded-2xl">
+				<div class="w-1/4 m-6 flex justify-center hover:border-4 border-slate-200 rounded-2xl">
 					<a class="my-5 laLigaLogo" href="/usr/league/laLiga"></a>
 				</div>
 			</div>
 			<div class="flex justify-center">
-				<div class="w-1/4 m-6 flex justify-center hover:border-2 border-slate-200 rounded-2xl">
+				<div class="w-1/4 m-6 flex justify-center hover:border-4 border-slate-200 rounded-2xl">
 					<a class="my-5 bundesligaLogo" href="/usr/league/bundesliga"></a>
 				</div>
-				<div class="w-1/4 m-6 flex justify-center hover:border-2 border-slate-200 rounded-2xl">
+				<div class="w-1/4 m-6 flex justify-center hover:border-4 border-slate-200 rounded-2xl">
 					<a class="my-5 serieALogo" href="/usr/league/serieA"></a>
 				</div>
-				<div class="w-1/4 m-6 flex justify-center hover:border-2 border-slate-200 rounded-2xl">
+				<div class="w-1/4 m-6 flex justify-center hover:border-4 border-slate-200 rounded-2xl">
 					<a class="my-5 ligue1Logo" href="/usr/league/ligue1"></a>
 				</div>
-				<div class="w-1/4 m-6 flex justify-center hover:border-2 border-slate-200 rounded-2xl">
+				<div class="w-1/4 m-6 flex justify-center hover:border-4 border-slate-200 rounded-2xl">
 					<a class="my-5 kLeague1Logo" href="/usr/league/kLeague1"></a>
 				</div>
 			</div>
