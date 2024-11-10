@@ -43,12 +43,26 @@
 				matchNumInt = i;
 			  	matchNumStr = String(i);
 			  
-			  	$(".match" + matchNumStr + "Date").append((response.response[matchNumInt].fixture.date).substring(0, 10));
-			  	$(".match" + matchNumStr + "Time").append((response.response[matchNumInt].fixture.date).substring(11, 16));
-				$(".match" + matchNumStr + "HomeLogo").append('<img src="' + response.response[matchNumInt].teams.home.logo + '"/>');
-				$(".match" + matchNumStr + "AwayLogo").append('<img src="' + response.response[matchNumInt].teams.away.logo + '"/>');
-				$(".match" + matchNumStr + "HomeScore").append(response.response[matchNumInt].goals.home);
-				$(".match" + matchNumStr + "AwayScore").append(response.response[matchNumInt].goals.away);
+			  	if (response.response[matchNumInt].fixture.status.short == "FT" || "NS") {
+				  	$(".match" + matchNumStr + "Date").append((response.response[matchNumInt].fixture.date).substring(0, 10));
+				  	$(".match" + matchNumStr + "Time").append((response.response[matchNumInt].fixture.date).substring(11, 16));
+				  	$(".match" + matchNumStr + "Status").append(response.response[matchNumStr].fixture.status.short);
+					$(".match" + matchNumStr + "HomeLogo").append('<img src="' + response.response[matchNumInt].teams.home.logo + '"/>');
+					$(".match" + matchNumStr + "AwayLogo").append('<img src="' + response.response[matchNumInt].teams.away.logo + '"/>');
+					$(".match" + matchNumStr + "HomeScore").append(response.response[matchNumInt].goals.home);
+					$(".match" + matchNumStr + "AwayScore").append(response.response[matchNumInt].goals.away);
+			  		
+			  	}
+				
+				if (response.response[matchNumInt].fixture.status.short == "1H" && "2H") {
+					$(".matchOnAir" + matchNumStr + "Date").append((response.response[matchNumInt].fixture.date).substring(0, 10));
+				  	$(".matchOnAir" + matchNumStr + "Time").append((response.response[matchNumInt].fixture.date).substring(11, 16));
+				  	$(".matchOnAir" + matchNumStr + "Status").append(response.response[matchNumInt].fixture.status.short);
+					$(".matchOnAir" + matchNumStr + "HomeLogo").append('<img src="' + response.response[matchNumInt].teams.home.logo + '"/>');
+					$(".matchOnAir" + matchNumStr + "AwayLogo").append('<img src="' + response.response[matchNumInt].teams.away.logo + '"/>');
+					$(".matchOnAir" + matchNumStr + "HomeScore").append(response.response[matchNumInt].goals.home);
+					$(".matchOnAir" + matchNumStr + "AwayScore").append(response.response[matchNumInt].goals.away);
+				}
 			}
 			
 		});
@@ -83,7 +97,7 @@
 	</script>
 	
 	<section class="flex">
-		<div class="w-1/5 flex justify-center border-2 border-slate-50 border-r-slate-200">commercial</div>
+		<div class="w-1/4 flex justify-center border-2 border-slate-50 border-r-slate-200">commercial</div>
 		
 		<div class="container mx-auto">
 			<div class="mt-2 flex justify-center">
@@ -96,6 +110,247 @@
 			
 			<div class="mt-8 text-base">
 				<div class="container mx-auto px-3">
+					<div class="flex justify-center">
+						<div class="flex justify-center w-24 text-red-400 bg-slate-800 rounded-sm"><i class="fas fa-broadcast-tower mt-1 mr-2" style="color: #ff7a7a;"></i>ON AIR</div>
+					</div>
+					<div>
+						<table class="table table-base">
+							<thead class="text-base">
+								<tr>
+									<th>DATE</th>
+									<th>TIME</th>
+									<th></th>
+									<th>HOME</th>
+									<th>SCORE</th>
+									<th>AWAY</th>
+								</tr>
+							</thead>
+							<tbody class="mt-8 text-xs">
+								<tr class="hover">
+									<td><div class="matchOnAir0Date mr-5"></div></td>
+									<td><div class="matchOnAir0Time mr-5"></div></td>
+									<td><div class="matchOnAir0Status mr-5 flex justify-center bg-green-400 rounded-2xl"></div></td>
+									<td>
+										<div class="flex">
+											<div class="matchOnAir0HomeLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td class="flex">
+										<div class="matchOnAir0HomeScore mt-1 mr-5"></div>
+										<div class="mt-0.5">:</div>
+										<div class="matchOnAir0AwayScore mt-1 ml-5"></div>
+									</td>
+									<td>
+										<div class="flex">
+											<div class="matchOnAir0AwayLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+							<tbody class="mt-8 text-xs">
+								<tr class="hover">
+									<td><div class="matchOnAir1Date mr-5"></div></td>
+									<td><div class="matchOnAir1Time mr-5"></div></td>
+									<td><div class="matchOnAir1Status mr-5 flex justify-center bg-green-400 rounded-2xl"></div></td>
+									<td>
+										<div class="flex">
+											<div class="matchOnAir1HomeLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td class="flex">
+										<div class="matchOnAir1HomeScore mt-1 mr-5"></div>
+										<div class="mt-0.5">:</div>
+										<div class="matchOnAir1AwayScore mt-1 ml-5"></div>
+									</td>
+									<td>
+										<div class="flex">
+											<div class="matchOnAir1AwayLogo w-5 h-5 ml-4 mb-3"></div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+							<tbody class="mt-8 text-xs">
+								<tr class="hover">
+									<td><div class="matchOnAir2Date mr-5"></div></td>
+									<td><div class="matchOnAir2Time mr-5"></div></td>
+									<td><div class="matchOnAir2Status mr-5 flex justify-center bg-green-400 rounded-2xl"></div></td>
+									<td>
+										<div class="flex">
+											<div class="matchOnAir2HomeLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td class="flex">
+										<div class="matchOnAir2HomeScore mt-1 mr-5"></div>
+										<div class="mt-0.5">:</div>
+										<div class="matchOnAir2AwayScore mt-1 ml-5"></div>
+									</td>
+									<td>
+										<div class="flex">
+											<div class="matchOnAir2AwayLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+							<tbody class="mt-8 text-xs">
+								<tr class="hover">
+									<td><div class="matchOnAir3Date mr-5"></div></td>
+									<td><div class="matchOnAir3Time mr-5"></div></td>
+									<td><div class="matchOnAir3Status mr-5 flex justify-center bg-green-400 rounded-2xl"></div></td>
+									<td>
+										<div class="flex">
+											<div class="matchOnAir3HomeLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td class="flex">
+										<div class="matchOnAir3HomeScore mt-1 mr-5"></div>
+										<div class="OnAirmt-0.5">:</div>
+										<div class="matchOnAir3AwayScore mt-1 ml-5"></div>
+									</td>
+									<td>
+										<div class="flex">
+											<div class="matchOnAir3AwayLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+							<tbody class="mt-8 text-xs">
+								<tr class="hover">
+									<td><div class="matchOnAir4Date mr-5"></div></td>
+									<td><div class="matchOnAir4Time mr-5"></div></td>
+									<td><div class="matchOnAir4Status mr-5 flex justify-center bg-green-400 rounded-2xl"></div></td>
+									<td>
+										<div class="flex">
+											<div class="matchOnAir4HomeLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td class="flex">
+										<div class="matchOnAir4HomeScore mt-1 mr-5"></div>
+										<div class="mt-0.5">:</div>
+										<div class="matchOnAir4AwayScore mt-1 ml-5"></div>
+									</td>
+									<td>
+										<div class="flex">
+											<div class="matchOnAir4AwayLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+							<tbody class="mt-8 text-xs">
+								<tr class="hover">
+									<td><div class="matchOnAir5Date mr-5"></div></td>
+									<td><div class="matchOnAir5Time mr-5"></div></td>
+									<td><div class="matchOnAir5Status mr-5 flex justify-center bg-green-400 rounded-2xl"></div></td>
+									<td>
+										<div class="flex">
+											<div class="matchOnAir5HomeLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td class="flex">
+										<div class="matchOnAir5HomeScore mt-1 mr-5"></div>
+										<div class="mt-0.5">:</div>
+										<div class="matchOnAir5AwayScore mt-1 ml-5"></div>
+									</td>
+									<td>
+										<div class="flex">
+											<div class="matchOnAir5AwayLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+							<tbody class="mt-8 text-xs">
+								<tr class="hover">
+									<td><div class="matchOnAir6Date mr-5"></div></td>
+									<td><div class="matchOnAir6Time mr-5"></div></td>
+									<td><div class="matchOnAir6Status mr-5 flex justify-center bg-green-400 rounded-2xl"></div></td>
+									<td>
+										<div class="flex">
+											<div class="matchOnAir6HomeLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td class="flex">
+										<div class="matchOnAir6HomeScore mt-1 mr-5"></div>
+										<div class="mt-0.5">:</div>
+										<div class="matchOnAir6AwayScore mt-1 ml-5"></div>
+									</td>
+									<td>
+										<div class="flex">
+											<div class="matchOnAir6AwayLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+							<tbody class="mt-8 text-xs">
+								<tr class="hover">
+									<td><div class="matchOnAir7Date mr-5"></div></td>
+									<td><div class="matchOnAir7Time mr-5"></div></td>
+									<td><div class="matchOnAir7Status mr-5 flex justify-center bg-green-400 rounded-2xl"></div></td>
+									<td>
+										<div class="flex">
+											<div class="matchOnAir7HomeLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td class="flex">
+										<div class="matchOnAir7HomeScore mt-1 mr-5"></div>
+										<div class="mt-0.5">:</div>
+										<div class="matchOnAir7AwayScore mt-1 ml-5"></div>
+									</td>
+									<td>
+										<div class="flex">
+											<div class="matchOnAir7AwayLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+							<tbody class="mt-8 text-xs">
+								<tr class="hover">
+									<td><div class="matchOnAir8Date mr-5"></div></td>
+									<td><div class="matchOnAir8Time mr-5"></div></td>
+									<td><div class="matchOnAir8Status mr-5 flex justify-center bg-green-400 rounded-2xl"></div></td>
+									<td>
+										<div class="flex">
+											<div class="matchOnAir8HomeLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td class="flex">
+										<div class="matchOnAir8HomeScore mt-1 mr-5"></div>
+										<div class="mt-0.5">:</div>
+										<div class="matchOnAir9AwayScore mt-1 ml-5"></div>
+									</td>
+									<td>
+										<div class="flex">
+											<div class="matchOnAir8AwayLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+							<tbody class="mt-8 text-xs">
+								<tr class="hover">
+									<td><div class="matchOnAir9Date mr-5"></div></td>
+									<td><div class="matchOnAir9Time mr-5"></div></td>
+									<td><div class="matchOnAir9Status mr-5 flex justify-center bg-green-400 rounded-2xl"></div></td>
+									<td>
+										<div class="flex">
+											<div class="matchOnAir9HomeLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td class="flex">
+										<div class="matchOnAir9HomeScore mt-1 mr-5"></div>
+										<div class="mt-0.5">:</div>
+										<div class="matchOnAir9AwayScore mt-1 ml-5"></div>
+									</td>
+									<td>
+										<div class="flex">
+											<div class="matchOnAir9AwayLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="mt-8 text-base">
+				<div class="container mx-auto px-3">
 					<div class="round0 mb-2 flex justify-center"></div>
 					<div>
 						<table class="table table-base">
@@ -103,6 +358,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -112,6 +368,7 @@
 								<tr class="hover">
 									<td><div class="match0Date mr-5"></div></td>
 									<td><div class="match0Time mr-5"></div></td>
+									<td><div class="match0Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match0HomeLogo w-8 h-8 ml-2"></div>
@@ -133,6 +390,7 @@
 								<tr class="hover">
 									<td><div class="match1Date mr-5"></div></td>
 									<td><div class="match1Time mr-5"></div></td>
+									<td><div class="match1Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match1HomeLogo w-8 h-8 ml-2"></div>
@@ -154,6 +412,7 @@
 								<tr class="hover">
 									<td><div class="match2Date mr-5"></div></td>
 									<td><div class="match2Time mr-5"></div></td>
+									<td><div class="match2Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match2HomeLogo w-8 h-8 ml-2"></div>
@@ -175,6 +434,7 @@
 								<tr class="hover">
 									<td><div class="match3Date mr-5"></div></td>
 									<td><div class="match3Time mr-5"></div></td>
+									<td><div class="match3Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match3HomeLogo w-8 h-8 ml-2"></div>
@@ -196,6 +456,7 @@
 								<tr class="hover">
 									<td><div class="match4Date mr-5"></div></td>
 									<td><div class="match4Time mr-5"></div></td>
+									<td><div class="match4Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match4HomeLogo w-8 h-8 ml-2"></div>
@@ -217,6 +478,7 @@
 								<tr class="hover">
 									<td><div class="match5Date mr-5"></div></td>
 									<td><div class="match5Time mr-5"></div></td>
+									<td><div class="match5Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match5HomeLogo w-8 h-8 ml-2"></div>
@@ -238,6 +500,7 @@
 								<tr class="hover">
 									<td><div class="match6Date mr-5"></div></td>
 									<td><div class="match6Time mr-5"></div></td>
+									<td><div class="match6Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match6HomeLogo w-8 h-8 ml-2"></div>
@@ -259,6 +522,7 @@
 								<tr class="hover">
 									<td><div class="match7Date mr-5"></div></td>
 									<td><div class="match7Time mr-5"></div></td>
+									<td><div class="match7Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match7HomeLogo w-8 h-8 ml-2"></div>
@@ -280,6 +544,7 @@
 								<tr class="hover">
 									<td><div class="match8Date mr-5"></div></td>
 									<td><div class="match8Time mr-5"></div></td>
+									<td><div class="match8Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match8HomeLogo w-8 h-8 ml-2"></div>
@@ -288,7 +553,7 @@
 									<td class="flex">
 										<div class="match8HomeScore mt-1 mr-5"></div>
 										<div class="mt-0.5">:</div>
-										<div class="match8AwayScore mt-1 ml-5"></div>
+										<div class="match9AwayScore mt-1 ml-5"></div>
 									</td>
 									<td>
 										<div class="flex">
@@ -301,6 +566,7 @@
 								<tr class="hover">
 									<td><div class="match9Date mr-5"></div></td>
 									<td><div class="match9Time mr-5"></div></td>
+									<td><div class="match9Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match9HomeLogo w-8 h-8 ml-2"></div>
@@ -331,6 +597,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -340,6 +607,7 @@
 								<tr class="hover">
 									<td><div class="match10Date mr-5"></div></td>
 									<td><div class="match10Time mr-5"></div></td>
+									<td><div class="match10Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match10HomeLogo w-8 h-8 ml-2"></div>
@@ -361,6 +629,7 @@
 								<tr class="hover">
 									<td><div class="match11Date mr-5"></div></td>
 									<td><div class="match11Time mr-5"></div></td>
+									<td><div class="match11Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match11HomeLogo w-8 h-8 ml-2"></div>
@@ -382,6 +651,7 @@
 								<tr class="hover">
 									<td><div class="match12Date mr-5"></div></td>
 									<td><div class="match12Time mr-5"></div></td>
+									<td><div class="match12Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match12HomeLogo w-8 h-8 ml-2"></div>
@@ -403,6 +673,7 @@
 								<tr class="hover">
 									<td><div class="match13Date mr-5"></div></td>
 									<td><div class="match13Time mr-5"></div></td>
+									<td><div class="match13Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match13HomeLogo w-8 h-8 ml-2"></div>
@@ -424,6 +695,7 @@
 								<tr class="hover">
 									<td><div class="match14Date mr-5"></div></td>
 									<td><div class="match14Time mr-5"></div></td>
+									<td><div class="match14Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match14HomeLogo w-8 h-8 ml-2"></div>
@@ -445,6 +717,7 @@
 								<tr class="hover">
 									<td><div class="match15Date mr-5"></div></td>
 									<td><div class="match15Time mr-5"></div></td>
+									<td><div class="match15Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match15HomeLogo w-8 h-8 ml-2"></div>
@@ -466,6 +739,7 @@
 								<tr class="hover">
 									<td><div class="match16Date mr-5"></div></td>
 									<td><div class="match16Time mr-5"></div></td>
+									<td><div class="match16Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match16HomeLogo w-8 h-8 ml-2"></div>
@@ -487,6 +761,7 @@
 								<tr class="hover">
 									<td><div class="match17Date mr-5"></div></td>
 									<td><div class="match17Time mr-5"></div></td>
+									<td><div class="match17Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match17HomeLogo w-8 h-8 ml-2"></div>
@@ -508,6 +783,7 @@
 								<tr class="hover">
 									<td><div class="match18Date mr-5"></div></td>
 									<td><div class="match18Time mr-5"></div></td>
+									<td><div class="match18Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match18HomeLogo w-8 h-8 ml-2"></div>
@@ -529,6 +805,7 @@
 								<tr class="hover">
 									<td><div class="match19Date mr-5"></div></td>
 									<td><div class="match19Time mr-5"></div></td>
+									<td><div class="match19Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match19HomeLogo w-5 h-5 ml-4 mb-3"></div>
@@ -559,6 +836,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -568,6 +846,7 @@
 								<tr class="hover">
 									<td><div class="match20Date mr-5"></div></td>
 									<td><div class="match20Time mr-5"></div></td>
+									<td><div class="match20Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match20HomeLogo w-8 h-8 ml-2"></div>
@@ -589,6 +868,7 @@
 								<tr class="hover">
 									<td><div class="match21Date mr-5"></div></td>
 									<td><div class="match21Time mr-5"></div></td>
+									<td><div class="match21Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match21HomeLogo w-8 h-8 ml-2"></div>
@@ -610,6 +890,7 @@
 								<tr class="hover">
 									<td><div class="match22Date mr-5"></div></td>
 									<td><div class="match22Time mr-5"></div></td>
+									<td><div class="match22Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match22HomeLogo w-8 h-8 ml-2"></div>
@@ -631,6 +912,7 @@
 								<tr class="hover">
 									<td><div class="match23Date mr-5"></div></td>
 									<td><div class="match23Time mr-5"></div></td>
+									<td><div class="match23Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match23HomeLogo w-8 h-8 ml-2"></div>
@@ -652,6 +934,7 @@
 								<tr class="hover">
 									<td><div class="match24Date mr-5"></div></td>
 									<td><div class="match24Time mr-5"></div></td>
+									<td><div class="match24Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match24HomeLogo w-8 h-8 ml-2"></div>
@@ -673,6 +956,7 @@
 								<tr class="hover">
 									<td><div class="match25Date mr-5"></div></td>
 									<td><div class="match25Time mr-5"></div></td>
+									<td><div class="match25Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match25HomeLogo w-8 h-8 ml-2"></div>
@@ -694,6 +978,7 @@
 								<tr class="hover">
 									<td><div class="match26Date mr-5"></div></td>
 									<td><div class="match26Time mr-5"></div></td>
+									<td><div class="match26Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match26HomeLogo w-8 h-8 ml-2"></div>
@@ -715,6 +1000,7 @@
 								<tr class="hover">
 									<td><div class="match27Date mr-5"></div></td>
 									<td><div class="match27Time mr-5"></div></td>
+									<td><div class="match27Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match27HomeLogo w-8 h-8 ml-2"></div>
@@ -736,6 +1022,7 @@
 								<tr class="hover">
 									<td><div class="match28Date mr-5"></div></td>
 									<td><div class="match28Time mr-5"></div></td>
+									<td><div class="match28Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match28HomeLogo w-8 h-8 ml-2"></div>
@@ -757,6 +1044,7 @@
 								<tr class="hover">
 									<td><div class="match29Date mr-5"></div></td>
 									<td><div class="match29Time mr-5"></div></td>
+									<td><div class="match29Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match29HomeLogo w-8 h-8 ml-2"></div>
@@ -787,6 +1075,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -796,6 +1085,7 @@
 								<tr class="hover">
 									<td><div class="match30Date mr-5"></div></td>
 									<td><div class="match30Time mr-5"></div></td>
+									<td><div class="match30Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match30HomeLogo w-8 h-8 ml-2"></div>
@@ -817,6 +1107,7 @@
 								<tr class="hover">
 									<td><div class="match31Date mr-5"></div></td>
 									<td><div class="match31Time mr-5"></div></td>
+									<td><div class="match31Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match31HomeLogo w-8 h-8 ml-2"></div>
@@ -838,6 +1129,7 @@
 								<tr class="hover">
 									<td><div class="match32Date mr-5"></div></td>
 									<td><div class="match32Time mr-5"></div></td>
+									<td><div class="match32Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match32HomeLogo w-5 h-5 ml-4 mb-3"></div>
@@ -859,6 +1151,7 @@
 								<tr class="hover">
 									<td><div class="match33Date mr-5"></div></td>
 									<td><div class="match33Time mr-5"></div></td>
+									<td><div class="match33Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match33HomeLogo w-8 h-8 ml-2"></div>
@@ -880,6 +1173,7 @@
 								<tr class="hover">
 									<td><div class="match34Date mr-5"></div></td>
 									<td><div class="match34Time mr-5"></div></td>
+									<td><div class="match34Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match34HomeLogo w-8 h-8 ml-2"></div>
@@ -901,6 +1195,7 @@
 								<tr class="hover">
 									<td><div class="match35Date mr-5"></div></td>
 									<td><div class="match35Time mr-5"></div></td>
+									<td><div class="match35Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match35HomeLogo w-8 h-8 ml-2"></div>
@@ -922,6 +1217,7 @@
 								<tr class="hover">
 									<td><div class="match36Date mr-5"></div></td>
 									<td><div class="match36Time mr-5"></div></td>
+									<td><div class="match36Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match36HomeLogo w-8 h-8 ml-2"></div>
@@ -943,6 +1239,7 @@
 								<tr class="hover">
 									<td><div class="match37Date mr-5"></div></td>
 									<td><div class="match37Time mr-5"></div></td>
+									<td><div class="match37Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match37HomeLogo w-8 h-8 ml-2"></div>
@@ -964,6 +1261,7 @@
 								<tr class="hover">
 									<td><div class="match38Date mr-5"></div></td>
 									<td><div class="match38Time mr-5"></div></td>
+									<td><div class="match38Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match38HomeLogo w-8 h-8 ml-2"></div>
@@ -985,6 +1283,7 @@
 								<tr class="hover">
 									<td><div class="match39Date mr-5"></div></td>
 									<td><div class="match39Time mr-5"></div></td>
+									<td><div class="match39Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match39HomeLogo w-8 h-8 ml-2"></div>
@@ -1015,6 +1314,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -1024,6 +1324,7 @@
 								<tr class="hover">
 									<td><div class="match40Date mr-5"></div></td>
 									<td><div class="match40Time mr-5"></div></td>
+									<td><div class="match40Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match40HomeLogo w-8 h-8 ml-2"></div>
@@ -1045,6 +1346,7 @@
 								<tr class="hover">
 									<td><div class="match41Date mr-5"></div></td>
 									<td><div class="match41Time mr-5"></div></td>
+									<td><div class="match41Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match41HomeLogo w-8 h-8 ml-2"></div>
@@ -1066,6 +1368,7 @@
 								<tr class="hover">
 									<td><div class="match42Date mr-5"></div></td>
 									<td><div class="match42Time mr-5"></div></td>
+									<td><div class="match42Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match42HomeLogo w-5 h-5 ml-4 mb-3"></div>
@@ -1087,6 +1390,7 @@
 								<tr class="hover">
 									<td><div class="match43Date mr-5"></div></td>
 									<td><div class="match43Time mr-5"></div></td>
+									<td><div class="match43Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match43HomeLogo w-8 h-8 ml-2"></div>
@@ -1108,6 +1412,7 @@
 								<tr class="hover">
 									<td><div class="match44Date mr-5"></div></td>
 									<td><div class="match44Time mr-5"></div></td>
+									<td><div class="match44Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match44HomeLogo w-8 h-8 ml-2"></div>
@@ -1129,6 +1434,7 @@
 								<tr class="hover">
 									<td><div class="match45Date mr-5"></div></td>
 									<td><div class="match45Time mr-5"></div></td>
+									<td><div class="match45Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match45HomeLogo w-8 h-8 ml-2"></div>
@@ -1150,6 +1456,7 @@
 								<tr class="hover">
 									<td><div class="match46Date mr-5"></div></td>
 									<td><div class="match46Time mr-5"></div></td>
+									<td><div class="match46Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match46HomeLogo w-8 h-8 ml-2"></div>
@@ -1171,6 +1478,7 @@
 								<tr class="hover">
 									<td><div class="match47Date mr-5"></div></td>
 									<td><div class="match47Time mr-5"></div></td>
+									<td><div class="match47Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match47HomeLogo w-8 h-8 ml-2"></div>
@@ -1192,6 +1500,7 @@
 								<tr class="hover">
 									<td><div class="match48Date mr-5"></div></td>
 									<td><div class="match48Time mr-5"></div></td>
+									<td><div class="match48Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match48HomeLogo w-8 h-8 ml-2"></div>
@@ -1213,6 +1522,7 @@
 								<tr class="hover">
 									<td><div class="match49Date mr-5"></div></td>
 									<td><div class="match49Time mr-5"></div></td>
+									<td><div class="match49Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match49HomeLogo w-8 h-8 ml-2"></div>
@@ -1243,6 +1553,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -1252,6 +1563,7 @@
 								<tr class="hover">
 									<td><div class="match50Date mr-5"></div></td>
 									<td><div class="match50Time mr-5"></div></td>
+									<td><div class="match50Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match50HomeLogo w-8 h-8 ml-2"></div>
@@ -1273,6 +1585,7 @@
 								<tr class="hover">
 									<td><div class="match51Date mr-5"></div></td>
 									<td><div class="match51Time mr-5"></div></td>
+									<td><div class="match51Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match51HomeLogo w-8 h-8 ml-2"></div>
@@ -1294,6 +1607,7 @@
 								<tr class="hover">
 									<td><div class="match52Date mr-5"></div></td>
 									<td><div class="match52Time mr-5"></div></td>
+									<td><div class="match52Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match52HomeLogo w-8 h-8 ml-2"></div>
@@ -1315,6 +1629,7 @@
 								<tr class="hover">
 									<td><div class="match53Date mr-5"></div></td>
 									<td><div class="match53Time mr-5"></div></td>
+									<td><div class="match53Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match53HomeLogo w-8 h-8 ml-2"></div>
@@ -1336,6 +1651,7 @@
 								<tr class="hover">
 									<td><div class="match54Date mr-5"></div></td>
 									<td><div class="match54Time mr-5"></div></td>
+									<td><div class="match54Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match54HomeLogo w-8 h-8 ml-2"></div>
@@ -1357,6 +1673,7 @@
 								<tr class="hover">
 									<td><div class="match55Date mr-5"></div></td>
 									<td><div class="match55Time mr-5"></div></td>
+									<td><div class="match55Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match55HomeLogo w-8 h-8 ml-2"></div>
@@ -1378,6 +1695,7 @@
 								<tr class="hover">
 									<td><div class="match56Date mr-5"></div></td>
 									<td><div class="match56Time mr-5"></div></td>
+									<td><div class="match56Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match56HomeLogo w-8 h-8 ml-2"></div>
@@ -1399,6 +1717,7 @@
 								<tr class="hover">
 									<td><div class="match57Date mr-5"></div></td>
 									<td><div class="match57Time mr-5"></div></td>
+									<td><div class="match57Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match57HomeLogo w-8 h-8 ml-2"></div>
@@ -1420,6 +1739,7 @@
 								<tr class="hover">
 									<td><div class="match58Date mr-5"></div></td>
 									<td><div class="match58Time mr-5"></div></td>
+									<td><div class="match58Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match58HomeLogo w-8 h-8 ml-2"></div>
@@ -1441,6 +1761,7 @@
 								<tr class="hover">
 									<td><div class="match59Date mr-5"></div></td>
 									<td><div class="match59Time mr-5"></div></td>
+									<td><div class="match59Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match59HomeLogo w-8 h-8 ml-2"></div>
@@ -1471,6 +1792,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -1480,6 +1802,7 @@
 								<tr class="hover">
 									<td><div class="match60Date mr-5"></div></td>
 									<td><div class="match60Time mr-5"></div></td>
+									<td><div class="match60Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match60HomeLogo w-8 h-8 ml-2"></div>
@@ -1501,6 +1824,7 @@
 								<tr class="hover">
 									<td><div class="match61Date mr-5"></div></td>
 									<td><div class="match61Time mr-5"></div></td>
+									<td><div class="match61Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match61HomeLogo w-8 h-8 ml-2"></div>
@@ -1522,6 +1846,7 @@
 								<tr class="hover">
 									<td><div class="match62Date mr-5"></div></td>
 									<td><div class="match62Time mr-5"></div></td>
+									<td><div class="match62Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match62HomeLogo w-8 h-8 ml-2"></div>
@@ -1543,6 +1868,7 @@
 								<tr class="hover">
 									<td><div class="match63Date mr-5"></div></td>
 									<td><div class="match63Time mr-5"></div></td>
+									<td><div class="match63Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match63HomeLogo w-8 h-8 ml-2"></div>
@@ -1564,6 +1890,7 @@
 								<tr class="hover">
 									<td><div class="match64Date mr-5"></div></td>
 									<td><div class="match64Time mr-5"></div></td>
+									<td><div class="match64Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match64HomeLogo w-8 h-8 ml-2"></div>
@@ -1585,6 +1912,7 @@
 								<tr class="hover">
 									<td><div class="match65Date mr-5"></div></td>
 									<td><div class="match65Time mr-5"></div></td>
+									<td><div class="match65Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match65HomeLogo w-8 h-8 ml-2"></div>
@@ -1606,6 +1934,7 @@
 								<tr class="hover">
 									<td><div class="match66Date mr-5"></div></td>
 									<td><div class="match66Time mr-5"></div></td>
+									<td><div class="match66Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match66HomeLogo w-8 h-8 ml-2"></div>
@@ -1627,6 +1956,7 @@
 								<tr class="hover">
 									<td><div class="match67Date mr-5"></div></td>
 									<td><div class="match67Time mr-5"></div></td>
+									<td><div class="match67Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match67HomeLogo w-8 h-8 ml-2"></div>
@@ -1648,6 +1978,7 @@
 								<tr class="hover">
 									<td><div class="match68Date mr-5"></div></td>
 									<td><div class="match68Time mr-5"></div></td>
+									<td><div class="match68Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match68HomeLogo w-8 h-8 ml-2"></div>
@@ -1669,6 +2000,7 @@
 								<tr class="hover">
 									<td><div class="match69Date mr-5"></div></td>
 									<td><div class="match69Time mr-5"></div></td>
+									<td><div class="match69Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match69HomeLogo w-8 h-8 ml-2"></div>
@@ -1699,6 +2031,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -1708,6 +2041,7 @@
 								<tr class="hover">
 									<td><div class="match70Date mr-5"></div></td>
 									<td><div class="match70Time mr-5"></div></td>
+									<td><div class="match70Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match70HomeLogo w-8 h-8 ml-2"></div>
@@ -1729,6 +2063,7 @@
 								<tr class="hover">
 									<td><div class="match71Date mr-5"></div></td>
 									<td><div class="match71Time mr-5"></div></td>
+									<td><div class="match71Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match71HomeLogo w-8 h-8 ml-2"></div>
@@ -1750,6 +2085,7 @@
 								<tr class="hover">
 									<td><div class="match72Date mr-5"></div></td>
 									<td><div class="match72Time mr-5"></div></td>
+									<td><div class="match72Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match72HomeLogo w-8 h-8 ml-2"></div>
@@ -1771,6 +2107,7 @@
 								<tr class="hover">
 									<td><div class="match73Date mr-5"></div></td>
 									<td><div class="match73Time mr-5"></div></td>
+									<td><div class="match73Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match73HomeLogo w-8 h-8 ml-2"></div>
@@ -1792,6 +2129,7 @@
 								<tr class="hover">
 									<td><div class="match74Date mr-5"></div></td>
 									<td><div class="match74Time mr-5"></div></td>
+									<td><div class="match74Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match74HomeLogo w-8 h-8 ml-2"></div>
@@ -1813,6 +2151,7 @@
 								<tr class="hover">
 									<td><div class="match75Date mr-5"></div></td>
 									<td><div class="match75Time mr-5"></div></td>
+									<td><div class="match75Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match75HomeLogo w-8 h-8 ml-2"></div>
@@ -1834,6 +2173,7 @@
 								<tr class="hover">
 									<td><div class="match76Date mr-5"></div></td>
 									<td><div class="match76Time mr-5"></div></td>
+									<td><div class="match76Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match76HomeLogo w-8 h-8 ml-2"></div>
@@ -1855,6 +2195,7 @@
 								<tr class="hover">
 									<td><div class="match77Date mr-5"></div></td>
 									<td><div class="match77Time mr-5"></div></td>
+									<td><div class="match77Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match77HomeLogo w-8 h-8 ml-2"></div>
@@ -1876,6 +2217,7 @@
 								<tr class="hover">
 									<td><div class="match78Date mr-5"></div></td>
 									<td><div class="match78Time mr-5"></div></td>
+									<td><div class="match78Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match78HomeLogo w-5 h-5 ml-4 mb-3"></div>
@@ -1897,6 +2239,7 @@
 								<tr class="hover">
 									<td><div class="match79Date mr-5"></div></td>
 									<td><div class="match79Time mr-5"></div></td>
+									<td><div class="match79Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match79HomeLogo w-8 h-8 ml-2"></div>
@@ -1927,6 +2270,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -1936,6 +2280,7 @@
 								<tr class="hover">
 									<td><div class="match80Date mr-5"></div></td>
 									<td><div class="match80Time mr-5"></div></td>
+									<td><div class="match80Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match80HomeLogo w-8 h-8 ml-2"></div>
@@ -1957,6 +2302,7 @@
 								<tr class="hover">
 									<td><div class="match81Date mr-5"></div></td>
 									<td><div class="match81Time mr-5"></div></td>
+									<td><div class="match81Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match81HomeLogo w-8 h-8 ml-2"></div>
@@ -1978,6 +2324,7 @@
 								<tr class="hover">
 									<td><div class="match82Date mr-5"></div></td>
 									<td><div class="match82Time mr-5"></div></td>
+									<td><div class="match82Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match82HomeLogo w-8 h-8 ml-2"></div>
@@ -1999,6 +2346,7 @@
 								<tr class="hover">
 									<td><div class="match83Date mr-5"></div></td>
 									<td><div class="match83Time mr-5"></div></td>
+									<td><div class="match83Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match83HomeLogo w-8 h-8 ml-2"></div>
@@ -2020,6 +2368,7 @@
 								<tr class="hover">
 									<td><div class="match84Date mr-5"></div></td>
 									<td><div class="match84Time mr-5"></div></td>
+									<td><div class="match84Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match84HomeLogo w-8 h-8 ml-2"></div>
@@ -2041,6 +2390,7 @@
 								<tr class="hover">
 									<td><div class="match85Date mr-5"></div></td>
 									<td><div class="match85Time mr-5"></div></td>
+									<td><div class="match85Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match85HomeLogo w-8 h-8 ml-2"></div>
@@ -2062,6 +2412,7 @@
 								<tr class="hover">
 									<td><div class="match86Date mr-5"></div></td>
 									<td><div class="match86Time mr-5"></div></td>
+									<td><div class="match86Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match86HomeLogo w-8 h-8 ml-2"></div>
@@ -2083,6 +2434,7 @@
 								<tr class="hover">
 									<td><div class="match87Date mr-5"></div></td>
 									<td><div class="match87Time mr-5"></div></td>
+									<td><div class="match87Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match87HomeLogo w-8 h-8 ml-2"></div>
@@ -2104,6 +2456,7 @@
 								<tr class="hover">
 									<td><div class="match88Date mr-5"></div></td>
 									<td><div class="match88Time mr-5"></div></td>
+									<td><div class="match88Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match88HomeLogo w-8 h-8 ml-2"></div>
@@ -2125,6 +2478,7 @@
 								<tr class="hover">
 									<td><div class="match89Date mr-5"></div></td>
 									<td><div class="match89Time mr-5"></div></td>
+									<td><div class="match89Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match89HomeLogo w-8 h-8 ml-2"></div>
@@ -2155,6 +2509,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -2164,6 +2519,7 @@
 								<tr class="hover">
 									<td><div class="match90Date mr-5"></div></td>
 									<td><div class="match90Time mr-5"></div></td>
+									<td><div class="match90Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match90HomeLogo w-8 h-8 ml-2"></div>
@@ -2185,6 +2541,7 @@
 								<tr class="hover">
 									<td><div class="match91Date mr-5"></div></td>
 									<td><div class="match91Time mr-5"></div></td>
+									<td><div class="match91Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match91HomeLogo w-8 h-8 ml-2"></div>
@@ -2206,6 +2563,7 @@
 								<tr class="hover">
 									<td><div class="match92Date mr-5"></div></td>
 									<td><div class="match92Time mr-5"></div></td>
+									<td><div class="match92Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match92HomeLogo w-5 h-5 ml-4 mb-3"></div>
@@ -2227,6 +2585,7 @@
 								<tr class="hover">
 									<td><div class="match93Date mr-5"></div></td>
 									<td><div class="match93Time mr-5"></div></td>
+									<td><div class="match93Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match93HomeLogo w-8 h-8 ml-2"></div>
@@ -2248,6 +2607,7 @@
 								<tr class="hover">
 									<td><div class="match94Date mr-5"></div></td>
 									<td><div class="match94Time mr-5"></div></td>
+									<td><div class="match94Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match94HomeLogo w-8 h-8 ml-2"></div>
@@ -2269,6 +2629,7 @@
 								<tr class="hover">
 									<td><div class="match95Date mr-5"></div></td>
 									<td><div class="match95Time mr-5"></div></td>
+									<td><div class="match95Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match95HomeLogo w-8 h-8 ml-2"></div>
@@ -2290,6 +2651,7 @@
 								<tr class="hover">
 									<td><div class="match96Date mr-5"></div></td>
 									<td><div class="match96Time mr-5"></div></td>
+									<td><div class="match96Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match96HomeLogo w-8 h-8 ml-2"></div>
@@ -2311,6 +2673,7 @@
 								<tr class="hover">
 									<td><div class="match97Date mr-5"></div></td>
 									<td><div class="match97Time mr-5"></div></td>
+									<td><div class="match97Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match97HomeLogo w-8 h-8 ml-2"></div>
@@ -2332,6 +2695,7 @@
 								<tr class="hover">
 									<td><div class="match98Date mr-5"></div></td>
 									<td><div class="match98Time mr-5"></div></td>
+									<td><div class="match98Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match98HomeLogo w-8 h-8 ml-2"></div>
@@ -2353,6 +2717,7 @@
 								<tr class="hover">
 									<td><div class="match99Date mr-5"></div></td>
 									<td><div class="match99Time mr-5"></div></td>
+									<td><div class="match99Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match99HomeLogo w-8 h-8 ml-2"></div>
@@ -2383,6 +2748,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -2392,6 +2758,7 @@
 								<tr class="hover">
 									<td><div class="match100Date mr-5"></div></td>
 									<td><div class="match100Time mr-5"></div></td>
+									<td><div class="match100Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match100HomeLogo w-8 h-8 ml-2"></div>
@@ -2413,6 +2780,7 @@
 								<tr class="hover">
 									<td><div class="match101Date mr-5"></div></td>
 									<td><div class="match101Time mr-5"></div></td>
+									<td><div class="match101Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match101HomeLogo w-8 h-8 ml-2"></div>
@@ -2434,6 +2802,7 @@
 								<tr class="hover">
 									<td><div class="match102Date mr-5"></div></td>
 									<td><div class="match102Time mr-5"></div></td>
+									<td><div class="match102Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match102HomeLogo w-8 h-8 ml-2"></div>
@@ -2455,6 +2824,7 @@
 								<tr class="hover">
 									<td><div class="match103Date mr-5"></div></td>
 									<td><div class="match103Time mr-5"></div></td>
+									<td><div class="match103Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match103HomeLogo w-8 h-8 ml-2"></div>
@@ -2476,6 +2846,7 @@
 								<tr class="hover">
 									<td><div class="match104Date mr-5"></div></td>
 									<td><div class="match104Time mr-5"></div></td>
+									<td><div class="match104Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match104HomeLogo w-8 h-8 ml-2"></div>
@@ -2497,6 +2868,7 @@
 								<tr class="hover">
 									<td><div class="match105Date mr-5"></div></td>
 									<td><div class="match105Time mr-5"></div></td>
+									<td><div class="match105Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match105HomeLogo w-5 h-5 ml-4 mb-3"></div>
@@ -2518,6 +2890,7 @@
 								<tr class="hover">
 									<td><div class="match106Date mr-5"></div></td>
 									<td><div class="match106Time mr-5"></div></td>
+									<td><div class="match106Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match106HomeLogo w-8 h-8 ml-2"></div>
@@ -2539,6 +2912,7 @@
 								<tr class="hover">
 									<td><div class="match107Date mr-5"></div></td>
 									<td><div class="match107Time mr-5"></div></td>
+									<td><div class="match107Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match107HomeLogo w-8 h-8 ml-2"></div>
@@ -2560,6 +2934,7 @@
 								<tr class="hover">
 									<td><div class="match108Date mr-5"></div></td>
 									<td><div class="match108Time mr-5"></div></td>
+									<td><div class="match108Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match108HomeLogo w-8 h-8 ml-2"></div>
@@ -2581,6 +2956,7 @@
 								<tr class="hover">
 									<td><div class="match109Date mr-5"></div></td>
 									<td><div class="match109Time mr-5"></div></td>
+									<td><div class="match109Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match109HomeLogo w-8 h-8 ml-2"></div>
@@ -2611,6 +2987,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -2620,6 +2997,7 @@
 								<tr class="hover">
 									<td><div class="match110Date mr-5"></div></td>
 									<td><div class="match110Time mr-5"></div></td>
+									<td><div class="match110Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match110HomeLogo w-8 h-8 ml-2"></div>
@@ -2641,6 +3019,7 @@
 								<tr class="hover">
 									<td><div class="match111Date mr-5"></div></td>
 									<td><div class="match111Time mr-5"></div></td>
+									<td><div class="match111Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match111HomeLogo w-8 h-8 ml-2"></div>
@@ -2662,6 +3041,7 @@
 								<tr class="hover">
 									<td><div class="match112Date mr-5"></div></td>
 									<td><div class="match112Time mr-5"></div></td>
+									<td><div class="match112Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match112HomeLogo w-8 h-8 ml-2"></div>
@@ -2683,6 +3063,7 @@
 								<tr class="hover">
 									<td><div class="match113Date mr-5"></div></td>
 									<td><div class="match113Time mr-5"></div></td>
+									<td><div class="match113Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match113HomeLogo w-8 h-8 ml-2"></div>
@@ -2704,6 +3085,7 @@
 								<tr class="hover">
 									<td><div class="match114Date mr-5"></div></td>
 									<td><div class="match114Time mr-5"></div></td>
+									<td><div class="match114Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match114HomeLogo w-8 h-8 ml-2"></div>
@@ -2725,6 +3107,7 @@
 								<tr class="hover">
 									<td><div class="match115Date mr-5"></div></td>
 									<td><div class="match115Time mr-5"></div></td>
+									<td><div class="match115Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match115HomeLogo w-8 h-8 ml-2"></div>
@@ -2746,6 +3129,7 @@
 								<tr class="hover">
 									<td><div class="match116Date mr-5"></div></td>
 									<td><div class="match116Time mr-5"></div></td>
+									<td><div class="match116Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match116HomeLogo w-8 h-8 ml-2"></div>
@@ -2767,6 +3151,7 @@
 								<tr class="hover">
 									<td><div class="match117Date mr-5"></div></td>
 									<td><div class="match117Time mr-5"></div></td>
+									<td><div class="match117Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match117HomeLogo w-8 h-8 ml-2"></div>
@@ -2788,6 +3173,7 @@
 								<tr class="hover">
 									<td><div class="match118Date mr-5"></div></td>
 									<td><div class="match118Time mr-5"></div></td>
+									<td><div class="match118Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match118HomeLogo w-8 h-8 ml-2"></div>
@@ -2809,6 +3195,7 @@
 								<tr class="hover">
 									<td><div class="match119Date mr-5"></div></td>
 									<td><div class="match119Time mr-5"></div></td>
+									<td><div class="match119Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match119HomeLogo w-8 h-8 ml-2"></div>
@@ -2839,6 +3226,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -2848,6 +3236,7 @@
 								<tr class="hover">
 									<td><div class="match120Date mr-5"></div></td>
 									<td><div class="match120Time mr-5"></div></td>
+									<td><div class="match120Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match120HomeLogo w-8 h-8 ml-2"></div>
@@ -2869,6 +3258,7 @@
 								<tr class="hover">
 									<td><div class="match121Date mr-5"></div></td>
 									<td><div class="match121Time mr-5"></div></td>
+									<td><div class="match121Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match121HomeLogo w-8 h-8 ml-2"></div>
@@ -2890,6 +3280,7 @@
 								<tr class="hover">
 									<td><div class="match122Date mr-5"></div></td>
 									<td><div class="match122Time mr-5"></div></td>
+									<td><div class="match122Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match122HomeLogo w-8 h-8 ml-2"></div>
@@ -2911,6 +3302,7 @@
 								<tr class="hover">
 									<td><div class="match123Date mr-5"></div></td>
 									<td><div class="match123Time mr-5"></div></td>
+									<td><div class="match123Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match123HomeLogo w-8 h-8 ml-2"></div>
@@ -2932,6 +3324,7 @@
 								<tr class="hover">
 									<td><div class="match124Date mr-5"></div></td>
 									<td><div class="match124Time mr-5"></div></td>
+									<td><div class="match124Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match124HomeLogo w-8 h-8 ml-2"></div>
@@ -2953,6 +3346,7 @@
 								<tr class="hover">
 									<td><div class="match125Date mr-5"></div></td>
 									<td><div class="match125Time mr-5"></div></td>
+									<td><div class="match125Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match125HomeLogo w-8 h-8 ml-2"></div>
@@ -2974,6 +3368,7 @@
 								<tr class="hover">
 									<td><div class="match126Date mr-5"></div></td>
 									<td><div class="match126Time mr-5"></div></td>
+									<td><div class="match126Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match126HomeLogo w-8 h-8 ml-2"></div>
@@ -2995,6 +3390,7 @@
 								<tr class="hover">
 									<td><div class="match127Date mr-5"></div></td>
 									<td><div class="match127Time mr-5"></div></td>
+									<td><div class="match127Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match127HomeLogo w-8 h-8 ml-2"></div>
@@ -3016,6 +3412,7 @@
 								<tr class="hover">
 									<td><div class="match128Date mr-5"></div></td>
 									<td><div class="match128Time mr-5"></div></td>
+									<td><div class="match128Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match128HomeLogo w-8 h-8 ml-2"></div>
@@ -3037,6 +3434,7 @@
 								<tr class="hover">
 									<td><div class="match129Date mr-5"></div></td>
 									<td><div class="match129Time mr-5"></div></td>
+									<td><div class="match129Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match129HomeLogo w-5 h-5 ml-4 mb-3"></div>
@@ -3067,6 +3465,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -3076,6 +3475,7 @@
 								<tr class="hover">
 									<td><div class="match130Date mr-5"></div></td>
 									<td><div class="match130Time mr-5"></div></td>
+									<td><div class="match130Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match130HomeLogo w-8 h-8 ml-2"></div>
@@ -3097,6 +3497,7 @@
 								<tr class="hover">
 									<td><div class="match131Date mr-5"></div></td>
 									<td><div class="match131Time mr-5"></div></td>
+									<td><div class="match131Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match131HomeLogo w-8 h-8 ml-2"></div>
@@ -3118,6 +3519,7 @@
 								<tr class="hover">
 									<td><div class="match132Date mr-5"></div></td>
 									<td><div class="match132Time mr-5"></div></td>
+									<td><div class="match132Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match132HomeLogo w-8 h-8 ml-2"></div>
@@ -3139,6 +3541,7 @@
 								<tr class="hover">
 									<td><div class="match133Date mr-5"></div></td>
 									<td><div class="match133Time mr-5"></div></td>
+									<td><div class="match133Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match133HomeLogo w-8 h-8 ml-2"></div>
@@ -3160,6 +3563,7 @@
 								<tr class="hover">
 									<td><div class="match134Date mr-5"></div></td>
 									<td><div class="match134Time mr-5"></div></td>
+									<td><div class="match134Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match134HomeLogo w-8 h-8 ml-2"></div>
@@ -3181,6 +3585,7 @@
 								<tr class="hover">
 									<td><div class="match135Date mr-5"></div></td>
 									<td><div class="match135Time mr-5"></div></td>
+									<td><div class="match135Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match135HomeLogo w-8 h-8 ml-2"></div>
@@ -3202,6 +3607,7 @@
 								<tr class="hover">
 									<td><div class="match136Date mr-5"></div></td>
 									<td><div class="match136Time mr-5"></div></td>
+									<td><div class="match136Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match136HomeLogo w-8 h-8 ml-2"></div>
@@ -3223,6 +3629,7 @@
 								<tr class="hover">
 									<td><div class="match137Date mr-5"></div></td>
 									<td><div class="match137Time mr-5"></div></td>
+									<td><div class="match137Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match137HomeLogo w-8 h-8 ml-2"></div>
@@ -3244,6 +3651,7 @@
 								<tr class="hover">
 									<td><div class="match138Date mr-5"></div></td>
 									<td><div class="match138Time mr-5"></div></td>
+									<td><div class="match138Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match138HomeLogo w-8 h-8 ml-2"></div>
@@ -3265,6 +3673,7 @@
 								<tr class="hover">
 									<td><div class="match139Date mr-5"></div></td>
 									<td><div class="match139Time mr-5"></div></td>
+									<td><div class="match139Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match139HomeLogo w-8 h-8 ml-2"></div>
@@ -3295,6 +3704,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -3304,6 +3714,7 @@
 								<tr class="hover">
 									<td><div class="match140Date mr-5"></div></td>
 									<td><div class="match140Time mr-5"></div></td>
+									<td><div class="match140Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match140HomeLogo w-8 h-8 ml-2"></div>
@@ -3325,6 +3736,7 @@
 								<tr class="hover">
 									<td><div class="match141Date mr-5"></div></td>
 									<td><div class="match141Time mr-5"></div></td>
+									<td><div class="match141Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match141HomeLogo w-8 h-8 ml-2"></div>
@@ -3346,6 +3758,7 @@
 								<tr class="hover">
 									<td><div class="match142Date mr-5"></div></td>
 									<td><div class="match142Time mr-5"></div></td>
+									<td><div class="match142Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match142HomeLogo w-8 h-8 ml-2"></div>
@@ -3367,6 +3780,7 @@
 								<tr class="hover">
 									<td><div class="match143Date mr-5"></div></td>
 									<td><div class="match143Time mr-5"></div></td>
+									<td><div class="match143Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match143HomeLogo w-8 h-8 ml-2"></div>
@@ -3388,6 +3802,7 @@
 								<tr class="hover">
 									<td><div class="match144Date mr-5"></div></td>
 									<td><div class="match144Time mr-5"></div></td>
+									<td><div class="match144Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match144HomeLogo w-8 h-8 ml-2"></div>
@@ -3409,6 +3824,7 @@
 								<tr class="hover">
 									<td><div class="match145Date mr-5"></div></td>
 									<td><div class="match145Time mr-5"></div></td>
+									<td><div class="match145Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match145HomeLogo w-8 h-8 ml-2"></div>
@@ -3430,6 +3846,7 @@
 								<tr class="hover">
 									<td><div class="match146Date mr-5"></div></td>
 									<td><div class="match146Time mr-5"></div></td>
+									<td><div class="match146Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match146HomeLogo w-8 h-8 ml-2"></div>
@@ -3451,6 +3868,7 @@
 								<tr class="hover">
 									<td><div class="match147Date mr-5"></div></td>
 									<td><div class="match147Time mr-5"></div></td>
+									<td><div class="match147Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match147HomeLogo w-8 h-8 ml-2"></div>
@@ -3472,6 +3890,7 @@
 								<tr class="hover">
 									<td><div class="match148Date mr-5"></div></td>
 									<td><div class="match148Time mr-5"></div></td>
+									<td><div class="match148Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match148HomeLogo w-8 h-8 ml-2"></div>
@@ -3493,6 +3912,7 @@
 								<tr class="hover">
 									<td><div class="match149Date mr-5"></div></td>
 									<td><div class="match149Time mr-5"></div></td>
+									<td><div class="match149Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match149HomeLogo w-8 h-8 ml-2"></div>
@@ -3523,6 +3943,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -3532,6 +3953,7 @@
 								<tr class="hover">
 									<td><div class="match150Date mr-5"></div></td>
 									<td><div class="match150Time mr-5"></div></td>
+									<td><div class="match150Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match150HomeLogo w-8 h-8 ml-2"></div>
@@ -3553,6 +3975,7 @@
 								<tr class="hover">
 									<td><div class="match151Date mr-5"></div></td>
 									<td><div class="match151Time mr-5"></div></td>
+									<td><div class="match151Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match151HomeLogo w-8 h-8 ml-2"></div>
@@ -3574,6 +3997,7 @@
 								<tr class="hover">
 									<td><div class="match152Date mr-5"></div></td>
 									<td><div class="match152Time mr-5"></div></td>
+									<td><div class="match152Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match152HomeLogo w-5 h-5 ml-4 mb-3"></div>
@@ -3595,6 +4019,7 @@
 								<tr class="hover">
 									<td><div class="match153Date mr-5"></div></td>
 									<td><div class="match153Time mr-5"></div></td>
+									<td><div class="match153Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match153HomeLogo w-8 h-8 ml-2"></div>
@@ -3616,6 +4041,7 @@
 								<tr class="hover">
 									<td><div class="match154Date mr-5"></div></td>
 									<td><div class="match154Time mr-5"></div></td>
+									<td><div class="match154Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match154HomeLogo w-8 h-8 ml-2"></div>
@@ -3637,6 +4063,7 @@
 								<tr class="hover">
 									<td><div class="match155Date mr-5"></div></td>
 									<td><div class="match155Time mr-5"></div></td>
+									<td><div class="match155Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match155HomeLogo w-8 h-8 ml-2"></div>
@@ -3658,6 +4085,7 @@
 								<tr class="hover">
 									<td><div class="match156Date mr-5"></div></td>
 									<td><div class="match156Time mr-5"></div></td>
+									<td><div class="match156Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match156HomeLogo w-8 h-8 ml-2"></div>
@@ -3679,6 +4107,7 @@
 								<tr class="hover">
 									<td><div class="match157Date mr-5"></div></td>
 									<td><div class="match157Time mr-5"></div></td>
+									<td><div class="match157Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match157HomeLogo w-8 h-8 ml-2"></div>
@@ -3700,6 +4129,7 @@
 								<tr class="hover">
 									<td><div class="match158Date mr-5"></div></td>
 									<td><div class="match158Time mr-5"></div></td>
+									<td><div class="match158Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match158HomeLogo w-8 h-8 ml-2"></div>
@@ -3721,6 +4151,7 @@
 								<tr class="hover">
 									<td><div class="match159Date mr-5"></div></td>
 									<td><div class="match159Time mr-5"></div></td>
+									<td><div class="match159Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match159HomeLogo w-8 h-8 ml-2"></div>
@@ -3751,6 +4182,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -3760,6 +4192,7 @@
 								<tr class="hover">
 									<td><div class="match160Date mr-5"></div></td>
 									<td><div class="match160Time mr-5"></div></td>
+									<td><div class="match160Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match160HomeLogo w-8 h-8 ml-2"></div>
@@ -3781,6 +4214,7 @@
 								<tr class="hover">
 									<td><div class="match161Date mr-5"></div></td>
 									<td><div class="match161Time mr-5"></div></td>
+									<td><div class="match161Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match161HomeLogo w-8 h-8 ml-2"></div>
@@ -3802,6 +4236,7 @@
 								<tr class="hover">
 									<td><div class="match162Date mr-5"></div></td>
 									<td><div class="match162Time mr-5"></div></td>
+									<td><div class="match162Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match162HomeLogo w-8 h-8 ml-2"></div>
@@ -3823,6 +4258,7 @@
 								<tr class="hover">
 									<td><div class="match163Date mr-5"></div></td>
 									<td><div class="match163Time mr-5"></div></td>
+									<td><div class="match163Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match163HomeLogo w-8 h-8 ml-2"></div>
@@ -3844,6 +4280,7 @@
 								<tr class="hover">
 									<td><div class="match164Date mr-5"></div></td>
 									<td><div class="match164Time mr-5"></div></td>
+									<td><div class="match164Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match164HomeLogo w-8 h-8 ml-2"></div>
@@ -3865,6 +4302,7 @@
 								<tr class="hover">
 									<td><div class="match165Date mr-5"></div></td>
 									<td><div class="match165Time mr-5"></div></td>
+									<td><div class="match165Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match165HomeLogo w-8 h-8 ml-2"></div>
@@ -3886,6 +4324,7 @@
 								<tr class="hover">
 									<td><div class="match166Date mr-5"></div></td>
 									<td><div class="match166Time mr-5"></div></td>
+									<td><div class="match166Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match166HomeLogo w-8 h-8 ml-2"></div>
@@ -3907,6 +4346,7 @@
 								<tr class="hover">
 									<td><div class="match167Date mr-5"></div></td>
 									<td><div class="match167Time mr-5"></div></td>
+									<td><div class="match167Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match167HomeLogo w-8 h-8 ml-2"></div>
@@ -3928,6 +4368,7 @@
 								<tr class="hover">
 									<td><div class="match168Date mr-5"></div></td>
 									<td><div class="match168Time mr-5"></div></td>
+									<td><div class="match168Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match168HomeLogo w-8 h-8 ml-2"></div>
@@ -3949,6 +4390,7 @@
 								<tr class="hover">
 									<td><div class="match169Date mr-5"></div></td>
 									<td><div class="match169Time mr-5"></div></td>
+									<td><div class="match169Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match169HomeLogo w-8 h-8 ml-2"></div>
@@ -3979,6 +4421,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -3988,6 +4431,7 @@
 								<tr class="hover">
 									<td><div class="match170Date mr-5"></div></td>
 									<td><div class="match170Time mr-5"></div></td>
+									<td><div class="match170Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match170HomeLogo w-8 h-8 ml-2"></div>
@@ -4009,6 +4453,7 @@
 								<tr class="hover">
 									<td><div class="match171Date mr-5"></div></td>
 									<td><div class="match171Time mr-5"></div></td>
+									<td><div class="match171Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match171HomeLogo w-8 h-8 ml-2"></div>
@@ -4030,6 +4475,7 @@
 								<tr class="hover">
 									<td><div class="match172Date mr-5"></div></td>
 									<td><div class="match172Time mr-5"></div></td>
+									<td><div class="match172Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match172HomeLogo w-8 h-8 ml-2"></div>
@@ -4051,6 +4497,7 @@
 								<tr class="hover">
 									<td><div class="match173Date mr-5"></div></td>
 									<td><div class="match173Time mr-5"></div></td>
+									<td><div class="match173Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match173HomeLogo w-8 h-8 ml-2"></div>
@@ -4072,6 +4519,7 @@
 								<tr class="hover">
 									<td><div class="match174Date mr-5"></div></td>
 									<td><div class="match174Time mr-5"></div></td>
+									<td><div class="match174Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match174HomeLogo w-8 h-8 ml-2"></div>
@@ -4093,6 +4541,7 @@
 								<tr class="hover">
 									<td><div class="match175Date mr-5"></div></td>
 									<td><div class="match175Time mr-5"></div></td>
+									<td><div class="match175Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match175HomeLogo w-8 h-8 ml-2"></div>
@@ -4114,6 +4563,7 @@
 								<tr class="hover">
 									<td><div class="match176Date mr-5"></div></td>
 									<td><div class="match176Time mr-5"></div></td>
+									<td><div class="match176Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match176HomeLogo w-8 h-8 ml-2"></div>
@@ -4135,6 +4585,7 @@
 								<tr class="hover">
 									<td><div class="match177Date mr-5"></div></td>
 									<td><div class="match177Time mr-5"></div></td>
+									<td><div class="match177Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match177HomeLogo w-5 h-5 ml-4 mb-3"></div>
@@ -4156,6 +4607,7 @@
 								<tr class="hover">
 									<td><div class="match178Date mr-5"></div></td>
 									<td><div class="match178Time mr-5"></div></td>
+									<td><div class="match178Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match178HomeLogo w-8 h-8 ml-2"></div>
@@ -4177,6 +4629,7 @@
 								<tr class="hover">
 									<td><div class="match179Date mr-5"></div></td>
 									<td><div class="match179Time mr-5"></div></td>
+									<td><div class="match179Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match179HomeLogo w-8 h-8 ml-2"></div>
@@ -4207,6 +4660,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -4216,6 +4670,7 @@
 								<tr class="hover">
 									<td><div class="match180Date mr-5"></div></td>
 									<td><div class="match180Time mr-5"></div></td>
+									<td><div class="match180Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match180HomeLogo w-8 h-8 ml-2"></div>
@@ -4237,6 +4692,7 @@
 								<tr class="hover">
 									<td><div class="match181Date mr-5"></div></td>
 									<td><div class="match181Time mr-5"></div></td>
+									<td><div class="match181Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match181HomeLogo w-8 h-8 ml-2"></div>
@@ -4258,6 +4714,7 @@
 								<tr class="hover">
 									<td><div class="match182Date mr-5"></div></td>
 									<td><div class="match182Time mr-5"></div></td>
+									<td><div class="match182Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match182HomeLogo w-8 h-8 ml-2"></div>
@@ -4279,6 +4736,7 @@
 								<tr class="hover">
 									<td><div class="match183Date mr-5"></div></td>
 									<td><div class="match183Time mr-5"></div></td>
+									<td><div class="match183Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match183HomeLogo w-8 h-8 ml-2"></div>
@@ -4300,6 +4758,7 @@
 								<tr class="hover">
 									<td><div class="match184Date mr-5"></div></td>
 									<td><div class="match184Time mr-5"></div></td>
+									<td><div class="match184Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match184HomeLogo w-8 h-8 ml-2"></div>
@@ -4321,6 +4780,7 @@
 								<tr class="hover">
 									<td><div class="match185Date mr-5"></div></td>
 									<td><div class="match185Time mr-5"></div></td>
+									<td><div class="match185Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match185HomeLogo w-8 h-8 ml-2"></div>
@@ -4342,6 +4802,7 @@
 								<tr class="hover">
 									<td><div class="match186Date mr-5"></div></td>
 									<td><div class="match186Time mr-5"></div></td>
+									<td><div class="match186Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match186HomeLogo w-8 h-8 ml-2"></div>
@@ -4363,6 +4824,7 @@
 								<tr class="hover">
 									<td><div class="match187Date mr-5"></div></td>
 									<td><div class="match187Time mr-5"></div></td>
+									<td><div class="match187Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match187HomeLogo w-8 h-8 ml-2"></div>
@@ -4384,6 +4846,7 @@
 								<tr class="hover">
 									<td><div class="match188Date mr-5"></div></td>
 									<td><div class="match188Time mr-5"></div></td>
+									<td><div class="match188Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match188HomeLogo w-8 h-8 ml-2"></div>
@@ -4405,6 +4868,7 @@
 								<tr class="hover">
 									<td><div class="match189Date mr-5"></div></td>
 									<td><div class="match189Time mr-5"></div></td>
+									<td><div class="match189Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match189HomeLogo w-8 h-8 ml-2"></div>
@@ -4435,6 +4899,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -4444,6 +4909,7 @@
 								<tr class="hover">
 									<td><div class="match190Date mr-5"></div></td>
 									<td><div class="match190Time mr-5"></div></td>
+									<td><div class="match190Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match190HomeLogo w-8 h-8 ml-2"></div>
@@ -4465,6 +4931,7 @@
 								<tr class="hover">
 									<td><div class="match191Date mr-5"></div></td>
 									<td><div class="match191Time mr-5"></div></td>
+									<td><div class="match191Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match191HomeLogo w-8 h-8 ml-2"></div>
@@ -4486,6 +4953,7 @@
 								<tr class="hover">
 									<td><div class="match192Date mr-5"></div></td>
 									<td><div class="match192Time mr-5"></div></td>
+									<td><div class="match192Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match192HomeLogo w-8 h-8 ml-2"></div>
@@ -4507,6 +4975,7 @@
 								<tr class="hover">
 									<td><div class="match193Date mr-5"></div></td>
 									<td><div class="match193Time mr-5"></div></td>
+									<td><div class="match193Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match193HomeLogo w-8 h-8 ml-2"></div>
@@ -4528,6 +4997,7 @@
 								<tr class="hover">
 									<td><div class="match194Date mr-5"></div></td>
 									<td><div class="match194Time mr-5"></div></td>
+									<td><div class="match194Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match194HomeLogo w-8 h-8 ml-2"></div>
@@ -4549,6 +5019,7 @@
 								<tr class="hover">
 									<td><div class="match195Date mr-5"></div></td>
 									<td><div class="match195Time mr-5"></div></td>
+									<td><div class="match195Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match195HomeLogo w-8 h-8 ml-2"></div>
@@ -4570,6 +5041,7 @@
 								<tr class="hover">
 									<td><div class="match196Date mr-5"></div></td>
 									<td><div class="match196Time mr-5"></div></td>
+									<td><div class="match196Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match196HomeLogo w-8 h-8 ml-2"></div>
@@ -4591,6 +5063,7 @@
 								<tr class="hover">
 									<td><div class="match197Date mr-5"></div></td>
 									<td><div class="match197Time mr-5"></div></td>
+									<td><div class="match197Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match197HomeLogo w-8 h-8 ml-2"></div>
@@ -4612,6 +5085,7 @@
 								<tr class="hover">
 									<td><div class="match198Date mr-5"></div></td>
 									<td><div class="match198Time mr-5"></div></td>
+									<td><div class="match198Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match198HomeLogo w-5 h-5 ml-4 mb-3"></div>
@@ -4633,6 +5107,7 @@
 								<tr class="hover">
 									<td><div class="match199Date mr-5"></div></td>
 									<td><div class="match199Time mr-5"></div></td>
+									<td><div class="match199Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match199HomeLogo w-8 h-8 ml-2"></div>
@@ -4663,6 +5138,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -4672,6 +5148,7 @@
 								<tr class="hover">
 									<td><div class="match200Date mr-5"></div></td>
 									<td><div class="match200Time mr-5"></div></td>
+									<td><div class="match200Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match200HomeLogo w-8 h-8 ml-2"></div>
@@ -4693,6 +5170,7 @@
 								<tr class="hover">
 									<td><div class="match201Date mr-5"></div></td>
 									<td><div class="match201Time mr-5"></div></td>
+									<td><div class="match201Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match201HomeLogo w-8 h-8 ml-2"></div>
@@ -4714,6 +5192,7 @@
 								<tr class="hover">
 									<td><div class="match202Date mr-5"></div></td>
 									<td><div class="match202Time mr-5"></div></td>
+									<td><div class="match202Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match202HomeLogo w-8 h-8 ml-2"></div>
@@ -4735,6 +5214,7 @@
 								<tr class="hover">
 									<td><div class="match203Date mr-5"></div></td>
 									<td><div class="match203Time mr-5"></div></td>
+									<td><div class="match203Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match203HomeLogo w-8 h-8 ml-2"></div>
@@ -4756,6 +5236,7 @@
 								<tr class="hover">
 									<td><div class="match204Date mr-5"></div></td>
 									<td><div class="match204Time mr-5"></div></td>
+									<td><div class="match204Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match204HomeLogo w-8 h-8 ml-2"></div>
@@ -4777,6 +5258,7 @@
 								<tr class="hover">
 									<td><div class="match205Date mr-5"></div></td>
 									<td><div class="match205Time mr-5"></div></td>
+									<td><div class="match205Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match205HomeLogo w-8 h-8 ml-2"></div>
@@ -4798,6 +5280,7 @@
 								<tr class="hover">
 									<td><div class="match206Date mr-5"></div></td>
 									<td><div class="match206Time mr-5"></div></td>
+									<td><div class="match206Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match206HomeLogo w-8 h-8 ml-2"></div>
@@ -4819,6 +5302,7 @@
 								<tr class="hover">
 									<td><div class="match207Date mr-5"></div></td>
 									<td><div class="match207Time mr-5"></div></td>
+									<td><div class="match207Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match207HomeLogo w-8 h-8 ml-2"></div>
@@ -4840,6 +5324,7 @@
 								<tr class="hover">
 									<td><div class="match208Date mr-5"></div></td>
 									<td><div class="match208Time mr-5"></div></td>
+									<td><div class="match208Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match208HomeLogo w-8 h-8 ml-2"></div>
@@ -4861,6 +5346,7 @@
 								<tr class="hover">
 									<td><div class="match209Date mr-5"></div></td>
 									<td><div class="match209Time mr-5"></div></td>
+									<td><div class="match209Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match209HomeLogo w-8 h-8 ml-2"></div>
@@ -4891,6 +5377,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -4900,6 +5387,7 @@
 								<tr class="hover">
 									<td><div class="match210Date mr-5"></div></td>
 									<td><div class="match210Time mr-5"></div></td>
+									<td><div class="match210Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match210HomeLogo w-8 h-8 ml-2"></div>
@@ -4921,6 +5409,7 @@
 								<tr class="hover">
 									<td><div class="match211Date mr-5"></div></td>
 									<td><div class="match211Time mr-5"></div></td>
+									<td><div class="match211Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match211HomeLogo w-8 h-8 ml-2"></div>
@@ -4942,6 +5431,7 @@
 								<tr class="hover">
 									<td><div class="match212Date mr-5"></div></td>
 									<td><div class="match212Time mr-5"></div></td>
+									<td><div class="match212Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match212HomeLogo w-8 h-8 ml-2"></div>
@@ -4963,6 +5453,7 @@
 								<tr class="hover">
 									<td><div class="match213Date mr-5"></div></td>
 									<td><div class="match213Time mr-5"></div></td>
+									<td><div class="match213Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match213HomeLogo w-8 h-8 ml-2"></div>
@@ -4984,6 +5475,7 @@
 								<tr class="hover">
 									<td><div class="match214Date mr-5"></div></td>
 									<td><div class="match214Time mr-5"></div></td>
+									<td><div class="match214Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match214HomeLogo w-8 h-8 ml-2"></div>
@@ -5005,6 +5497,7 @@
 								<tr class="hover">
 									<td><div class="match215Date mr-5"></div></td>
 									<td><div class="match215Time mr-5"></div></td>
+									<td><div class="match215Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match215HomeLogo w-8 h-8 ml-2"></div>
@@ -5026,6 +5519,7 @@
 								<tr class="hover">
 									<td><div class="match216Date mr-5"></div></td>
 									<td><div class="match216Time mr-5"></div></td>
+									<td><div class="match216Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match216HomeLogo w-8 h-8 ml-2"></div>
@@ -5047,6 +5541,7 @@
 								<tr class="hover">
 									<td><div class="match217Date mr-5"></div></td>
 									<td><div class="match217Time mr-5"></div></td>
+									<td><div class="match217Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match217HomeLogo w-8 h-8 ml-2"></div>
@@ -5068,6 +5563,7 @@
 								<tr class="hover">
 									<td><div class="match218Date mr-5"></div></td>
 									<td><div class="match218Time mr-5"></div></td>
+									<td><div class="match218Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match218HomeLogo w-8 h-8 ml-2"></div>
@@ -5089,6 +5585,7 @@
 								<tr class="hover">
 									<td><div class="match219Date mr-5"></div></td>
 									<td><div class="match219Time mr-5"></div></td>
+									<td><div class="match219Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match219HomeLogo w-8 h-8 ml-2"></div>
@@ -5119,6 +5616,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -5128,6 +5626,7 @@
 								<tr class="hover">
 									<td><div class="match220Date mr-5"></div></td>
 									<td><div class="match220Time mr-5"></div></td>
+									<td><div class="match220Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match220HomeLogo w-8 h-8 ml-2"></div>
@@ -5149,6 +5648,7 @@
 								<tr class="hover">
 									<td><div class="match221Date mr-5"></div></td>
 									<td><div class="match221Time mr-5"></div></td>
+									<td><div class="match221Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match221HomeLogo w-8 h-8 ml-2"></div>
@@ -5170,6 +5670,7 @@
 								<tr class="hover">
 									<td><div class="match222Date mr-5"></div></td>
 									<td><div class="match222Time mr-5"></div></td>
+									<td><div class="match222Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match222HomeLogo w-5 h-5 ml-4 mb-3"></div>
@@ -5191,6 +5692,7 @@
 								<tr class="hover">
 									<td><div class="match223Date mr-5"></div></td>
 									<td><div class="match223Time mr-5"></div></td>
+									<td><div class="match223Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match223HomeLogo w-8 h-8 ml-2"></div>
@@ -5212,6 +5714,7 @@
 								<tr class="hover">
 									<td><div class="match224Date mr-5"></div></td>
 									<td><div class="match224Time mr-5"></div></td>
+									<td><div class="match224Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match224HomeLogo w-8 h-8 ml-2"></div>
@@ -5233,6 +5736,7 @@
 								<tr class="hover">
 									<td><div class="match225Date mr-5"></div></td>
 									<td><div class="match225Time mr-5"></div></td>
+									<td><div class="match225Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match225HomeLogo w-8 h-8 ml-2"></div>
@@ -5254,6 +5758,7 @@
 								<tr class="hover">
 									<td><div class="match226Date mr-5"></div></td>
 									<td><div class="match226Time mr-5"></div></td>
+									<td><div class="match226Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match226HomeLogo w-8 h-8 ml-2"></div>
@@ -5275,6 +5780,7 @@
 								<tr class="hover">
 									<td><div class="match227Date mr-5"></div></td>
 									<td><div class="match227Time mr-5"></div></td>
+									<td><div class="match227Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match227HomeLogo w-8 h-8 ml-2"></div>
@@ -5296,6 +5802,7 @@
 								<tr class="hover">
 									<td><div class="match228Date mr-5"></div></td>
 									<td><div class="match228Time mr-5"></div></td>
+									<td><div class="match228Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match228HomeLogo w-8 h-8 ml-2"></div>
@@ -5317,6 +5824,7 @@
 								<tr class="hover">
 									<td><div class="match229Date mr-5"></div></td>
 									<td><div class="match229Time mr-5"></div></td>
+									<td><div class="match229Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match229HomeLogo w-8 h-8 ml-2"></div>
@@ -5347,6 +5855,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -5356,6 +5865,7 @@
 								<tr class="hover">
 									<td><div class="match230Date mr-5"></div></td>
 									<td><div class="match230Time mr-5"></div></td>
+									<td><div class="match230Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match230HomeLogo w-8 h-8 ml-2"></div>
@@ -5377,6 +5887,7 @@
 								<tr class="hover">
 									<td><div class="match231Date mr-5"></div></td>
 									<td><div class="match231Time mr-5"></div></td>
+									<td><div class="match231Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match231HomeLogo w-8 h-8 ml-2"></div>
@@ -5398,6 +5909,7 @@
 								<tr class="hover">
 									<td><div class="match232Date mr-5"></div></td>
 									<td><div class="match232Time mr-5"></div></td>
+									<td><div class="match232Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match232HomeLogo w-8 h-8 ml-2"></div>
@@ -5419,6 +5931,7 @@
 								<tr class="hover">
 									<td><div class="match233Date mr-5"></div></td>
 									<td><div class="match233Time mr-5"></div></td>
+									<td><div class="match233Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match233HomeLogo w-8 h-8 ml-2"></div>
@@ -5440,6 +5953,7 @@
 								<tr class="hover">
 									<td><div class="match234Date mr-5"></div></td>
 									<td><div class="match234Time mr-5"></div></td>
+									<td><div class="match234Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match234HomeLogo w-8 h-8 ml-2"></div>
@@ -5461,6 +5975,7 @@
 								<tr class="hover">
 									<td><div class="match235Date mr-5"></div></td>
 									<td><div class="match235Time mr-5"></div></td>
+									<td><div class="match235Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match235HomeLogo w-8 h-8 ml-2"></div>
@@ -5482,6 +5997,7 @@
 								<tr class="hover">
 									<td><div class="match236Date mr-5"></div></td>
 									<td><div class="match236Time mr-5"></div></td>
+									<td><div class="match236Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match236HomeLogo w-8 h-8 ml-2"></div>
@@ -5503,6 +6019,7 @@
 								<tr class="hover">
 									<td><div class="match237Date mr-5"></div></td>
 									<td><div class="match237Time mr-5"></div></td>
+									<td><div class="match237Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match237HomeLogo w-8 h-8 ml-2"></div>
@@ -5524,6 +6041,7 @@
 								<tr class="hover">
 									<td><div class="match238Date mr-5"></div></td>
 									<td><div class="match238Time mr-5"></div></td>
+									<td><div class="match238Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match238HomeLogo w-8 h-8 ml-2"></div>
@@ -5545,6 +6063,7 @@
 								<tr class="hover">
 									<td><div class="match239Date mr-5"></div></td>
 									<td><div class="match239Time mr-5"></div></td>
+									<td><div class="match239Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match239HomeLogo w-8 h-8 ml-2"></div>
@@ -5575,6 +6094,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -5584,6 +6104,7 @@
 								<tr class="hover">
 									<td><div class="match240Date mr-5"></div></td>
 									<td><div class="match240Time mr-5"></div></td>
+									<td><div class="match240Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match240HomeLogo w-8 h-8 ml-2"></div>
@@ -5605,6 +6126,7 @@
 								<tr class="hover">
 									<td><div class="match241Date mr-5"></div></td>
 									<td><div class="match241Time mr-5"></div></td>
+									<td><div class="match241Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match241HomeLogo w-5 h-5 ml-4 mb-3"></div>
@@ -5626,6 +6148,7 @@
 								<tr class="hover">
 									<td><div class="match242Date mr-5"></div></td>
 									<td><div class="match242Time mr-5"></div></td>
+									<td><div class="match242Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match242HomeLogo w-8 h-8 ml-2"></div>
@@ -5647,6 +6170,7 @@
 								<tr class="hover">
 									<td><div class="match243Date mr-5"></div></td>
 									<td><div class="match243Time mr-5"></div></td>
+									<td><div class="match243Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match243HomeLogo w-8 h-8 ml-2"></div>
@@ -5668,6 +6192,7 @@
 								<tr class="hover">
 									<td><div class="match244Date mr-5"></div></td>
 									<td><div class="match244Time mr-5"></div></td>
+									<td><div class="match244Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match244HomeLogo w-8 h-8 ml-2"></div>
@@ -5689,6 +6214,7 @@
 								<tr class="hover">
 									<td><div class="match245Date mr-5"></div></td>
 									<td><div class="match245Time mr-5"></div></td>
+									<td><div class="match245Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match245HomeLogo w-8 h-8 ml-2"></div>
@@ -5710,6 +6236,7 @@
 								<tr class="hover">
 									<td><div class="match246Date mr-5"></div></td>
 									<td><div class="match246Time mr-5"></div></td>
+									<td><div class="match246Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match246HomeLogo w-8 h-8 ml-2"></div>
@@ -5731,6 +6258,7 @@
 								<tr class="hover">
 									<td><div class="match247Date mr-5"></div></td>
 									<td><div class="match247Time mr-5"></div></td>
+									<td><div class="match247Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match247HomeLogo w-8 h-8 ml-2"></div>
@@ -5752,6 +6280,7 @@
 								<tr class="hover">
 									<td><div class="match248Date mr-5"></div></td>
 									<td><div class="match248Time mr-5"></div></td>
+									<td><div class="match248Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match248HomeLogo w-8 h-8 ml-2"></div>
@@ -5773,6 +6302,7 @@
 								<tr class="hover">
 									<td><div class="match249Date mr-5"></div></td>
 									<td><div class="match249Time mr-5"></div></td>
+									<td><div class="match249Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match249HomeLogo w-8 h-8 ml-2"></div>
@@ -5803,6 +6333,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -5812,6 +6343,7 @@
 								<tr class="hover">
 									<td><div class="match250Date mr-5"></div></td>
 									<td><div class="match250Time mr-5"></div></td>
+									<td><div class="match250Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match250HomeLogo w-8 h-8 ml-2"></div>
@@ -5833,6 +6365,7 @@
 								<tr class="hover">
 									<td><div class="match251Date mr-5"></div></td>
 									<td><div class="match251Time mr-5"></div></td>
+									<td><div class="match251Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match251HomeLogo w-8 h-8 ml-2"></div>
@@ -5854,6 +6387,7 @@
 								<tr class="hover">
 									<td><div class="match252Date mr-5"></div></td>
 									<td><div class="match252Time mr-5"></div></td>
+									<td><div class="match252Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match252HomeLogo w-8 h-8 ml-2"></div>
@@ -5875,6 +6409,7 @@
 								<tr class="hover">
 									<td><div class="match253Date mr-5"></div></td>
 									<td><div class="match253Time mr-5"></div></td>
+									<td><div class="match253Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match253HomeLogo w-8 h-8 ml-2"></div>
@@ -5896,6 +6431,7 @@
 								<tr class="hover">
 									<td><div class="match254Date mr-5"></div></td>
 									<td><div class="match254Time mr-5"></div></td>
+									<td><div class="match254Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match254HomeLogo w-8 h-8 ml-2"></div>
@@ -5917,6 +6453,7 @@
 								<tr class="hover">
 									<td><div class="match255Date mr-5"></div></td>
 									<td><div class="match255Time mr-5"></div></td>
+									<td><div class="match255Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match255HomeLogo w-8 h-8 ml-2"></div>
@@ -5938,6 +6475,7 @@
 								<tr class="hover">
 									<td><div class="match256Date mr-5"></div></td>
 									<td><div class="match256Time mr-5"></div></td>
+									<td><div class="match256Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match256HomeLogo w-8 h-8 ml-2"></div>
@@ -5959,6 +6497,7 @@
 								<tr class="hover">
 									<td><div class="match257Date mr-5"></div></td>
 									<td><div class="match257Time mr-5"></div></td>
+									<td><div class="match257Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match257HomeLogo w-8 h-8 ml-2"></div>
@@ -5980,6 +6519,7 @@
 								<tr class="hover">
 									<td><div class="match258Date mr-5"></div></td>
 									<td><div class="match258Time mr-5"></div></td>
+									<td><div class="match258Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match258HomeLogo w-8 h-8 ml-2"></div>
@@ -6001,6 +6541,7 @@
 								<tr class="hover">
 									<td><div class="match259Date mr-5"></div></td>
 									<td><div class="match259Time mr-5"></div></td>
+									<td><div class="match259Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match259HomeLogo w-8 h-8 ml-2"></div>
@@ -6031,6 +6572,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -6040,6 +6582,7 @@
 								<tr class="hover">
 									<td><div class="match260Date mr-5"></div></td>
 									<td><div class="match260Time mr-5"></div></td>
+									<td><div class="match260Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match260HomeLogo w-8 h-8 ml-2"></div>
@@ -6061,6 +6604,7 @@
 								<tr class="hover">
 									<td><div class="match261Date mr-5"></div></td>
 									<td><div class="match261Time mr-5"></div></td>
+									<td><div class="match261Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match261HomeLogo w-8 h-8 ml-2"></div>
@@ -6082,6 +6626,7 @@
 								<tr class="hover">
 									<td><div class="match262Date mr-5"></div></td>
 									<td><div class="match262Time mr-5"></div></td>
+									<td><div class="match262Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match262HomeLogo w-8 h-8 ml-2"></div>
@@ -6103,6 +6648,7 @@
 								<tr class="hover">
 									<td><div class="match263Date mr-5"></div></td>
 									<td><div class="match263Time mr-5"></div></td>
+									<td><div class="match263Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match263HomeLogo w-8 h-8 ml-2"></div>
@@ -6124,6 +6670,7 @@
 								<tr class="hover">
 									<td><div class="match264Date mr-5"></div></td>
 									<td><div class="match264Time mr-5"></div></td>
+									<td><div class="match264Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match264HomeLogo w-8 h-8 ml-2"></div>
@@ -6145,6 +6692,7 @@
 								<tr class="hover">
 									<td><div class="match265Date mr-5"></div></td>
 									<td><div class="match265Time mr-5"></div></td>
+									<td><div class="match265Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match265HomeLogo w-8 h-8 ml-2"></div>
@@ -6166,6 +6714,7 @@
 								<tr class="hover">
 									<td><div class="match266Date mr-5"></div></td>
 									<td><div class="match266Time mr-5"></div></td>
+									<td><div class="match266Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match266HomeLogo w-8 h-8 ml-2"></div>
@@ -6187,6 +6736,7 @@
 								<tr class="hover">
 									<td><div class="match267Date mr-5"></div></td>
 									<td><div class="match267Time mr-5"></div></td>
+									<td><div class="match267Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match267HomeLogo w-8 h-8 ml-2"></div>
@@ -6208,6 +6758,7 @@
 								<tr class="hover">
 									<td><div class="match268Date mr-5"></div></td>
 									<td><div class="match268Time mr-5"></div></td>
+									<td><div class="match268Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match268HomeLogo w-8 h-8 ml-2"></div>
@@ -6229,6 +6780,7 @@
 								<tr class="hover">
 									<td><div class="match269Date mr-5"></div></td>
 									<td><div class="match269Time mr-5"></div></td>
+									<td><div class="match269Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match269HomeLogo w-5 h-5 ml-4 mb-3"></div>
@@ -6259,6 +6811,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -6268,6 +6821,7 @@
 								<tr class="hover">
 									<td><div class="match270Date mr-5"></div></td>
 									<td><div class="match270Time mr-5"></div></td>
+									<td><div class="match270Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match270HomeLogo w-8 h-8 ml-2"></div>
@@ -6289,6 +6843,7 @@
 								<tr class="hover">
 									<td><div class="match271Date mr-5"></div></td>
 									<td><div class="match271Time mr-5"></div></td>
+									<td><div class="match271Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match271HomeLogo w-8 h-8 ml-2"></div>
@@ -6310,6 +6865,7 @@
 								<tr class="hover">
 									<td><div class="match272Date mr-5"></div></td>
 									<td><div class="match272Time mr-5"></div></td>
+									<td><div class="match272Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match272HomeLogo w-5 h-5 ml-4 mb-3"></div>
@@ -6331,6 +6887,7 @@
 								<tr class="hover">
 									<td><div class="match273Date mr-5"></div></td>
 									<td><div class="match273Time mr-5"></div></td>
+									<td><div class="match273Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match273HomeLogo w-8 h-8 ml-2"></div>
@@ -6352,6 +6909,7 @@
 								<tr class="hover">
 									<td><div class="match274Date mr-5"></div></td>
 									<td><div class="match274Time mr-5"></div></td>
+									<td><div class="match274Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match274HomeLogo w-8 h-8 ml-2"></div>
@@ -6373,6 +6931,7 @@
 								<tr class="hover">
 									<td><div class="match275Date mr-5"></div></td>
 									<td><div class="match275Time mr-5"></div></td>
+									<td><div class="match275Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match275HomeLogo w-8 h-8 ml-2"></div>
@@ -6394,6 +6953,7 @@
 								<tr class="hover">
 									<td><div class="match276Date mr-5"></div></td>
 									<td><div class="match276Time mr-5"></div></td>
+									<td><div class="match276Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match276HomeLogo w-8 h-8 ml-2"></div>
@@ -6415,6 +6975,7 @@
 								<tr class="hover">
 									<td><div class="match277Date mr-5"></div></td>
 									<td><div class="match277Time mr-5"></div></td>
+									<td><div class="match277Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match277HomeLogo w-8 h-8 ml-2"></div>
@@ -6436,6 +6997,7 @@
 								<tr class="hover">
 									<td><div class="match278Date mr-5"></div></td>
 									<td><div class="match278Time mr-5"></div></td>
+									<td><div class="match278Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match278HomeLogo w-8 h-8 ml-2"></div>
@@ -6457,6 +7019,7 @@
 								<tr class="hover">
 									<td><div class="match279Date mr-5"></div></td>
 									<td><div class="match279Time mr-5"></div></td>
+									<td><div class="match279Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match279HomeLogo w-8 h-8 ml-2"></div>
@@ -6487,6 +7050,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -6496,6 +7060,7 @@
 								<tr class="hover">
 									<td><div class="match280Date mr-5"></div></td>
 									<td><div class="match280Time mr-5"></div></td>
+									<td><div class="match280Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match280HomeLogo w-8 h-8 ml-2"></div>
@@ -6517,6 +7082,7 @@
 								<tr class="hover">
 									<td><div class="match281Date mr-5"></div></td>
 									<td><div class="match281Time mr-5"></div></td>
+									<td><div class="match281Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match281HomeLogo w-8 h-8 ml-2"></div>
@@ -6538,6 +7104,7 @@
 								<tr class="hover">
 									<td><div class="match282Date mr-5"></div></td>
 									<td><div class="match282Time mr-5"></div></td>
+									<td><div class="match282Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match282HomeLogo w-8 h-8 ml-2"></div>
@@ -6559,6 +7126,7 @@
 								<tr class="hover">
 									<td><div class="match283Date mr-5"></div></td>
 									<td><div class="match283Time mr-5"></div></td>
+									<td><div class="match283Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match283HomeLogo w-8 h-8 ml-2"></div>
@@ -6580,6 +7148,7 @@
 								<tr class="hover">
 									<td><div class="match284Date mr-5"></div></td>
 									<td><div class="match284Time mr-5"></div></td>
+									<td><div class="match284Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match284HomeLogo w-8 h-8 ml-2"></div>
@@ -6601,6 +7170,7 @@
 								<tr class="hover">
 									<td><div class="match285Date mr-5"></div></td>
 									<td><div class="match285Time mr-5"></div></td>
+									<td><div class="match285Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match285HomeLogo w-8 h-8 ml-2"></div>
@@ -6622,6 +7192,7 @@
 								<tr class="hover">
 									<td><div class="match286Date mr-5"></div></td>
 									<td><div class="match286Time mr-5"></div></td>
+									<td><div class="match286Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match286HomeLogo w-8 h-8 ml-2"></div>
@@ -6643,6 +7214,7 @@
 								<tr class="hover">
 									<td><div class="match287Date mr-5"></div></td>
 									<td><div class="match287Time mr-5"></div></td>
+									<td><div class="match287Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match287HomeLogo w-8 h-8 ml-2"></div>
@@ -6664,6 +7236,7 @@
 								<tr class="hover">
 									<td><div class="match288Date mr-5"></div></td>
 									<td><div class="match288Time mr-5"></div></td>
+									<td><div class="match288Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match288HomeLogo w-8 h-8 ml-2"></div>
@@ -6685,6 +7258,7 @@
 								<tr class="hover">
 									<td><div class="match289Date mr-5"></div></td>
 									<td><div class="match289Time mr-5"></div></td>
+									<td><div class="match289Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match289HomeLogo w-8 h-8 ml-2"></div>
@@ -6715,6 +7289,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -6724,6 +7299,7 @@
 								<tr class="hover">
 									<td><div class="match290Date mr-5"></div></td>
 									<td><div class="match290Time mr-5"></div></td>
+									<td><div class="match290Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match290HomeLogo w-8 h-8 ml-2"></div>
@@ -6745,6 +7321,7 @@
 								<tr class="hover">
 									<td><div class="match291Date mr-5"></div></td>
 									<td><div class="match291Time mr-5"></div></td>
+									<td><div class="match291Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match291HomeLogo w-8 h-8 ml-2"></div>
@@ -6766,6 +7343,7 @@
 								<tr class="hover">
 									<td><div class="match292Date mr-5"></div></td>
 									<td><div class="match292Time mr-5"></div></td>
+									<td><div class="match292Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match292HomeLogo w-8 h-8 ml-2"></div>
@@ -6787,6 +7365,7 @@
 								<tr class="hover">
 									<td><div class="match293Date mr-5"></div></td>
 									<td><div class="match293Time mr-5"></div></td>
+									<td><div class="match293Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match293HomeLogo w-8 h-8 ml-2"></div>
@@ -6808,6 +7387,7 @@
 								<tr class="hover">
 									<td><div class="match294Date mr-5"></div></td>
 									<td><div class="match294Time mr-5"></div></td>
+									<td><div class="match294Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match294HomeLogo w-8 h-8 ml-2"></div>
@@ -6829,6 +7409,7 @@
 								<tr class="hover">
 									<td><div class="match295Date mr-5"></div></td>
 									<td><div class="match295Time mr-5"></div></td>
+									<td><div class="match295Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match295HomeLogo w-8 h-8 ml-2"></div>
@@ -6850,6 +7431,7 @@
 								<tr class="hover">
 									<td><div class="match296Date mr-5"></div></td>
 									<td><div class="match296Time mr-5"></div></td>
+									<td><div class="match296Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match296HomeLogo w-8 h-8 ml-2"></div>
@@ -6871,6 +7453,7 @@
 								<tr class="hover">
 									<td><div class="match297Date mr-5"></div></td>
 									<td><div class="match297Time mr-5"></div></td>
+									<td><div class="match297Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match297HomeLogo w-8 h-8 ml-2"></div>
@@ -6892,6 +7475,7 @@
 								<tr class="hover">
 									<td><div class="match298Date mr-5"></div></td>
 									<td><div class="match298Time mr-5"></div></td>
+									<td><div class="match298Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match298HomeLogo w-8 h-8 ml-2"></div>
@@ -6913,6 +7497,7 @@
 								<tr class="hover">
 									<td><div class="match299Date mr-5"></div></td>
 									<td><div class="match299Time mr-5"></div></td>
+									<td><div class="match299Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match299HomeLogo w-5 h-5 ml-4 mb-3"></div>
@@ -6943,6 +7528,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -6952,6 +7538,7 @@
 								<tr class="hover">
 									<td><div class="match300Date mr-5"></div></td>
 									<td><div class="match300Time mr-5"></div></td>
+									<td><div class="match300Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match300HomeLogo w-8 h-8 ml-2"></div>
@@ -6973,6 +7560,7 @@
 								<tr class="hover">
 									<td><div class="match301Date mr-5"></div></td>
 									<td><div class="match301Time mr-5"></div></td>
+									<td><div class="match301Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match301HomeLogo w-8 h-8 ml-2"></div>
@@ -6994,6 +7582,7 @@
 								<tr class="hover">
 									<td><div class="match302Date mr-5"></div></td>
 									<td><div class="match302Time mr-5"></div></td>
+									<td><div class="match302Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match302HomeLogo w-8 h-8 ml-2"></div>
@@ -7015,6 +7604,7 @@
 								<tr class="hover">
 									<td><div class="match303Date mr-5"></div></td>
 									<td><div class="match303Time mr-5"></div></td>
+									<td><div class="match303Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match303HomeLogo w-8 h-8 ml-2"></div>
@@ -7036,6 +7626,7 @@
 								<tr class="hover">
 									<td><div class="match304Date mr-5"></div></td>
 									<td><div class="match304Time mr-5"></div></td>
+									<td><div class="match304Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match304HomeLogo w-8 h-8 ml-2"></div>
@@ -7057,6 +7648,7 @@
 								<tr class="hover">
 									<td><div class="match305Date mr-5"></div></td>
 									<td><div class="match305Time mr-5"></div></td>
+									<td><div class="match305Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match305HomeLogo w-8 h-8 ml-2"></div>
@@ -7078,6 +7670,7 @@
 								<tr class="hover">
 									<td><div class="match306Date mr-5"></div></td>
 									<td><div class="match306Time mr-5"></div></td>
+									<td><div class="match306Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match306HomeLogo w-8 h-8 ml-2"></div>
@@ -7099,6 +7692,7 @@
 								<tr class="hover">
 									<td><div class="match307Date mr-5"></div></td>
 									<td><div class="match307Time mr-5"></div></td>
+									<td><div class="match307Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match307HomeLogo w-8 h-8 ml-2"></div>
@@ -7120,6 +7714,7 @@
 								<tr class="hover">
 									<td><div class="match308Date mr-5"></div></td>
 									<td><div class="match308Time mr-5"></div></td>
+									<td><div class="match308Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match308HomeLogo w-8 h-8 ml-2"></div>
@@ -7141,6 +7736,7 @@
 								<tr class="hover">
 									<td><div class="match309Date mr-5"></div></td>
 									<td><div class="match309Time mr-5"></div></td>
+									<td><div class="match309Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match309HomeLogo w-8 h-8 ml-2"></div>
@@ -7171,6 +7767,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -7180,6 +7777,7 @@
 								<tr class="hover">
 									<td><div class="match310Date mr-5"></div></td>
 									<td><div class="match310Time mr-5"></div></td>
+									<td><div class="match310Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match310HomeLogo w-8 h-8 ml-2"></div>
@@ -7201,6 +7799,7 @@
 								<tr class="hover">
 									<td><div class="match311Date mr-5"></div></td>
 									<td><div class="match311Time mr-5"></div></td>
+									<td><div class="match311Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match311HomeLogo w-8 h-8 ml-2"></div>
@@ -7222,6 +7821,7 @@
 								<tr class="hover">
 									<td><div class="match312Date mr-5"></div></td>
 									<td><div class="match312Time mr-5"></div></td>
+									<td><div class="match312Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match312HomeLogo w-8 h-8 ml-2"></div>
@@ -7243,6 +7843,7 @@
 								<tr class="hover">
 									<td><div class="match313Date mr-5"></div></td>
 									<td><div class="match313Time mr-5"></div></td>
+									<td><div class="match313Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match313HomeLogo w-5 h-5 ml-4 mb-3"></div>
@@ -7264,6 +7865,7 @@
 								<tr class="hover">
 									<td><div class="match314Date mr-5"></div></td>
 									<td><div class="match314Time mr-5"></div></td>
+									<td><div class="match314Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match314HomeLogo w-8 h-8 ml-2"></div>
@@ -7285,6 +7887,7 @@
 								<tr class="hover">
 									<td><div class="match315Date mr-5"></div></td>
 									<td><div class="match315Time mr-5"></div></td>
+									<td><div class="match315Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match315HomeLogo w-8 h-8 ml-2"></div>
@@ -7306,6 +7909,7 @@
 								<tr class="hover">
 									<td><div class="match316Date mr-5"></div></td>
 									<td><div class="match316Time mr-5"></div></td>
+									<td><div class="match316Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match316HomeLogo w-8 h-8 ml-2"></div>
@@ -7327,6 +7931,7 @@
 								<tr class="hover">
 									<td><div class="match317Date mr-5"></div></td>
 									<td><div class="match317Time mr-5"></div></td>
+									<td><div class="match317Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match317HomeLogo w-8 h-8 ml-2"></div>
@@ -7348,6 +7953,7 @@
 								<tr class="hover">
 									<td><div class="match318Date mr-5"></div></td>
 									<td><div class="match318Time mr-5"></div></td>
+									<td><div class="match318Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match318HomeLogo w-8 h-8 ml-2"></div>
@@ -7369,6 +7975,7 @@
 								<tr class="hover">
 									<td><div class="match319Date mr-5"></div></td>
 									<td><div class="match319Time mr-5"></div></td>
+									<td><div class="match319Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match319HomeLogo w-8 h-8 ml-2"></div>
@@ -7399,6 +8006,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -7408,6 +8016,7 @@
 								<tr class="hover">
 									<td><div class="match320Date mr-5"></div></td>
 									<td><div class="match320Time mr-5"></div></td>
+									<td><div class="match320Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match320HomeLogo w-8 h-8 ml-2"></div>
@@ -7429,6 +8038,7 @@
 								<tr class="hover">
 									<td><div class="match321Date mr-5"></div></td>
 									<td><div class="match321Time mr-5"></div></td>
+									<td><div class="match321Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match321HomeLogo w-8 h-8 ml-2"></div>
@@ -7450,6 +8060,7 @@
 								<tr class="hover">
 									<td><div class="match322Date mr-5"></div></td>
 									<td><div class="match322Time mr-5"></div></td>
+									<td><div class="match322Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match322HomeLogo w-8 h-8 ml-2"></div>
@@ -7471,6 +8082,7 @@
 								<tr class="hover">
 									<td><div class="match323Date mr-5"></div></td>
 									<td><div class="match323Time mr-5"></div></td>
+									<td><div class="match323Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match323HomeLogo w-8 h-8 ml-2"></div>
@@ -7492,6 +8104,7 @@
 								<tr class="hover">
 									<td><div class="match324Date mr-5"></div></td>
 									<td><div class="match324Time mr-5"></div></td>
+									<td><div class="match324Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match324HomeLogo w-8 h-8 ml-2"></div>
@@ -7513,6 +8126,7 @@
 								<tr class="hover">
 									<td><div class="match325Date mr-5"></div></td>
 									<td><div class="match325Time mr-5"></div></td>
+									<td><div class="match325Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match325HomeLogo w-8 h-8 ml-2"></div>
@@ -7534,6 +8148,7 @@
 								<tr class="hover">
 									<td><div class="match326Date mr-5"></div></td>
 									<td><div class="match326Time mr-5"></div></td>
+									<td><div class="match326Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match326HomeLogo w-8 h-8 ml-2"></div>
@@ -7555,6 +8170,7 @@
 								<tr class="hover">
 									<td><div class="match327Date mr-5"></div></td>
 									<td><div class="match327Time mr-5"></div></td>
+									<td><div class="match327Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match327HomeLogo w-8 h-8 ml-2"></div>
@@ -7576,6 +8192,7 @@
 								<tr class="hover">
 									<td><div class="match328Date mr-5"></div></td>
 									<td><div class="match328Time mr-5"></div></td>
+									<td><div class="match328Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match328HomeLogo w-8 h-8 ml-2"></div>
@@ -7597,6 +8214,7 @@
 								<tr class="hover">
 									<td><div class="match329Date mr-5"></div></td>
 									<td><div class="match329Time mr-5"></div></td>
+									<td><div class="match329Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match329HomeLogo w-8 h-8 ml-2"></div>
@@ -7627,6 +8245,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -7636,6 +8255,7 @@
 								<tr class="hover">
 									<td><div class="match330Date mr-5"></div></td>
 									<td><div class="match330Time mr-5"></div></td>
+									<td><div class="match330Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match330HomeLogo w-8 h-8 ml-2"></div>
@@ -7657,6 +8277,7 @@
 								<tr class="hover">
 									<td><div class="match331Date mr-5"></div></td>
 									<td><div class="match331Time mr-5"></div></td>
+									<td><div class="match331Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match331HomeLogo w-8 h-8 ml-2"></div>
@@ -7678,6 +8299,7 @@
 								<tr class="hover">
 									<td><div class="match332Date mr-5"></div></td>
 									<td><div class="match332Time mr-5"></div></td>
+									<td><div class="match332Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match332HomeLogo w-8 h-8 ml-2"></div>
@@ -7699,6 +8321,7 @@
 								<tr class="hover">
 									<td><div class="match333Date mr-5"></div></td>
 									<td><div class="match333Time mr-5"></div></td>
+									<td><div class="match333Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match333HomeLogo w-5 h-5 ml-4 mb-3"></div>
@@ -7720,6 +8343,7 @@
 								<tr class="hover">
 									<td><div class="match334Date mr-5"></div></td>
 									<td><div class="match334Time mr-5"></div></td>
+									<td><div class="match334Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match334HomeLogo w-8 h-8 ml-2"></div>
@@ -7741,6 +8365,7 @@
 								<tr class="hover">
 									<td><div class="match335Date mr-5"></div></td>
 									<td><div class="match335Time mr-5"></div></td>
+									<td><div class="match335Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match335HomeLogo w-8 h-8 ml-2"></div>
@@ -7762,6 +8387,7 @@
 								<tr class="hover">
 									<td><div class="match336Date mr-5"></div></td>
 									<td><div class="match336Time mr-5"></div></td>
+									<td><div class="match336Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match336HomeLogo w-8 h-8 ml-2"></div>
@@ -7783,6 +8409,7 @@
 								<tr class="hover">
 									<td><div class="match337Date mr-5"></div></td>
 									<td><div class="match337Time mr-5"></div></td>
+									<td><div class="match337Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match337HomeLogo w-8 h-8 ml-2"></div>
@@ -7804,6 +8431,7 @@
 								<tr class="hover">
 									<td><div class="match338Date mr-5"></div></td>
 									<td><div class="match338Time mr-5"></div></td>
+									<td><div class="match338Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match338HomeLogo w-8 h-8 ml-2"></div>
@@ -7825,6 +8453,7 @@
 								<tr class="hover">
 									<td><div class="match339Date mr-5"></div></td>
 									<td><div class="match339Time mr-5"></div></td>
+									<td><div class="match339Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match339HomeLogo w-8 h-8 ml-2"></div>
@@ -7855,6 +8484,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -7864,6 +8494,7 @@
 								<tr class="hover">
 									<td><div class="match340Date mr-5"></div></td>
 									<td><div class="match340Time mr-5"></div></td>
+									<td><div class="match340Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match340HomeLogo w-8 h-8 ml-2"></div>
@@ -7885,6 +8516,7 @@
 								<tr class="hover">
 									<td><div class="match341Date mr-5"></div></td>
 									<td><div class="match341Time mr-5"></div></td>
+									<td><div class="match341Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match341HomeLogo w-8 h-8 ml-2"></div>
@@ -7906,6 +8538,7 @@
 								<tr class="hover">
 									<td><div class="match342Date mr-5"></div></td>
 									<td><div class="match342Time mr-5"></div></td>
+									<td><div class="match342Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match342HomeLogo w-8 h-8 ml-2"></div>
@@ -7927,6 +8560,7 @@
 								<tr class="hover">
 									<td><div class="match343Date mr-5"></div></td>
 									<td><div class="match343Time mr-5"></div></td>
+									<td><div class="match343Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match343HomeLogo w-8 h-8 ml-2"></div>
@@ -7948,6 +8582,7 @@
 								<tr class="hover">
 									<td><div class="match344Date mr-5"></div></td>
 									<td><div class="match344Time mr-5"></div></td>
+									<td><div class="match344Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match344HomeLogo w-8 h-8 ml-2"></div>
@@ -7969,6 +8604,7 @@
 								<tr class="hover">
 									<td><div class="match345Date mr-5"></div></td>
 									<td><div class="match345Time mr-5"></div></td>
+									<td><div class="match345Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match345HomeLogo w-8 h-8 ml-2"></div>
@@ -7990,6 +8626,7 @@
 								<tr class="hover">
 									<td><div class="match346Date mr-5"></div></td>
 									<td><div class="match346Time mr-5"></div></td>
+									<td><div class="match346Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match346HomeLogo w-8 h-8 ml-2"></div>
@@ -8011,6 +8648,7 @@
 								<tr class="hover">
 									<td><div class="match347Date mr-5"></div></td>
 									<td><div class="match347Time mr-5"></div></td>
+									<td><div class="match347Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match347HomeLogo w-8 h-8 ml-2"></div>
@@ -8032,6 +8670,7 @@
 								<tr class="hover">
 									<td><div class="match348Date mr-5"></div></td>
 									<td><div class="match348Time mr-5"></div></td>
+									<td><div class="match348Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match348HomeLogo w-8 h-8 ml-2"></div>
@@ -8053,6 +8692,7 @@
 								<tr class="hover">
 									<td><div class="match349Date mr-5"></div></td>
 									<td><div class="match349Time mr-5"></div></td>
+									<td><div class="match349Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match349HomeLogo w-8 h-8 ml-2"></div>
@@ -8083,6 +8723,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -8092,6 +8733,7 @@
 								<tr class="hover">
 									<td><div class="match350Date mr-5"></div></td>
 									<td><div class="match350Time mr-5"></div></td>
+									<td><div class="match350Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match350HomeLogo w-8 h-8 ml-2"></div>
@@ -8113,6 +8755,7 @@
 								<tr class="hover">
 									<td><div class="match351Date mr-5"></div></td>
 									<td><div class="match351Time mr-5"></div></td>
+									<td><div class="match351Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match351HomeLogo w-8 h-8 ml-2"></div>
@@ -8134,6 +8777,7 @@
 								<tr class="hover">
 									<td><div class="match352Date mr-5"></div></td>
 									<td><div class="match352Time mr-5"></div></td>
+									<td><div class="match352Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match352HomeLogo w-8 h-8 ml-2"></div>
@@ -8155,6 +8799,7 @@
 								<tr class="hover">
 									<td><div class="match353Date mr-5"></div></td>
 									<td><div class="match353Time mr-5"></div></td>
+									<td><div class="match353Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match353HomeLogo w-8 h-8 ml-2"></div>
@@ -8176,6 +8821,7 @@
 								<tr class="hover">
 									<td><div class="match354Date mr-5"></div></td>
 									<td><div class="match354Time mr-5"></div></td>
+									<td><div class="match354Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match354HomeLogo w-8 h-8 ml-2"></div>
@@ -8197,6 +8843,7 @@
 								<tr class="hover">
 									<td><div class="match355Date mr-5"></div></td>
 									<td><div class="match355Time mr-5"></div></td>
+									<td><div class="match355Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match355HomeLogo w-5 h-5 ml-4 mb-3"></div>
@@ -8218,6 +8865,7 @@
 								<tr class="hover">
 									<td><div class="match356Date mr-5"></div></td>
 									<td><div class="match356Time mr-5"></div></td>
+									<td><div class="match356Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match356HomeLogo w-8 h-8 ml-2"></div>
@@ -8239,6 +8887,7 @@
 								<tr class="hover">
 									<td><div class="match357Date mr-5"></div></td>
 									<td><div class="match357Time mr-5"></div></td>
+									<td><div class="match357Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match357HomeLogo w-8 h-8 ml-2"></div>
@@ -8260,6 +8909,7 @@
 								<tr class="hover">
 									<td><div class="match358Date mr-5"></div></td>
 									<td><div class="match358Time mr-5"></div></td>
+									<td><div class="match358Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match358HomeLogo w-8 h-8 ml-2"></div>
@@ -8281,6 +8931,7 @@
 								<tr class="hover">
 									<td><div class="match359Date mr-5"></div></td>
 									<td><div class="match359Time mr-5"></div></td>
+									<td><div class="match359Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match359HomeLogo w-8 h-8 ml-2"></div>
@@ -8311,6 +8962,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -8320,6 +8972,7 @@
 								<tr class="hover">
 									<td><div class="match360Date mr-5"></div></td>
 									<td><div class="match360Time mr-5"></div></td>
+									<td><div class="match360Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match360HomeLogo w-8 h-8 ml-2"></div>
@@ -8341,6 +8994,7 @@
 								<tr class="hover">
 									<td><div class="match361Date mr-5"></div></td>
 									<td><div class="match361Time mr-5"></div></td>
+									<td><div class="match361Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match361HomeLogo w-8 h-8 ml-2"></div>
@@ -8362,6 +9016,7 @@
 								<tr class="hover">
 									<td><div class="match362Date mr-5"></div></td>
 									<td><div class="match362Time mr-5"></div></td>
+									<td><div class="match362Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match362HomeLogo w-8 h-8 ml-2"></div>
@@ -8383,6 +9038,7 @@
 								<tr class="hover">
 									<td><div class="match363Date mr-5"></div></td>
 									<td><div class="match363Time mr-5"></div></td>
+									<td><div class="match363Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match363HomeLogo w-8 h-8 ml-2"></div>
@@ -8404,6 +9060,7 @@
 								<tr class="hover">
 									<td><div class="match364Date mr-5"></div></td>
 									<td><div class="match364Time mr-5"></div></td>
+									<td><div class="match364Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match364HomeLogo w-8 h-8 ml-2"></div>
@@ -8425,6 +9082,7 @@
 								<tr class="hover">
 									<td><div class="match365Date mr-5"></div></td>
 									<td><div class="match365Time mr-5"></div></td>
+									<td><div class="match365Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match365HomeLogo w-8 h-8 ml-2"></div>
@@ -8446,6 +9104,7 @@
 								<tr class="hover">
 									<td><div class="match366Date mr-5"></div></td>
 									<td><div class="match366Time mr-5"></div></td>
+									<td><div class="match366Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match366HomeLogo w-8 h-8 ml-2"></div>
@@ -8467,6 +9126,7 @@
 								<tr class="hover">
 									<td><div class="match367Date mr-5"></div></td>
 									<td><div class="match367Time mr-5"></div></td>
+									<td><div class="match367Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match367HomeLogo w-8 h-8 ml-2"></div>
@@ -8488,6 +9148,7 @@
 								<tr class="hover">
 									<td><div class="match368Date mr-5"></div></td>
 									<td><div class="match368Time mr-5"></div></td>
+									<td><div class="match368Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match368HomeLogo w-8 h-8 ml-2"></div>
@@ -8509,6 +9170,7 @@
 								<tr class="hover">
 									<td><div class="match369Date mr-5"></div></td>
 									<td><div class="match369Time mr-5"></div></td>
+									<td><div class="match369Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match369HomeLogo w-8 h-8 ml-2"></div>
@@ -8539,6 +9201,7 @@
 								<tr>
 									<th>DATE</th>
 									<th>TIME</th>
+									<th></th>
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
@@ -8548,6 +9211,7 @@
 								<tr class="hover">
 									<td><div class="match370Date mr-5"></div></td>
 									<td><div class="match370Time mr-5"></div></td>
+									<td><div class="match370Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match370HomeLogo w-8 h-8 ml-2"></div>
@@ -8569,6 +9233,7 @@
 								<tr class="hover">
 									<td><div class="match371Date mr-5"></div></td>
 									<td><div class="match371Time mr-5"></div></td>
+									<td><div class="match371Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match371HomeLogo w-8 h-8 ml-2"></div>
@@ -8590,6 +9255,7 @@
 								<tr class="hover">
 									<td><div class="match372Date mr-5"></div></td>
 									<td><div class="match372Time mr-5"></div></td>
+									<td><div class="match372Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match372HomeLogo w-8 h-8 ml-2"></div>
@@ -8611,6 +9277,7 @@
 								<tr class="hover">
 									<td><div class="match373Date mr-5"></div></td>
 									<td><div class="match373Time mr-5"></div></td>
+									<td><div class="match373Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match373HomeLogo w-8 h-8 ml-2"></div>
@@ -8632,6 +9299,7 @@
 								<tr class="hover">
 									<td><div class="match374Date mr-5"></div></td>
 									<td><div class="match374Time mr-5"></div></td>
+									<td><div class="match374Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match374HomeLogo w-8 h-8 ml-2"></div>
@@ -8653,6 +9321,7 @@
 								<tr class="hover">
 									<td><div class="match375Date mr-5"></div></td>
 									<td><div class="match375Time mr-5"></div></td>
+									<td><div class="match375Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match375HomeLogo w-5 h-5 ml-4 mb-3"></div>
@@ -8674,6 +9343,7 @@
 								<tr class="hover">
 									<td><div class="match376Date mr-5"></div></td>
 									<td><div class="match376Time mr-5"></div></td>
+									<td><div class="match376Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match376HomeLogo w-8 h-8 ml-2"></div>
@@ -8695,6 +9365,7 @@
 								<tr class="hover">
 									<td><div class="match377Date mr-5"></div></td>
 									<td><div class="match377Time mr-5"></div></td>
+									<td><div class="match377Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match377HomeLogo w-8 h-8 ml-2"></div>
@@ -8716,6 +9387,7 @@
 								<tr class="hover">
 									<td><div class="match378Date mr-5"></div></td>
 									<td><div class="match378Time mr-5"></div></td>
+									<td><div class="match378Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match378HomeLogo w-8 h-8 ml-2"></div>
@@ -8737,6 +9409,7 @@
 								<tr class="hover">
 									<td><div class="match379Date mr-5"></div></td>
 									<td><div class="match379Time mr-5"></div></td>
+									<td><div class="match379Status mr-5 flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
 											<div class="match379HomeLogo w-8 h-8 ml-2"></div>
@@ -8760,9 +9433,10 @@
 			</div>
 		</div>
 			
-		<div class="mt-2 w-2/5 border-2 border-slate-50 border-l-slate-200">
+		<div class="mt-2 w-2/5 border-2 border-slate-50 border-t-slate-200 border-l-slate-200">
 			<table class="table table-auto">
-				<thead class="text-[10px]">
+				<caption class="caption-top mt-2">Regular Season</caption>
+				<thead class="text-[8px]">
 					<tr>
 						<th>RANK</th>
 						<th>CLUB</th>
@@ -8774,7 +9448,7 @@
 					</tr>
 				</thead>
 				<tbody class="mt-8 text-[10px]">
-					<tr>
+					<tr class="bg-blue-100">
 						<td><div class="rank0 ml-3"></div></td>
 						<td><div class="clubLogo0"></div></td>
 						<td><div class="match0 ml-3"></div></td>
@@ -8785,7 +9459,7 @@
 					</tr>
 				</tbody>
 				<tbody class="mt-8 text-[10px]">
-					<tr>
+					<tr class="bg-blue-100">
 						<td><div class="rank1 ml-3"></div></td>
 						<td><div class="clubLogo1"></div></td>
 						<td><div class="match1 ml-3"></div></td>
@@ -8796,7 +9470,7 @@
 					</tr>
 				</tbody>
 				<tbody class="mt-8 text-[10px]">
-					<tr>
+					<tr class="bg-blue-100">
 						<td><div class="rank2 ml-3"></div></td>
 						<td><div class="clubLogo2"></div></td>
 						<td><div class="match2 ml-3"></div></td>
@@ -8807,7 +9481,7 @@
 					</tr>
 				</tbody>
 				<tbody class="mt-8 text-[10px]">
-					<tr>
+					<tr class="bg-blue-100">
 						<td><div class="rank3 ml-3"></div></td>
 						<td><div class="clubLogo3"></div></td>
 						<td><div class="match3 ml-3"></div></td>
@@ -8818,7 +9492,7 @@
 					</tr>
 				</tbody>
 				<tbody class="mt-8 text-[10px]">
-					<tr>
+					<tr class="bg-orange-100">
 						<td><div class="rank4 ml-3"></div></td>
 						<td><div class="clubLogo4"></div></td>
 						<td><div class="match4 ml-3"></div></td>
@@ -8961,7 +9635,7 @@
 					</tr>
 				</tbody>
 				<tbody class="mt-8 text-[10px]">
-					<tr>
+					<tr class="bg-red-100">
 						<td><div class="rank17 ml-3"></div></td>
 						<td><div class="clubLogo17"></div></td>
 						<td><div class="match17 ml-3"></div></td>
@@ -8972,7 +9646,7 @@
 					</tr>
 				</tbody>
 				<tbody class="mt-8 text-[10px]">
-					<tr>
+					<tr class="bg-red-100">
 						<td><div class="rank18 ml-3"></div></td>
 						<td><div class="clubLogo18"></div></td>
 						<td><div class="match18 ml-3"></div></td>
@@ -8983,7 +9657,7 @@
 					</tr>
 				</tbody>
 				<tbody class="mt-8 text-[10px]">
-					<tr>
+					<tr class="bg-red-100">
 						<td><div class="rank19 ml-3"></div></td>
 						<td><div class="clubLogo19"></div></td>
 						<td><div class="match19 ml-3"></div></td>

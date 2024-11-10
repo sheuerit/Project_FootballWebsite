@@ -38,7 +38,7 @@
 	</script>
 	
 	<section class="flex">
-		<div class="w-1/5 flex justify-center border-2 border-slate-50 border-r-slate-200">commercial</div>
+		<div class="w-1/4 flex justify-center border-2 border-slate-50 border-r-slate-200">commercial</div>
 		<div class="container mx-auto">
 			<div class="flex justify-center ">
 				<div class="w-1/4 m-6 flex justify-center hover:border-4 border-slate-200 rounded-2xl">
