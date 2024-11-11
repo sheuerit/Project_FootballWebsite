@@ -7,7 +7,7 @@
 <%@ include file="../common/header.jsp" %>
 
 	<script>
-		const settings = {
+		const settingsLeagues = {
 			async : true,
 			crossDomain : true,
 			url: 'https://api-football-v1.p.rapidapi.com/v3/leagues',		
@@ -18,7 +18,7 @@
 			}
 		};
 
-		$.ajax(settings).done(function(response) {
+		$.ajax(settingsLeagues).done(function(response) {
 			$(".uefaChampionsLeagueLogo").append('<img src="' + response.response[17].league.logo + '"/>');
 			$(".uefaEuropaLeagueLogo").append('<img src="' + response.response[179].league.logo + '"/>');
 			$(".premierLeagueLogo").append('<img src="' + response.response[5].league.logo + '"/>');
@@ -35,6 +35,29 @@
 			// "World Cup" >> 13
 			// "Euro Championship" >> 1
 			// "Asian Games" >> 14
+			
+		const settingsNews = {
+			async: true,
+			crossDomain: true,
+			url: 'https://top-sports-news.p.rapidapi.com/90min?category=football-news',
+			method: 'GET',
+			headers: {
+				'x-rapidapi-key': '3a012c58fdmsh42f7e05c92b7f66p1ed97ejsn1660d3e9d81f',
+				'x-rapidapi-host': 'top-sports-news.p.rapidapi.com'
+			}
+		};
+
+		$.ajax(settingsNews).done(function (response) {
+			$(".news0Title").append(response[1].news[0].title);
+			$(".news0Href").append(response[1].news[0].href);
+			$(".news1Title").append(response[1].news[1].title);
+			$(".news1Href").append(response[1].news[1].href);
+			$(".news2Title").append(response[1].news[2].title);
+			$(".news2Href").append(response[1].news[2].href);
+			$(".news3Title").append(response[1].news[3].title);
+			$(".news3Href").append(response[1].news[3].href);
+			
+		});	
 	</script>
 	
 	<section class="flex">
@@ -69,10 +92,18 @@
 				</div>
 			</div>
 			<div class="flex border-2 border-slate-50 border-y-slate-200">
-				<div class="w-1/4 flex justify-center border-2 border-slate-50 border-r-slate-200">news</div>
-				<div class="w-1/4 flex justify-center border-2 border-slate-50 border-r-slate-200">news</div>
-				<div class="w-1/4 flex justify-center border-2 border-slate-50 border-r-slate-200">news</div>
-				<div class="w-1/4 flex justify-center">news</div>
+				<div class="w-1/4 flex justify-center border-2 border-slate-50 border-r-slate-200">
+					<div class="news0Title hover:underline text-sm leading-8"></div>
+				</div>
+				<div class="w-1/4 flex justify-center border-2 border-slate-50 border-r-slate-200">
+					<div class="news1Title hover:underline text-sm leading-8"></div>
+				</div>
+				<div class="w-1/4 flex justify-center border-2 border-slate-50 border-r-slate-200">
+					<div class="news2Title hover:underline text-sm leading-8"></div>
+				</div>
+				<div class="w-1/4 flex justify-center">
+					<div class="news3Title hover:underline text-sm leading-8"></div>
+				</div>
 			</div>
 		</div>
 		
