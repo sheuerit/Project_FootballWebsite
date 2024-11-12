@@ -27,7 +27,7 @@
 			$(".serieALogo").append('<img src="' + response.response[7].league.logo + '"/>');
 			$(".ligue1Logo").append('<img src="' + response.response[2].league.logo + '"/>');
 			$(".kLeague1Logo").append('<img src="' + response.response[309].league.logo + '"/>');
-		});
+
 			// "Fa Cup ENG" >> 113
 			// "League Cup" >> 115
 			// "Eredivisie" >> 8
@@ -35,29 +35,29 @@
 			// "World Cup" >> 13
 			// "Euro Championship" >> 1
 			// "Asian Games" >> 14
+		});
 			
-		const settingsNews = {
-			async: true,
-			crossDomain: true,
-			url: 'https://top-sports-news.p.rapidapi.com/90min?category=football-news',
-			method: 'GET',
-			headers: {
-				'x-rapidapi-key': '3a012c58fdmsh42f7e05c92b7f66p1ed97ejsn1660d3e9d81f',
-				'x-rapidapi-host': 'top-sports-news.p.rapidapi.com'
-			}
-		};
+		const settingsnews = {
+				async: true,
+				crossDomain: true,
+				url: 'https://top-sports-news.p.rapidapi.com/espn/soccer',
+				method: 'GET',
+				headers: {
+					'x-rapidapi-key': '3a012c58fdmsh42f7e05c92b7f66p1ed97ejsn1660d3e9d81f',
+					'x-rapidapi-host': 'top-sports-news.p.rapidapi.com'
+				}
+			};
 
-		$.ajax(settingsNews).done(function (response) {
-			$(".news0Title").append(response[1].news[0].title);
-			$(".news0Href").append(response[1].news[0].href);
-			$(".news1Title").append(response[1].news[1].title);
-			$(".news1Href").append(response[1].news[1].href);
-			$(".news2Title").append(response[1].news[2].title);
-			$(".news2Href").append(response[1].news[2].href);
-			$(".news3Title").append(response[1].news[3].title);
-			$(".news3Href").append(response[1].news[3].href);
-			
-		});	
+			$.ajax(settingsnews).done(function (response) {
+				$(".news0").append('<a href="'+ response.top_headlines[0].href +'" target="_blank">'+ response.top_headlines[0].title +'</a>');
+				$(".news1").append('<a href="'+ response.top_headlines[1].href +'" target="_blank">'+ response.top_headlines[1].title +'</a>');
+				$(".news2").append('<a href="'+ response.top_headlines[2].href +'" target="_blank">'+ response.top_headlines[2].title +'</a>');
+				$(".news3").append('<a href="'+ response.top_headlines[3].href +'" target="_blank">'+ response.top_headlines[3].title +'</a>');
+				$(".news4").append('<a href="'+ response.top_headlines[4].href +'" target="_blank">'+ response.top_headlines[4].title +'</a>');
+				$(".news5").append('<a href="'+ response.top_headlines[5].href +'" target="_blank">'+ response.top_headlines[5].title +'</a>');
+				$(".news6").append('<a href="'+ response.top_headlines[6].href +'" target="_blank">'+ response.top_headlines[6].title +'</a>');
+				$(".news7").append('<a href="'+ response.top_headlines[7].href +'" target="_blank">'+ response.top_headlines[7].title +'</a>');
+			});
 	</script>
 	
 	<section class="flex">
@@ -91,18 +91,33 @@
 					<a class="my-5 kLeague1Logo" href="/usr/league/kLeague1"></a>
 				</div>
 			</div>
+			
 			<div class="flex border-2 border-slate-50 border-y-slate-200">
-				<div class="w-1/4 flex justify-center border-2 border-slate-50 border-r-slate-200">
-					<div class="news0Title hover:underline text-sm leading-8"></div>
+				<div class="w-1/4 flex justify-center border-2 border-slate-100">
+					<div class="news0 hover:underline text-sm leading-8"></div>
 				</div>
-				<div class="w-1/4 flex justify-center border-2 border-slate-50 border-r-slate-200">
-					<div class="news1Title hover:underline text-sm leading-8"></div>
+				<div class="w-1/4 flex justify-center border-2 border-slate-100 ">
+					<div class="news1 hover:underline text-sm leading-8"></div>
 				</div>
-				<div class="w-1/4 flex justify-center border-2 border-slate-50 border-r-slate-200">
-					<div class="news2Title hover:underline text-sm leading-8"></div>
+				<div class="w-1/4 flex justify-center border-2 border-slate-100 ">
+					<div class="news2 hover:underline text-sm leading-8"></div>
 				</div>
 				<div class="w-1/4 flex justify-center">
-					<div class="news3Title hover:underline text-sm leading-8"></div>
+					<div class="news3 hover:underline text-sm leading-8"></div>
+				</div>
+			</div>
+			<div class="flex border-2 border-slate-50 border-y-slate-200">
+				<div class="w-1/4 flex justify-center border-2 border-slate-100 " >
+					<div class="news4 hover:underline text-sm leading-8"></div>
+				</div>
+				<div class="w-1/4 flex justify-center border-2 border-slate-100 ">
+					<div class="news5 hover:underline text-sm leading-8"></div>
+				</div>
+				<div class="w-1/4 flex justify-center border-2 border-slate-100 ">
+					<div class="news6 hover:underline text-sm leading-8"></div>
+				</div>
+				<div class="w-1/4 flex justify-center">
+					<div class="news7 hover:underline text-sm leading-8"></div>
 				</div>
 			</div>
 		</div>

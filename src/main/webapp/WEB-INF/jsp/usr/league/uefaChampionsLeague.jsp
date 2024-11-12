@@ -32,9 +32,25 @@
 				$(".match" + numStr + "Date").append((response.response[numInt].fixture.date).substring(0, 10));
 				$(".match" + numStr + "Time").append((response.response[numInt].fixture.date).substring(11, 16));
 			  	$(".match" + numStr + "Round").append(response.response[numInt].league.round);
-				$(".match" + numStr + "Status").append(response.response[numInt].fixture.status.short);
-				$(".match" + numStr + "HomeLogo").append('<img src="' + response.response[numInt].teams.home.logo + '"/>');
-				$(".match" + numStr + "AwayLogo").append('<img src="' + response.response[numInt].teams.away.logo + '"/>');
+
+			  	if (response.response[matchNumStr].fixture.status.short == "1H" || response.response[matchNumStr].fixture.status.short == "HT" || response.response[matchNumStr].fixture.status.short == "2H") {
+					$(".match" + matchNumStr + "Status").append('<div class="flex justify-center bg-green-400 rounded-2xl">' + response.response[matchNumStr].fixture.status.short + '</div>');
+				} else {
+					$(".match" + matchNumStr + "Status").append('<div class="flex justify-center bg-slate-200 rounded-2xl">' + response.response[matchNumStr].fixture.status.short + '</div>');
+				}
+				
+				if (response.response[numInt].teams.home.id == 40) {
+					$(".match" + numStr + "HomeLogo").append('<img src="' + response.response[numInt].teams.home.logo + '" class="h-8 ml-2"/>');
+				} else {
+					$(".match" + numStr + "HomeLogo").append('<img src="' + response.response[numInt].teams.home.logo + '"/>');
+				}
+				
+				if (response.response[numInt].teams.away.id == 40) {
+					$(".match" + numStr + "AwayLogo").append('<img src="' + response.response[numInt].teams.away.logo + '" class="h-8 ml-2"/>');
+				} else {
+					$(".match" + numStr + "AwayLogo").append('<img src="' + response.response[numInt].teams.away.logo + '"/>');
+				}
+				
 				$(".match" + numStr + "HomeScore").append(response.response[numInt].goals.home);
 				$(".match" + numStr + "AwayScore").append(response.response[numInt].goals.away);
 			  	
@@ -59,7 +75,13 @@
 				  	numStr = String(i);
 				  
 				  	$(".rank" + numStr).append(response.response[0].league.standings[0][numInt].rank);
-				  	$(".clubLogo" + numStr).append('<img src="' + response.response[0].league.standings[0][numInt].team.logo + '"/>');
+				  	
+				  	if (response.response[0].league.standings[0][numInt].team.id == 40) {
+				  		$(".clubLogo" + numStr).append('<img src="' + response.response[0].league.standings[0][numInt].team.logo + '" class="h-7 ml-1"/>');
+				  	} else {
+					  	$(".clubLogo" + numStr).append('<img src="' + response.response[0].league.standings[0][numInt].team.logo + '"/>');
+				  	}
+				  	
 				  	$(".match" + numStr).append(response.response[0].league.standings[0][numInt].all.played);
 				  	$(".win" + numStr).append(response.response[0].league.standings[0][numInt].all.win);
 				  	$(".draw" + numStr).append(response.response[0].league.standings[0][numInt].all.draw);
@@ -3268,10 +3290,10 @@
 			</div>
 		</div>	
 		
-		<div class="mt-2 w-2/5 border-2 border-slate-50 border-t-slate-200 border-l-slate-200">
+		<div class="w-2/5 border-2 border-slate-50 border-l-slate-200">
 			<table class="table table-auto">
 				<caption class="caption-top mt-2">REGULAR SEASON</caption>
-				<thead class="text-[10px]">
+				<thead class="text-[8px]">
 					<tr>
 						<th>RANK</th>
 						<th>CLUB</th>

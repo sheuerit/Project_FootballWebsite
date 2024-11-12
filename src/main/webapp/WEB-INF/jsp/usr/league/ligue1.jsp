@@ -33,9 +33,25 @@
 			  	$(".match" + matchNumStr + "Date").append((response.response[matchNumInt].fixture.date).substring(0, 10));
 				$(".match" + matchNumStr + "Time").append((response.response[matchNumInt].fixture.date).substring(11, 16));
 				$(".match" + matchNumStr + "Round").append(response.response[matchNumInt].league.round);
-				$(".match" + matchNumStr + "Status").append(response.response[matchNumStr].fixture.status.short);
-				$(".match" + matchNumStr + "HomeLogo").append('<img src="' + response.response[matchNumInt].teams.home.logo + '"/>');
-				$(".match" + matchNumStr + "AwayLogo").append('<img src="' + response.response[matchNumInt].teams.away.logo + '"/>');
+
+				if (response.response[matchNumStr].fixture.status.short == "1H" || response.response[matchNumStr].fixture.status.short == "HT" || response.response[matchNumStr].fixture.status.short == "2H") {
+					$(".match" + matchNumStr + "Status").append('<div class="flex justify-center bg-green-400 rounded-2xl">' + response.response[matchNumStr].fixture.status.short + '</div>');
+				} else {
+					$(".match" + matchNumStr + "Status").append('<div class="flex justify-center bg-slate-200 rounded-2xl">' + response.response[matchNumStr].fixture.status.short + '</div>');
+				}
+				
+				if (response.response[matchNumInt].teams.home.id == 93) {
+					$(".match" + matchNumStr + "HomeLogo").append('<img src="' + response.response[matchNumInt].teams.home.logo + '" class="h-8 ml-2"/>');
+				} else {
+					$(".match" + matchNumStr + "HomeLogo").append('<img src="' + response.response[matchNumInt].teams.home.logo + '"/>');
+				}
+				
+				if (response.response[matchNumInt].teams.away.id == 93) {
+					$(".match" + matchNumStr + "AwayLogo").append('<img src="' + response.response[matchNumInt].teams.away.logo + '" class="h-8 ml-2"/>');
+				} else {
+					$(".match" + matchNumStr + "AwayLogo").append('<img src="' + response.response[matchNumInt].teams.away.logo + '"/>');
+				}
+				
 				$(".match" + matchNumStr + "HomeScore").append(response.response[matchNumInt].goals.home);
 				$(".match" + matchNumStr + "AwayScore").append(response.response[matchNumInt].goals.away);
 			  
@@ -60,7 +76,13 @@
 				  	numStr = String(i);
 				  
 				  	$(".rank" + numStr).append(response.response[0].league.standings[0][numInt].rank);
-				  	$(".clubLogo" + numStr).append('<img src="' + response.response[0].league.standings[0][numInt].team.logo + '"/>');
+				  	
+				  	if (response.response[0].league.standings[0][numInt].team.id == 93) {
+				  		$(".clubLogo" + numStr).append('<img src="' + response.response[0].league.standings[0][numInt].team.logo + '" class="h-5 ml-1"/>');
+				  	} else {
+					  	$(".clubLogo" + numStr).append('<img src="' + response.response[0].league.standings[0][numInt].team.logo + '"/>');
+				  	}
+				  	
 				  	$(".match" + numStr).append(response.response[0].league.standings[0][numInt].all.played);
 				  	$(".win" + numStr).append(response.response[0].league.standings[0][numInt].all.win);
 				  	$(".draw" + numStr).append(response.response[0].league.standings[0][numInt].all.draw);
@@ -69,7 +91,6 @@
 				}
 				
 			});
-			
 	</script>
 	
 	<section class="flex">
@@ -7143,10 +7164,10 @@
 			</div>
 		</div>
 		
-		<div class="mt-2 w-2/5 border-2 border-slate-50 border-t-slate-200 border-l-slate-200">
+		<div class="w-2/5 border-2 border-slate-50 border-l-slate-200">
 			<table class="table table-auto">
 				<caption class="caption-top mt-2">Regular Season</caption>
-				<thead class="text-[10px]">
+				<thead class="text-[8px]">
 					<tr>
 						<th>RANK</th>
 						<th>CLUB</th>
