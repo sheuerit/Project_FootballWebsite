@@ -38,26 +38,26 @@
 		});
 			
 		const settingsnews = {
-				async: true,
-				crossDomain: true,
-				url: 'https://top-sports-news.p.rapidapi.com/espn/soccer',
-				method: 'GET',
-				headers: {
-					'x-rapidapi-key': '3a012c58fdmsh42f7e05c92b7f66p1ed97ejsn1660d3e9d81f',
-					'x-rapidapi-host': 'top-sports-news.p.rapidapi.com'
-				}
-			};
+			async: true,
+			crossDomain: true,
+			url: 'https://top-sports-news.p.rapidapi.com/espn/soccer',
+			method: 'GET',
+			headers: {
+				'x-rapidapi-key': '3a012c58fdmsh42f7e05c92b7f66p1ed97ejsn1660d3e9d81f',
+				'x-rapidapi-host': 'top-sports-news.p.rapidapi.com'
+			}
+		};
 
-			$.ajax(settingsnews).done(function (response) {
-				$(".news0").append('<a href="'+ response.top_headlines[0].href +'" target="_blank">'+ response.top_headlines[0].title +'</a>');
-				$(".news1").append('<a href="'+ response.top_headlines[1].href +'" target="_blank">'+ response.top_headlines[1].title +'</a>');
-				$(".news2").append('<a href="'+ response.top_headlines[2].href +'" target="_blank">'+ response.top_headlines[2].title +'</a>');
-				$(".news3").append('<a href="'+ response.top_headlines[3].href +'" target="_blank">'+ response.top_headlines[3].title +'</a>');
-				$(".news4").append('<a href="'+ response.top_headlines[4].href +'" target="_blank">'+ response.top_headlines[4].title +'</a>');
-				$(".news5").append('<a href="'+ response.top_headlines[5].href +'" target="_blank">'+ response.top_headlines[5].title +'</a>');
-				$(".news6").append('<a href="'+ response.top_headlines[6].href +'" target="_blank">'+ response.top_headlines[6].title +'</a>');
-				$(".news7").append('<a href="'+ response.top_headlines[7].href +'" target="_blank">'+ response.top_headlines[7].title +'</a>');
-			});
+		$.ajax(settingsnews).done(function (response) {
+			$(".news0").append('<a href="'+ response.top_headlines[0].href +'" target="_blank">'+ response.top_headlines[0].title +'</a>');
+			$(".news1").append('<a href="'+ response.top_headlines[1].href +'" target="_blank">'+ response.top_headlines[1].title +'</a>');
+			$(".news2").append('<a href="'+ response.top_headlines[2].href +'" target="_blank">'+ response.top_headlines[2].title +'</a>');
+			$(".news3").append('<a href="'+ response.top_headlines[3].href +'" target="_blank">'+ response.top_headlines[3].title +'</a>');
+			$(".news4").append('<a href="'+ response.top_headlines[4].href +'" target="_blank">'+ response.top_headlines[4].title +'</a>');
+			$(".news5").append('<a href="'+ response.top_headlines[5].href +'" target="_blank">'+ response.top_headlines[5].title +'</a>');
+			$(".news6").append('<a href="'+ response.top_headlines[6].href +'" target="_blank">'+ response.top_headlines[6].title +'</a>');
+			$(".news7").append('<a href="'+ response.top_headlines[7].href +'" target="_blank">'+ response.top_headlines[7].title +'</a>');
+		});
 	</script>
 	
 	<section class="flex">
@@ -122,7 +122,18 @@
 			</div>
 		</div>
 		
-		<div class="w-1/4 flex justify-center border-2 border-slate-50 border-l-slate-200">link</div>	
+		<div class="w-1/4 border-2 border-slate-50 border-l-slate-200">
+			<div class="m-16">
+				<a href="https://www.kitbag.com/ko/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/5f/Goal_Website_Logo.svg/1920px-Goal_Website_Logo.svg.png" alt="" /></a>
+			</div>
+			<div class="m-16">
+				<a href="https://www.kitbag.com/ko/" target="_blank"><img src="https://www.kitbag.com/content/assets/__0-596386953475.3036.svg" alt="" /></a>
+			</div>
+			<div class="m-16">
+				<a href="https://fconline.nexon.com/main/index" target="_blank"><img src="https://file.nexon.com/NxFile/Download/FileDownloader.aspx?oidFile=5413419214155286064" alt="" /></a>
+			</div>
+
+		</div>	
 	</section>
 
 	

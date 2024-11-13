@@ -34,10 +34,10 @@
 				$(".match" + matchNumStr + "Time").append((response.response[matchNumInt].fixture.date).substring(11, 16));
 				$(".match" + matchNumStr + "Round").append(response.response[matchNumInt].league.round);
 
-				if (response.response[matchNumStr].fixture.status.short == "1H" || response.response[matchNumStr].fixture.status.short == "HT" || response.response[matchNumStr].fixture.status.short == "2H") {
-					$(".match" + matchNumStr + "Status").append('<div class="flex justify-center bg-green-400 rounded-2xl">' + response.response[matchNumStr].fixture.status.short + '</div>');
+				if (response.response[matchNumInt].fixture.status.short == "1H" || response.response[matchNumInt].fixture.status.short == "HT" || response.response[matchNumInt].fixture.status.short == "2H") {
+					$(".match" + matchNumStr + "Status").append('<div class="flex justify-center bg-green-400 rounded-2xl">' + response.response[matchNumInt].fixture.status.short + '</div>');
 				} else {
-					$(".match" + matchNumStr + "Status").append('<div class="flex justify-center bg-slate-200 rounded-2xl">' + response.response[matchNumStr].fixture.status.short + '</div>');
+					$(".match" + matchNumStr + "Status").append('<div class="flex justify-center bg-slate-200 rounded-2xl">' + response.response[matchNumInt].fixture.status.short + '</div>');
 				}
 				
 				$(".match" + matchNumStr + "HomeLogo").append('<img src="' + response.response[matchNumInt].teams.home.logo + '"/>');

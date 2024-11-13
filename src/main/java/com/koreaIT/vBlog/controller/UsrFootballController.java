@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class UsrLeagueController {
+public class UsrFootballController {
 
 	@RequestMapping("/usr/league/uefaChampionsLeague")
 	public String uefaChampionsLeague() {
