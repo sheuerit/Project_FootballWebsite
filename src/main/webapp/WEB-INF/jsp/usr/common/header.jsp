@@ -23,7 +23,7 @@
 <body>
 	<div class="h-20 container mx-auto text-2xl flex">
 		<div>
-			<a class="h-full px-20 flex items-center" href="/">FOOTSCOPE</a>
+			<a class="h-full px-20 flex items-center" href="/"><i class="fa-sharp fa-solid fa-futbol mr-2"></i>FOOTSCOPE</a>
 		</div>
 		<div class="flex-grow"></div>
 		<ul class="flex">

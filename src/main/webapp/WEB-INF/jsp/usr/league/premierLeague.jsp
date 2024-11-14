@@ -30,6 +30,7 @@
 				matchNumInt = i;
 			  	matchNumStr = String(i);
 			  
+			  	$(".match" + matchNumStr + "Id").append(response.response[matchNumInt].fixture.id);
 				$(".match" + matchNumStr + "Date").append((response.response[matchNumInt].fixture.date).substring(0, 10));
 				$(".match" + matchNumStr + "Time").append((response.response[matchNumInt].fixture.date).substring(11, 16));
 				$(".match" + matchNumStr + "Round").append(response.response[matchNumInt].league.round);
@@ -97,6 +98,7 @@
 		<div class="w-1/4 flex justify-center border-2 border-slate-50 border-r-slate-200">commercial</div>
 		
 		<div class="container mx-auto">
+			<div class=""></div>
 			<div class="mt-2 flex justify-center">
 				<div class="premierLeagueLogo w-24"></div>
 			</div>
@@ -120,8 +122,8 @@
 									<th>AWAY</th>
 								</tr>
 							</thead>
-							<tbody class="mt-8 text-xs">
-								<tr class="hover">
+							<tbody class="mt-8 text-xs cursor-pointer" onclick="location.href='/usr/matchDetail/matchDetail'">
+								<tr class="hover" >
 									<td><div class="match0Date mr-5 text-[10px]"></div></td>
 									<td><div class="match0Time mr-5 text-[10px]"></div></td>
 									<td><div class="match0Round text-[8px]"></div></td>

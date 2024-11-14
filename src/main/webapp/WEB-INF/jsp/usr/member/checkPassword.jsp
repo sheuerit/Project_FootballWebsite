@@ -1,16 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!-- checkPassword.jsp 안에서 jstl 설정, 접두사를 c로 설정 -->
 
 	<c:set var="pageTitle" value="PASSWORD CHECK" />
-	<!-- c:set 태그(변수 선언문), <var>변수 pageTitle에 <value>PASSWORD CHECK 저장 -->
 
 	<%@ include file="../common/header.jsp" %>
-	<!-- checkPassword.jsp에 head.jsp를 포함시켜서 브라우저에 출력 -->
 
 	<script>
-	
 		const checkPasswordForm_onSubmit = function(form) {
 
 			form.loginPw.value = form.loginPw.value.trim();

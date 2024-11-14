@@ -45,4 +45,9 @@ public class UsrFootballController {
 	public String kLeague1() {
 		return "usr/league/kLeague1";
 	}
+	
+	@RequestMapping("/usr/matchDetail/matchDetail")
+	public String match0Detail() {
+		return "usr/matchDetail/matchDetail";
+	}
 }
