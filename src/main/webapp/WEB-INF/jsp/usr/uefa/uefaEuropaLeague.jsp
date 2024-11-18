@@ -8,7 +8,7 @@
 		const settings1 = {
 			async: true,
 			crossDomain: true,
-			url: 'https://api-football-v1.p.rapidapi.com/v3/fixtures?league=2&season=2024&timezone=Asia%2FSeoul',
+			url: 'https://api-football-v1.p.rapidapi.com/v3/fixtures?league=3&season=2024&timezone=Asia%2FSeoul',
 			method: 'GET',
 			headers: {
 				'x-rapidapi-key': '3a012c58fdmsh42f7e05c92b7f66p1ed97ejsn1660d3e9d81f',
@@ -17,7 +17,7 @@
 		};
 
 		$.ajax(settings1).done(function(response) {
-			$(".uefaChampionsLeagueLogo").append('<img src="' + response.response[90].league.logo + '"/>');
+			$(".uefaEuropaLeagueLogo").append('<img src="' + response.response[90].league.logo + '"/>');
 			
 			var numInt;
 			numInt = null;
@@ -25,43 +25,34 @@
 			var numStr;
 			numStr = null;
 
-			for ( var i = 90; i <= 233; i++ ) {
+			for ( var i = 80; i <= 223; i++ ) {
 			  	numInt = i;
 			  	numStr = String(i);
-			  	
+			  
+			  	$(".match" + numStr + "DetailByFixtureId").append('<form action="uefaMatchDetail" method="post" onsubmit="submitForm(this); return false;"><input name="id" type="hidden" value="' + String(response.response[numInt].fixture.id) + '" /><button class="btn btn-outline btn-sm"><i class="fa-solid fa-magnifying-glass"></button></form>');
 				$(".match" + numStr + "Date").append((response.response[numInt].fixture.date).substring(0, 10));
 				$(".match" + numStr + "Time").append((response.response[numInt].fixture.date).substring(11, 16));
-			  	$(".match" + numStr + "Round").append(response.response[numInt].league.round);
+				$(".match" + numStr + "Round").append(response.response[numInt].league.round);
 
-			  	if (response.response[numInt].fixture.status.short == "1H" || response.response[numInt].fixture.status.short == "HT" || response.response[numInt].fixture.status.short == "2H") {
+				if (response.response[numInt].fixture.status.short == "1H" || response.response[numInt].fixture.status.short == "HT" || response.response[numInt].fixture.status.short == "2H") {
 					$(".match" + numStr + "Status").append('<div class="flex justify-center bg-green-400 rounded-2xl">' + response.response[numInt].fixture.status.short + '</div>');
 				} else {
 					$(".match" + numStr + "Status").append('<div class="flex justify-center bg-slate-200 rounded-2xl">' + response.response[numInt].fixture.status.short + '</div>');
 				}
 				
-				if (response.response[numInt].teams.home.id == 40) {
-					$(".match" + numStr + "HomeLogo").append('<img src="' + response.response[numInt].teams.home.logo + '" class="h-8 ml-2"/>');
-				} else {
-					$(".match" + numStr + "HomeLogo").append('<img src="' + response.response[numInt].teams.home.logo + '"/>');
-				}
-				
-				if (response.response[numInt].teams.away.id == 40) {
-					$(".match" + numStr + "AwayLogo").append('<img src="' + response.response[numInt].teams.away.logo + '" class="h-8 ml-2"/>');
-				} else {
-					$(".match" + numStr + "AwayLogo").append('<img src="' + response.response[numInt].teams.away.logo + '"/>');
-				}
-				
+				$(".match" + numStr + "HomeLogo").append('<img src="' + response.response[numInt].teams.home.logo + '"/>');
+				$(".match" + numStr + "AwayLogo").append('<img src="' + response.response[numInt].teams.away.logo + '"/>');
 				$(".match" + numStr + "HomeScore").append(response.response[numInt].goals.home);
 				$(".match" + numStr + "AwayScore").append(response.response[numInt].goals.away);
-			  	
+					
 			}
-			
+								
 		});
 		
 		const settings2 = {
 				async: true,
 				crossDomain: true,
-				url: 'https://api-football-v1.p.rapidapi.com/v3/standings?league=2&season=2024',
+				url: 'https://api-football-v1.p.rapidapi.com/v3/standings?league=3&season=2024',
 				method: 'GET',
 				headers: {
 					'x-rapidapi-key': '3a012c58fdmsh42f7e05c92b7f66p1ed97ejsn1660d3e9d81f',
@@ -75,13 +66,7 @@
 				  	numStr = String(i);
 				  
 				  	$(".rank" + numStr).append(response.response[0].league.standings[0][numInt].rank);
-				  	
-				  	if (response.response[0].league.standings[0][numInt].team.id == 40) {
-				  		$(".clubLogo" + numStr).append('<img src="' + response.response[0].league.standings[0][numInt].team.logo + '" class="h-7 ml-1"/>');
-				  	} else {
-					  	$(".clubLogo" + numStr).append('<img src="' + response.response[0].league.standings[0][numInt].team.logo + '"/>');
-				  	}
-				  	
+				  	$(".clubLogo" + numStr).append('<img src="' + response.response[0].league.standings[0][numInt].team.logo + '"/>');
 				  	$(".match" + numStr).append(response.response[0].league.standings[0][numInt].all.played);
 				  	$(".win" + numStr).append(response.response[0].league.standings[0][numInt].all.win);
 				  	$(".draw" + numStr).append(response.response[0].league.standings[0][numInt].all.draw);
@@ -94,16 +79,16 @@
 	
 	<section class="flex">
 		<div class="w-1/4 flex justify-center border-2 border-slate-50 border-r-slate-200">commercial</div>
-		
-		<div class ="container mx-auto">
+	
+		<div class="container mx-auto">
 			<div class="mt-2 flex justify-center">
-				<div class="uefaChampionsLeagueLogo w-24"></div>
+				<div class="uefaEuropaLeagueLogo w-24"></div>
 			</div>
 			
 			<div class="mt-8 text-sm">
 				<div class="container mx-auto px-3">
 					<div>
-						<table class="table table-auto">
+						<table class="table table-base">
 							<thead class="text-sm">
 								<tr>
 									<th>DATE</th>
@@ -113,13 +98,238 @@
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
+									<th>DETAIL</th>
 								</tr>
 							</thead>
 							<tbody class="mt-8 text-xs">
 								<tr class="hover">
-									<td><div class="match90Date text-[10px]"></div></td>
-									<td><div class="match90Time text-[10px]"></div></td>
-									<td><div class="match90Round text-[8px]"></div></td>
+									<td><div class="match80Date mr-5 text-[10px]"></div></td>
+									<td><div class="match80Time mr-5 text-[10px]"></div></td><td><div class="match80Round text-[8px]"></div></td>
+									<td><div class="match80Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
+									<td>
+										<div class="flex">
+											<div class="match80HomeLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td class="flex">
+										<div class="match80HomeScore mt-1 mr-5 text-[10px]"></div>
+										<div class="mt-0.5">:</div>
+										<div class="match80AwayScore mt-1 ml-5 text-[10px]"></div>
+									</td>
+									<td>
+										<div class="flex">
+											<div class="match80AwayLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td><div class="match80DetailByFixtureId"></div></td>
+								</tr>
+							</tbody>
+							<tbody class="mt-8 text-xs">
+								<tr class="hover">
+									<td><div class="match81Date mr-5 text-[10px]"></div></td>
+									<td><div class="match81Time mr-5 text-[10px]"></div></td><td><div class="match81Round text-[8px]"></div></td>
+									<td><div class="match81Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
+									<td>
+										<div class="flex">
+											<div class="match81HomeLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td class="flex">
+										<div class="match81HomeScore mt-1 mr-5 text-[10px]"></div>
+										<div class="mt-0.5">:</div>
+										<div class="match81AwayScore mt-1 ml-5 text-[10px]"></div>
+									</td>
+									<td>
+										<div class="flex">
+											<div class="match81AwayLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td><div class="match81DetailByFixtureId"></div></td>
+								</tr>
+							</tbody>
+							<tbody class="mt-8 text-xs">
+								<tr class="hover">
+									<td><div class="match82Date mr-5 text-[10px]"></div></td>
+									<td><div class="match82Time mr-5 text-[10px]"></div></td><td><div class="match82Round text-[8px]"></div></td>
+									<td><div class="match82Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
+									<td>
+										<div class="flex">
+											<div class="match82HomeLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td class="flex">
+										<div class="match82HomeScore mt-1 mr-5 text-[10px]"></div>
+										<div class="mt-0.5">:</div>
+										<div class="match82AwayScore mt-1 ml-5 text-[10px]"></div>
+									</td>
+									<td>
+										<div class="flex">
+											<div class="match82AwayLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td><div class="match82DetailByFixtureId"></div></td>
+								</tr>
+							</tbody>
+							<tbody class="mt-8 text-xs">
+								<tr class="hover">
+									<td><div class="match83Date mr-5 text-[10px]"></div></td>
+									<td><div class="match83Time mr-5 text-[10px]"></div></td><td><div class="match83Round text-[8px]"></div></td>
+									<td><div class="match83Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
+									<td>
+										<div class="flex">
+											<div class="match83HomeLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td class="flex">
+										<div class="match83HomeScore mt-1 mr-5 text-[10px]"></div>
+										<div class="mt-0.5">:</div>
+										<div class="match83AwayScore mt-1 ml-5 text-[10px]"></div>
+									</td>
+									<td>
+										<div class="flex">
+											<div class="match83AwayLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td><div class="match83DetailByFixtureId"></div></td>
+								</tr>
+							</tbody>
+							<tbody class="mt-8 text-xs">
+								<tr class="hover">
+									<td><div class="match84Date mr-5 text-[10px]"></div></td>
+									<td><div class="match84Time mr-5 text-[10px]"></div></td><td><div class="match84Round text-[8px]"></div></td>
+									<td><div class="match84Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
+									<td>
+										<div class="flex">
+											<div class="match84HomeLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td class="flex">
+										<div class="match84HomeScore mt-1 mr-5 text-[10px]"></div>
+										<div class="mt-0.5">:</div>
+										<div class="match84AwayScore mt-1 ml-5 text-[10px]"></div>
+									</td>
+									<td>
+										<div class="flex">
+											<div class="match84AwayLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td><div class="match84DetailByFixtureId"></div></td>
+								</tr>
+							</tbody>
+							<tbody class="mt-8 text-xs">
+								<tr class="hover">
+									<td><div class="match85Date mr-5 text-[10px]"></div></td>
+									<td><div class="match85Time mr-5 text-[10px]"></div></td><td><div class="match85Round text-[8px]"></div></td>
+									<td><div class="match85Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
+									<td>
+										<div class="flex">
+											<div class="match85HomeLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td class="flex">
+										<div class="match85HomeScore mt-1 mr-5 text-[10px]"></div>
+										<div class="mt-0.5">:</div>
+										<div class="match85AwayScore mt-1 ml-5 text-[10px]"></div>
+									</td>
+									<td>
+										<div class="flex">
+											<div class="match85AwayLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+							<tbody class="mt-8 text-xs">
+								<tr class="hover">
+									<td><div class="match86Date mr-5 text-[10px]"></div></td>
+									<td><div class="match86Time mr-5 text-[10px]"></div></td><td><div class="match86Round text-[8px]"></div></td>
+									<td><div class="match86Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
+									<td>
+										<div class="flex">
+											<div class="match86HomeLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td class="flex">
+										<div class="match86HomeScore mt-1 mr-5 text-[10px]"></div>
+										<div class="mt-0.5">:</div>
+										<div class="match86AwayScore mt-1 ml-5 text-[10px]"></div>
+									</td>
+									<td>
+										<div class="flex">
+											<div class="match86AwayLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+							<tbody class="mt-8 text-xs">
+								<tr class="hover">
+									<td><div class="match87Date mr-5 text-[10px]"></div></td>
+									<td><div class="match87Time mr-5 text-[10px]"></div></td><td><div class="match87Round text-[8px]"></div></td>
+									<td><div class="match87Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
+									<td>
+										<div class="flex">
+											<div class="match87HomeLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td class="flex">
+										<div class="match87HomeScore mt-1 mr-5 text-[10px]"></div>
+										<div class="mt-0.5">:</div>
+										<div class="match87AwayScore mt-1 ml-5 text-[10px]"></div>
+									</td>
+									<td>
+										<div class="flex">
+											<div class="match87AwayLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+							<tbody class="mt-8 text-xs">
+								<tr class="hover">
+									<td><div class="match88Date mr-5 text-[10px]"></div></td>
+									<td><div class="match88Time mr-5 text-[10px]"></div></td><td><div class="match88Round text-[8px]"></div></td>
+									<td><div class="match88Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
+									<td>
+										<div class="flex">
+											<div class="match98HomeLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td class="flex">
+										<div class="match88HomeScore mt-1 mr-5 text-[10px]"></div>
+										<div class="mt-0.5">:</div>
+										<div class="match88AwayScore mt-1 ml-5 text-[10px]"></div>
+									</td>
+									<td>
+										<div class="flex">
+											<div class="match88AwayLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+							<tbody class="mt-8 text-xs">
+								<tr class="hover">
+									<td><div class="match89Date mr-5 text-[10px]"></div></td>
+									<td><div class="match89Time mr-5 text-[10px]"></div></td><td><div class="match89Round text-[8px]"></div></td>
+									<td><div class="match89Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
+									<td>
+										<div class="flex">
+											<div class="match89HomeLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+									<td class="flex">
+										<div class="match89HomeScore mt-1 mr-5 text-[10px]"></div>
+										<div class="mt-0.5">:</div>
+										<div class="match89AwayScore mt-1 ml-5 text-[10px]"></div>
+									</td>
+									<td>
+										<div class="flex">
+											<div class="match89AwayLogo w-8 h-8 ml-2"></div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+							<tbody class="mt-8 text-xs">
+								<tr class="hover">
+									<td><div class="match90Date mr-5 text-[10px]"></div></td>
+									<td><div class="match90Time mr-5 text-[10px]"></div></td><td><div class="match90Round text-[8px]"></div></td>
 									<td><div class="match90Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
@@ -2891,7 +3101,7 @@
 							<tbody class="mt-8 text-xs">
 								<tr class="hover">
 									<td><div class="match216Date mr-5 text-[10px]"></div></td>
-									<td><div class="match216Time mr-5 text-[10px]"></div></td><td><div class="match126Round text-[8px]"></div></td>
+									<td><div class="match216Time mr-5 text-[10px]"></div></td><td><div class="match216Round text-[8px]"></div></td>
 									<td><div class="match216Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
@@ -3064,231 +3274,11 @@
 									</td>
 								</tr>
 							</tbody>
-							<tbody class="mt-8 text-xs">
-								<tr class="hover">
-									<td><div class="match224Date mr-5 text-[10px]"></div></td>
-									<td><div class="match224Time mr-5 text-[10px]"></div></td><td><div class="match224Round text-[8px]"></div></td>
-									<td><div class="match224Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
-									<td>
-										<div class="flex">
-											<div class="match224HomeLogo w-8 h-8 ml-2"></div>
-										</div>
-									</td>
-									<td class="flex">
-										<div class="match224HomeScore mt-1 mr-5 text-[10px]"></div>
-										<div class="mt-0.5">:</div>
-										<div class="match224AwayScore mt-1 ml-5 text-[10px]"></div>
-									</td>
-									<td>
-										<div class="flex">
-											<div class="match224AwayLogo w-8 h-8 ml-2"></div>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-							<tbody class="mt-8 text-xs">
-								<tr class="hover">
-									<td><div class="match225Date mr-5 text-[10px]"></div></td>
-									<td><div class="match225Time mr-5 text-[10px]"></div></td><td><div class="match225Round text-[8px]"></div></td>
-									<td><div class="match225Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
-									<td>
-										<div class="flex">
-											<div class="match225HomeLogo w-8 h-8 ml-2"></div>
-										</div>
-									</td>
-									<td class="flex">
-										<div class="match225HomeScore mt-1 mr-5 text-[10px]"></div>
-										<div class="mt-0.5">:</div>
-										<div class="match225AwayScore mt-1 ml-5 text-[10px]"></div>
-									</td>
-									<td>
-										<div class="flex">
-											<div class="match225AwayLogo w-8 h-8 ml-2"></div>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-							<tbody class="mt-8 text-xs">
-								<tr class="hover">
-									<td><div class="match226Date mr-5 text-[10px]"></div></td>
-									<td><div class="match226Time mr-5 text-[10px]"></div></td><td><div class="match226Round text-[8px]"></div></td>
-									<td><div class="match226Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
-									<td>
-										<div class="flex">
-											<div class="match226HomeLogo w-8 h-8 ml-2"></div>
-										</div>
-									</td>
-									<td class="flex">
-										<div class="match226HomeScore mt-1 mr-5 text-[10px]"></div>
-										<div class="mt-0.5">:</div>
-										<div class="match226AwayScore mt-1 ml-5 text-[10px]"></div>
-									</td>
-									<td>
-										<div class="flex">
-											<div class="match226AwayLogo w-8 h-8 ml-2"></div>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-							<tbody class="mt-8 text-xs">
-								<tr class="hover">
-									<td><div class="match227Date mr-5 text-[10px]"></div></td>
-									<td><div class="match227Time mr-5 text-[10px]"></div></td><td><div class="match227Round text-[8px]"></div></td>
-									<td><div class="match227Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
-									<td>
-										<div class="flex">
-											<div class="match227HomeLogo w-8 h-8 ml-2"></div>
-										</div>
-									</td>
-									<td class="flex">
-										<div class="match227HomeScore mt-1 mr-5 text-[10px]"></div>
-										<div class="mt-0.5">:</div>
-										<div class="match227AwayScore mt-1 ml-5 text-[10px]"></div>
-									</td>
-									<td>
-										<div class="flex">
-											<div class="match227AwayLogo w-8 h-8 ml-2"></div>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-							<tbody class="mt-8 text-xs">
-								<tr class="hover">
-									<td><div class="match228Date mr-5 text-[10px]"></div></td>
-									<td><div class="match228Time mr-5 text-[10px]"></div></td><td><div class="match228Round text-[8px]"></div></td>
-									<td><div class="match228Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
-									<td>
-										<div class="flex">
-											<div class="match228HomeLogo w-8 h-8 ml-2"></div>
-										</div>
-									</td>
-									<td class="flex">
-										<div class="match228HomeScore mt-1 mr-5 text-[10px]"></div>
-										<div class="mt-0.5">:</div>
-										<div class="match228AwayScore mt-1 ml-5 text-[10px]"></div>
-									</td>
-									<td>
-										<div class="flex">
-											<div class="match228AwayLogo w-8 h-8 ml-2"></div>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-							<tbody class="mt-8 text-xs">
-								<tr class="hover">
-									<td><div class="match229Date mr-5 text-[10px]"></div></td>
-									<td><div class="match229Time mr-5 text-[10px]"></div></td><td><div class="match229Round text-[8px]"></div></td>
-									<td><div class="match229Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
-									<td>
-										<div class="flex">
-											<div class="match229HomeLogo w-8 h-8 ml-2"></div>
-										</div>
-									</td>
-									<td class="flex">
-										<div class="match229HomeScore mt-1 mr-5 text-[10px]"></div>
-										<div class="mt-0.5">:</div>
-										<div class="match229AwayScore mt-1 ml-5 text-[10px]"></div>
-									</td>
-									<td>
-										<div class="flex">
-											<div class="match229AwayLogo w-8 h-8 ml-2"></div>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-							<tbody class="mt-8 text-xs">
-								<tr class="hover">
-									<td><div class="match230Date mr-5 text-[10px]"></div></td>
-									<td><div class="match230Time mr-5 text-[10px]"></div></td><td><div class="match230Round text-[8px]"></div></td>
-									<td><div class="match230Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
-									<td>
-										<div class="flex">
-											<div class="match230HomeLogo w-8 h-8 ml-2"></div>
-										</div>
-									</td>
-									<td class="flex">
-										<div class="match230HomeScore mt-1 mr-5 text-[10px]"></div>
-										<div class="mt-0.5">:</div>
-										<div class="match230AwayScore mt-1 ml-5 text-[10px]"></div>
-									</td>
-									<td>
-										<div class="flex">
-											<div class="match230AwayLogo w-8 h-8 ml-2"></div>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-							<tbody class="mt-8 text-xs">
-								<tr class="hover">
-									<td><div class="match231Date mr-5 text-[10px]"></div></td>
-									<td><div class="match231Time mr-5 text-[10px]"></div></td><td><div class="match231Round text-[8px]"></div></td>
-									<td><div class="match231Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
-									<td>
-										<div class="flex">
-											<div class="match231HomeLogo w-8 h-8 ml-2"></div>
-										</div>
-									</td>
-									<td class="flex">
-										<div class="match231HomeScore mt-1 mr-5 text-[10px]"></div>
-										<div class="mt-0.5">:</div>
-										<div class="match231AwayScore mt-1 ml-5 text-[10px]"></div>
-									</td>
-									<td>
-										<div class="flex">
-											<div class="match231AwayLogo w-8 h-8 ml-2"></div>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-							<tbody class="mt-8 text-xs">
-								<tr class="hover">
-									<td><div class="match232Date mr-5 text-[10px]"></div></td>
-									<td><div class="match232Time mr-5 text-[10px]"></div></td><td><div class="match232Round text-[8px]"></div></td>
-									<td><div class="match232Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
-									<td>
-										<div class="flex">
-											<div class="match232HomeLogo w-8 h-8 ml-2"></div>
-										</div>
-									</td>
-									<td class="flex">
-										<div class="match232HomeScore mt-1 mr-5 text-[10px]"></div>
-										<div class="mt-0.5">:</div>
-										<div class="match232AwayScore mt-1 ml-5 text-[10px]"></div>
-									</td>
-									<td>
-										<div class="flex">
-											<div class="match232AwayLogo w-8 h-8 ml-2"></div>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-							<tbody class="mt-8 text-xs">
-								<tr class="hover">
-									<td><div class="match233Date mr-5 text-[10px]"></div></td>
-									<td><div class="match233Time mr-5 text-[10px]"></div></td><td><div class="match233Round text-[8px]"></div></td>
-									<td><div class="match233Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
-									<td>
-										<div class="flex">
-											<div class="match233HomeLogo w-8 h-8 ml-2"></div>
-										</div>
-									</td>
-									<td class="flex">
-										<div class="match233HomeScore mt-1 mr-5 text-[10px]"></div>
-										<div class="mt-0.5">:</div>
-										<div class="match233AwayScore mt-1 ml-5 text-[10px]"></div>
-									</td>
-									<td>
-										<div class="flex">
-											<div class="match233AwayLogo w-8 h-8 ml-2"></div>
-										</div>
-									</td>
-								</tr>
-							</tbody>
 						</table>
 					</div>
 				</div>
 			</div>
-		</div>	
+		</div>
 		
 		<div class="w-2/5 border-2 border-slate-50 border-l-slate-200">
 			<table class="table table-auto">

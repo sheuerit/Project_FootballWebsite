@@ -65,30 +65,30 @@
 		<div class="container mx-auto">
 			<div class="flex justify-center ">
 				<div class="w-1/4 m-6 flex justify-center hover:border-4 border-slate-200 rounded-2xl">
-					<a class="my-5 uefaChampionsLeagueLogo" href="/usr/league/uefaChampionsLeague"></a>
+					<a class="my-5 uefaChampionsLeagueLogo" href="/usr/uefa/uefaChampionsLeague"></a>
 				</div>
 				<div class="w-1/4 m-6 flex justify-center hover:border-4 border-slate-200 rounded-2xl">
-					<a class="my-5 uefaEuropaLeagueLogo" href="/usr/league/uefaEuropaLeague"></a>
+					<a class="my-5 uefaEuropaLeagueLogo" href="/usr/uefa/uefaEuropaLeague"></a>
 				</div>
 				<div class="w-1/4 m-6 flex justify-center hover:border-4 border-slate-200 rounded-2xl">
-					<a class="my-5 premierLeagueLogo" href="/usr/league/premierLeague"></a>
+					<a class="my-5 premierLeagueLogo" href="/usr/england/premierLeague"></a>
 				</div>
 				<div class="w-1/4 m-6 flex justify-center hover:border-4 border-slate-200 rounded-2xl">
-					<a class="my-5 laLigaLogo" href="/usr/league/laLiga"></a>
+					<a class="my-5 laLigaLogo" href="/usr/spain/laLiga"></a>
 				</div>
 			</div>
 			<div class="flex justify-center">
 				<div class="w-1/4 m-6 flex justify-center hover:border-4 border-slate-200 rounded-2xl">
-					<a class="my-5 bundesligaLogo" href="/usr/league/bundesliga"></a>
+					<a class="my-5 bundesligaLogo" href="/usr/german/bundesliga"></a>
 				</div>
 				<div class="w-1/4 m-6 flex justify-center hover:border-4 border-slate-200 rounded-2xl">
-					<a class="my-5 serieALogo" href="/usr/league/serieA"></a>
+					<a class="my-5 serieALogo" href="/usr/italy/serieA"></a>
 				</div>
 				<div class="w-1/4 m-6 flex justify-center hover:border-4 border-slate-200 rounded-2xl">
-					<a class="my-5 ligue1Logo" href="/usr/league/ligue1"></a>
+					<a class="my-5 ligue1Logo" href="/usr/france/ligue1"></a>
 				</div>
 				<div class="w-1/4 m-6 flex justify-center hover:border-4 border-slate-200 rounded-2xl">
-					<a class="my-5 kLeague1Logo" href="/usr/league/kLeague1"></a>
+					<a class="my-5 kLeague1Logo" href="/usr/korea/kLeague1"></a>
 				</div>
 			</div>
 			

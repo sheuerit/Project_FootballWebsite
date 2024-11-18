@@ -8,7 +8,7 @@
 		const settings1 = {
 			async: true,
 			crossDomain: true,
-			url: 'https://api-football-v1.p.rapidapi.com/v3/fixtures?league=140&season=2024&timezone=Asia%2FSeoul',
+			url: 'https://api-football-v1.p.rapidapi.com/v3/fixtures?league=39&season=2024&timezone=Asia%2FSeoul',
 			method: 'GET',
 			headers: {
 				'x-rapidapi-key': '3a012c58fdmsh42f7e05c92b7f66p1ed97ejsn1660d3e9d81f',
@@ -17,8 +17,8 @@
 		};
 
 		$.ajax(settings1).done(function(response) {
-			$(".laLigaLogo").append('<img src="' + response.response[0].league.logo + '"/>');
-			$(".laLigaFlag").append('<img src="' + response.response[0].league.flag + '"/>');
+			$(".premierLeagueLogo").append('<img src="' + response.response[0].league.logo + '"/>');
+			$(".premierLeagueFlag").append('<img src="' + response.response[0].league.flag + '"/>');
 			
 			var matchNumInt;
 			matchNumInt = null;
@@ -30,21 +30,32 @@
 				matchNumInt = i;
 			  	matchNumStr = String(i);
 			  
+			  	$(".match" + matchNumStr + "DetailByFixtureId").append('<form action="premierLeagueMatchDetail" method="post" onsubmit="submitForm(this); return false;"><input name="id" type="hidden" value="' + String(response.response[matchNumInt].fixture.id) + '" /><button class="btn btn-outline btn-sm"><i class="fa-solid fa-magnifying-glass"></button></form>');
 				$(".match" + matchNumStr + "Date").append((response.response[matchNumInt].fixture.date).substring(0, 10));
 				$(".match" + matchNumStr + "Time").append((response.response[matchNumInt].fixture.date).substring(11, 16));
 				$(".match" + matchNumStr + "Round").append(response.response[matchNumInt].league.round);
-
+				
 				if (response.response[matchNumInt].fixture.status.short == "1H" || response.response[matchNumInt].fixture.status.short == "HT" || response.response[matchNumInt].fixture.status.short == "2H") {
 					$(".match" + matchNumStr + "Status").append('<div class="flex justify-center bg-green-400 rounded-2xl">' + response.response[matchNumInt].fixture.status.short + '</div>');
 				} else {
 					$(".match" + matchNumStr + "Status").append('<div class="flex justify-center bg-slate-200 rounded-2xl">' + response.response[matchNumInt].fixture.status.short + '</div>');
 				}
 				
-				$(".match" + matchNumStr + "HomeLogo").append('<img src="' + response.response[matchNumInt].teams.home.logo + '"/>');
-				$(".match" + matchNumStr + "AwayLogo").append('<img src="' + response.response[matchNumInt].teams.away.logo + '"/>');
+				if (response.response[matchNumInt].teams.home.id == 40) {
+					$(".match" + matchNumStr + "HomeLogo").append('<img src="' + response.response[matchNumInt].teams.home.logo + '" class="h-8 ml-2"/>');
+				} else {
+					$(".match" + matchNumStr + "HomeLogo").append('<img src="' + response.response[matchNumInt].teams.home.logo + '"/>');
+				}
+				
+				if (response.response[matchNumInt].teams.away.id == 40) {
+					$(".match" + matchNumStr + "AwayLogo").append('<img src="' + response.response[matchNumInt].teams.away.logo + '" class="h-8 ml-2"/>');
+				} else {
+					$(".match" + matchNumStr + "AwayLogo").append('<img src="' + response.response[matchNumInt].teams.away.logo + '"/>');
+				}
+				
 				$(".match" + matchNumStr + "HomeScore").append(response.response[matchNumInt].goals.home);
 				$(".match" + matchNumStr + "AwayScore").append(response.response[matchNumInt].goals.away);
-			  	
+				
 			}
 			
 		});
@@ -52,7 +63,7 @@
 		const settings2 = {
 				async: true,
 				crossDomain: true,
-				url: 'https://api-football-v1.p.rapidapi.com/v3/standings?league=140&season=2024',
+				url: 'https://api-football-v1.p.rapidapi.com/v3/standings?league=39&season=2024',
 				method: 'GET',
 				headers: {
 					'x-rapidapi-key': '3a012c58fdmsh42f7e05c92b7f66p1ed97ejsn1660d3e9d81f',
@@ -66,7 +77,13 @@
 				  	numStr = String(i);
 				  
 				  	$(".rank" + numStr).append(response.response[0].league.standings[0][numInt].rank);
-				  	$(".clubLogo" + numStr).append('<img src="' + response.response[0].league.standings[0][numInt].team.logo + '"/>');
+				  	
+				  	if (response.response[0].league.standings[0][numInt].team.id == 40) {
+				  		$(".clubLogo" + numStr).append('<img src="' + response.response[0].league.standings[0][numInt].team.logo + '" class="h-7 ml-1"/>');
+				  	} else {
+					  	$(".clubLogo" + numStr).append('<img src="' + response.response[0].league.standings[0][numInt].team.logo + '"/>');
+				  	}
+				  	
 				  	$(".match" + numStr).append(response.response[0].league.standings[0][numInt].all.played);
 				  	$(".win" + numStr).append(response.response[0].league.standings[0][numInt].all.win);
 				  	$(".draw" + numStr).append(response.response[0].league.standings[0][numInt].all.draw);
@@ -81,12 +98,13 @@
 		<div class="w-1/4 flex justify-center border-2 border-slate-50 border-r-slate-200">commercial</div>
 		
 		<div class="container mx-auto">
+			<div class=""></div>
 			<div class="mt-2 flex justify-center">
-				<div class="laLigaLogo w-24"></div>
+				<div class="premierLeagueLogo w-24"></div>
 			</div>
 			
 			<div class="mt-2 flex justify-center">
-				<div class="laLigaFlag w-6 border-2 border-inherit"></div>
+				<div class="premierLeagueFlag w-6 border-2 border-inherit"></div>
 			</div>
 			
 			<div class="mt-8 text-sm">
@@ -102,6 +120,7 @@
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
+									<th>DETAIL</th>
 								</tr>
 							</thead>
 							<tbody class="mt-8 text-xs">
@@ -125,6 +144,7 @@
 											<div class="match0AwayLogo w-8 h-8 ml-2"></div>
 										</div>
 									</td>
+									<td><div class="match0DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -148,6 +168,7 @@
 											<div class="match1AwayLogo w-8 h-8 ml-2"></div>
 										</div>
 									</td>
+									<td><div class="match1DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -171,6 +192,7 @@
 											<div class="match2AwayLogo w-8 h-8 ml-2"></div>
 										</div>
 									</td>
+									<td><div class="match2DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -194,6 +216,7 @@
 											<div class="match3AwayLogo w-8 h-8 ml-2"></div>
 										</div>
 									</td>
+									<td><div class="match3DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -217,6 +240,7 @@
 											<div class="match4AwayLogo w-8 h-8 ml-2"></div>
 										</div>
 									</td>
+									<td><div class="match4DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8849,7 +8873,7 @@
 				</div>
 			</div>
 		</div>
-		
+			
 		<div class="w-2/5 border-2 border-slate-50 border-l-slate-200">
 			<table class="table table-auto">
 				<caption class="caption-top mt-2">Regular Season</caption>

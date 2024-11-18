@@ -30,6 +30,7 @@
 				matchNumInt = i;
 			  	matchNumStr = String(i);
 			  	
+			  	$(".match" + matchNumStr + "DetailByFixtureId").append('<form action="ligue1MatchDetail" method="post" onsubmit="submitForm(this); return false;"><input name="id" type="hidden" value="' + String(response.response[matchNumInt].fixture.id) + '" /><button class="btn btn-outline btn-sm"><i class="fa-solid fa-magnifying-glass"></button></form>');
 			  	$(".match" + matchNumStr + "Date").append((response.response[matchNumInt].fixture.date).substring(0, 10));
 				$(".match" + matchNumStr + "Time").append((response.response[matchNumInt].fixture.date).substring(11, 16));
 				$(".match" + matchNumStr + "Round").append(response.response[matchNumInt].league.round);
@@ -118,6 +119,7 @@
 									<th>HOME</th>
 									<th>SCORE</th>
 									<th>AWAY</th>
+									<th>DETAIL</th>
 								</tr>
 							</thead>
 							<tbody class="mt-8 text-xs">
@@ -141,6 +143,7 @@
 											<div class="match0AwayLogo w-8 h-8 ml-2"></div>
 										</div>
 									</td>
+									<td><div class="match0DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -164,6 +167,7 @@
 											<div class="match1AwayLogo w-8 h-8 ml-2"></div>
 										</div>
 									</td>
+									<td><div class="match1DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -187,6 +191,7 @@
 											<div class="match2AwayLogo w-8 h-8 ml-2"></div>
 										</div>
 									</td>
+									<td><div class="match2DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -210,6 +215,7 @@
 											<div class="match3AwayLogo w-8 h-8 ml-2"></div>
 										</div>
 									</td>
+									<td><div class="match3DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -233,6 +239,7 @@
 											<div class="match4AwayLogo w-8 h-8 ml-2"></div>
 										</div>
 									</td>
+									<td><div class="match4DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">

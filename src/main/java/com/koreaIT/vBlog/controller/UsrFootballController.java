@@ -1,53 +1,126 @@
 package com.koreaIT.vBlog.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 
 @Controller
 public class UsrFootballController {
 
-	@RequestMapping("/usr/league/uefaChampionsLeague")
+	public String fixtureId;
+	
+	@RequestMapping("/usr/uefa/uefaChampionsLeague")
 	public String uefaChampionsLeague() {
-		return "usr/league/uefaChampionsLeague";
+		
+		return "usr/uefa/uefaChampionsLeague";
 	}
 	
-	@RequestMapping("/usr/league/uefaEuropaLeague")
+	@RequestMapping("/usr/uefa/uefaEuropaLeague")
 	public String uefaEuropaLeague() {
-		return "usr/league/uefaEuropaLeague";
+		
+		return "usr/uefa/uefaEuropaLeague";
 	}
 	
-	@RequestMapping("/usr/league/premierLeague")
+	@RequestMapping("/usr/uefa/uefaMatchDetail")
+	public String showUefaMatchDetail(Model model, String id) {
+		
+		fixtureId = id;
+		
+		model.addAttribute("fixtureId", fixtureId);
+		
+		return "usr/uefa/uefaMatchDetail";
+	}
+	
+	@RequestMapping("/usr/england/premierLeague")
 	public String premierLeague() {
-		return "usr/league/premierLeague";
+		
+		return "usr/england/premierLeague";
 	}
 	
-	@RequestMapping("/usr/league/laLiga")
+	@RequestMapping("/usr/england/premierLeagueMatchDetail")
+	public String showPremierLeagueMatchDetail(Model model, String id) {
+		
+		fixtureId = id;
+		
+		model.addAttribute("fixtureId", fixtureId);
+		
+		return "usr/england/premierLeagueMatchDetail";
+	}
+	
+	@RequestMapping("/usr/spain/laLiga")
 	public String laLiga() {
-		return "usr/league/laLiga";
+		return "usr/spain/laLiga";
 	}
 	
-	@RequestMapping("/usr/league/bundesliga")
+	@RequestMapping("/usr/spain/laLigaMatchDetail")
+	public String showLaLigaMatchDetail(Model model, String id) {
+		
+		fixtureId = id;
+		
+		model.addAttribute("fixtureId", fixtureId);
+		
+		return "usr/spain/laLigaMatchDetail";
+	}
+	
+	@RequestMapping("/usr/german/bundesliga")
 	public String bundesliga() {
-		return "usr/league/bundesliga";
+		return "usr/german/bundesliga";
 	}
 	
-	@RequestMapping("/usr/league/serieA")
+	@RequestMapping("/usr/german/bundesligaMatchDetail")
+	public String showBundesligaMatchDetail(Model model, String id) {
+		
+		fixtureId = id;
+		
+		model.addAttribute("fixtureId", fixtureId);
+		
+		return "usr/german/bundesligaMatchDetail";
+	}
+	
+	@RequestMapping("/usr/italy/serieA")
 	public String serieA() {
-		return "usr/league/serieA";
+		return "usr/italy/serieA";
 	}
 	
-	@RequestMapping("/usr/league/ligue1")
+	@RequestMapping("/usr/italy/serieAMatchDetail")
+	public String showSerieAMatchDetail(Model model, String id) {
+		
+		fixtureId = id;
+		
+		model.addAttribute("fixtureId", fixtureId);
+		
+		return "usr/italy/serieAMatchDetail";
+	}
+	
+	@RequestMapping("/usr/france/ligue1")
 	public String ligue1() {
-		return "usr/league/ligue1";
+		return "usr/france/ligue1";
 	}
 	
-	@RequestMapping("/usr/league/kLeague1")
+	@RequestMapping("/usr/france/ligue1MatchDetail")
+	public String showLigue1MatchDetail(Model model, String id) {
+		
+		fixtureId = id;
+		
+		model.addAttribute("fixtureId", fixtureId);
+		
+		return "usr/france/ligue1MatchDetail";
+	}
+	
+	@RequestMapping("/usr/korea/kLeague1")
 	public String kLeague1() {
-		return "usr/league/kLeague1";
+		return "usr/korea/kLeague1";
 	}
 	
-	@RequestMapping("/usr/matchDetail/matchDetail")
-	public String match0Detail() {
-		return "usr/matchDetail/matchDetail";
+	@RequestMapping("/usr/korea/kLeague1MatchDetail")
+	public String showKLeague1MatchDetail(Model model, String id) {
+		
+		fixtureId = id;
+		
+		model.addAttribute("fixtureId", fixtureId);
+		
+		return "usr/korea/kLeague1MatchDetail";
 	}
+	
 }
