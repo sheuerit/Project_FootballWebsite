@@ -26,7 +26,7 @@
 			var matchNumStr;
 			matchNumStr = null;
 
-			for ( var i = 0; i <= 379; i++ ) {
+			for ( var i = 0; i <= response.response.length; i++ ) {
 				matchNumInt = i;
 			  	matchNumStr = String(i);
 			  
@@ -72,7 +72,7 @@
 			};
 
 			$.ajax(settings2).done(function (response) {
-				for ( var i = 0; i <= 20; i++ ) {
+				for ( var i = 0; i <= response.response[0].league.standings[0].length; i++ ) {
 				  	numInt = i;
 				  	numStr = String(i);
 				  
@@ -131,7 +131,7 @@
 									<td><div class="match0Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match0HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match0HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -141,7 +141,7 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match0AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match0AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td><div class="match0DetailByFixtureId"></div></td>
@@ -155,7 +155,7 @@
 									<td><div class="match1Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match1HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match1HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -165,7 +165,7 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match1AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match1AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td><div class="match1DetailByFixtureId"></div></td>
@@ -179,7 +179,7 @@
 									<td><div class="match2Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match2HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match2HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -189,7 +189,7 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match2AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match2AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td><div class="match2DetailByFixtureId"></div></td>
@@ -203,7 +203,7 @@
 									<td><div class="match3Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match3HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match3HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -213,7 +213,7 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match3AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match3AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td><div class="match3DetailByFixtureId"></div></td>
@@ -227,7 +227,7 @@
 									<td><div class="match4Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match4HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match4HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -237,7 +237,7 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match4AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match4AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td><div class="match4DetailByFixtureId"></div></td>
@@ -251,7 +251,7 @@
 									<td><div class="match5Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match5HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match5HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -261,9 +261,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match5AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match5AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match5DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -274,7 +275,7 @@
 									<td><div class="match6Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match6HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match6HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -284,9 +285,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match6AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match6AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match6DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -297,7 +299,7 @@
 									<td><div class="match7Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match7HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match7HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -307,9 +309,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match7AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match7AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match7DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -320,7 +323,7 @@
 									<td><div class="match8Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match8HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match8HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -330,9 +333,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match8AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match8AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match8DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -343,7 +347,7 @@
 									<td><div class="match9Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match9HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match9HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -353,9 +357,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match9AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match9AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match9DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -366,7 +371,7 @@
 									<td><div class="match10Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match10HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match10HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -376,9 +381,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match10AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match10AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match10DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -389,7 +395,7 @@
 									<td><div class="match11Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match11HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match11HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -399,9 +405,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match11AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match11AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match11DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -412,7 +419,7 @@
 									<td><div class="match12Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match12HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match12HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -422,9 +429,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match12AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match12AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match12DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -435,7 +443,7 @@
 									<td><div class="match13Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match13HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match13HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -445,9 +453,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match13AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match13AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match13DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -458,7 +467,7 @@
 									<td><div class="match14Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match14HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match14HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -468,9 +477,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match14AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match14AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match14DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -481,7 +491,7 @@
 									<td><div class="match15Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match15HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match15HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -491,9 +501,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match15AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match15AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match15DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -504,7 +515,7 @@
 									<td><div class="match16Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match16HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match16HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -514,9 +525,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match16AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match16AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match16DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -527,7 +539,7 @@
 									<td><div class="match17Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match17HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match17HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -537,9 +549,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match17AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match17AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match17DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -550,7 +563,7 @@
 									<td><div class="match18Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match18HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match18HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -560,9 +573,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match18AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match18AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match18DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -573,7 +587,7 @@
 									<td><div class="match19Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match19HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match19HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -583,9 +597,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match19AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match19AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match19DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -596,7 +611,7 @@
 									<td><div class="match20Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match20HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match20HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -606,9 +621,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match20AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match20AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match20DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -619,7 +635,7 @@
 									<td><div class="match21Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match21HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match21HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -629,9 +645,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match21AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match21AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match21DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -642,7 +659,7 @@
 									<td><div class="match22Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match22HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match22HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -652,9 +669,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match22AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match22AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match22DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -665,7 +683,7 @@
 									<td><div class="match23Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match23HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match23HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -675,9 +693,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match23AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match23AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match23DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -688,7 +707,7 @@
 									<td><div class="match24Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match24HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match24HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -698,9 +717,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match24AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match24AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match24DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -711,7 +731,7 @@
 									<td><div class="match25Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match25HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match25HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -721,9 +741,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match25AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match25AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match25DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -734,7 +755,7 @@
 									<td><div class="match26Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match26HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match26HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -744,9 +765,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match26AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match26AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match26DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -757,7 +779,7 @@
 									<td><div class="match27Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match27HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match27HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -767,9 +789,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match27AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match27AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match27DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -780,7 +803,7 @@
 									<td><div class="match28Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match28HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match28HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -790,9 +813,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match28AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match28AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match28DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -803,7 +827,7 @@
 									<td><div class="match29Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match29HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match29HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -813,9 +837,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match29AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match29AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match29DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -826,7 +851,7 @@
 									<td><div class="match30Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match30HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match30HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -836,9 +861,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match30AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match30AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match30DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -849,7 +875,7 @@
 									<td><div class="match31Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match31HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match31HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -859,9 +885,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match31AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match31AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match31DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -872,7 +899,7 @@
 									<td><div class="match32Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match32HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match32HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -882,9 +909,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match32AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match32AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match32DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -895,7 +923,7 @@
 									<td><div class="match33Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match33HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match33HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -905,9 +933,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match33AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match33AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match33DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -918,7 +947,7 @@
 									<td><div class="match34Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match34HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match34HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -928,9 +957,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match34AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match34AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match34DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -941,7 +971,7 @@
 									<td><div class="match35Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match35HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match35HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -951,9 +981,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match35AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match35AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match35DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -964,7 +995,7 @@
 									<td><div class="match36Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match36HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match36HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -974,9 +1005,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match36AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match36AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match36DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -987,7 +1019,7 @@
 									<td><div class="match37Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match37HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match37HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -997,9 +1029,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match37AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match37AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match37DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1010,7 +1043,7 @@
 									<td><div class="match38Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match38HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match38HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1020,9 +1053,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match38AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match38AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match38DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1033,7 +1067,7 @@
 									<td><div class="match39Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match39HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match39HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1043,9 +1077,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match39AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match39AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match39DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1056,7 +1091,7 @@
 									<td><div class="match40Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match40HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match40HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1066,9 +1101,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match40AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match40AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match40DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1079,7 +1115,7 @@
 									<td><div class="match41Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match41HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match41HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1089,9 +1125,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match41AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match41AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match41DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1102,7 +1139,7 @@
 									<td><div class="match42Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match42HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match42HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1112,9 +1149,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match42AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match42AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match42DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1125,7 +1163,7 @@
 									<td><div class="match43Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match43HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match43HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1135,9 +1173,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match43AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match43AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match43DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1148,7 +1187,7 @@
 									<td><div class="match44Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match44HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match44HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1158,9 +1197,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match44AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match44AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match44DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1171,7 +1211,7 @@
 									<td><div class="match45Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match45HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match45HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1181,9 +1221,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match45AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match45AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match45DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1194,7 +1235,7 @@
 									<td><div class="match46Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match46HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match46HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1204,9 +1245,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match46AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match46AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match46DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1217,7 +1259,7 @@
 									<td><div class="match47Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match47HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match47HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1227,9 +1269,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match47AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match47AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match47DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1240,7 +1283,7 @@
 									<td><div class="match48Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match48HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match48HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1250,9 +1293,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match48AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match48AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match48DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1263,7 +1307,7 @@
 									<td><div class="match49Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match49HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match49HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1273,9 +1317,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match49AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match49AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match49DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1286,7 +1331,7 @@
 									<td><div class="match50Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match50HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match50HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1296,9 +1341,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match50AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match50AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match50DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1309,7 +1355,7 @@
 									<td><div class="match51Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match51HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match51HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1319,9 +1365,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match51AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match51AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match51DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1332,7 +1379,7 @@
 									<td><div class="match52Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match52HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match52HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1342,9 +1389,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match52AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match52AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match52DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1355,7 +1403,7 @@
 									<td><div class="match53Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match53HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match53HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1365,9 +1413,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match53AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match53AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match53DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1378,7 +1427,7 @@
 									<td><div class="match54Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match54HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match54HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1388,9 +1437,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match54AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match54AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match54DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1401,7 +1451,7 @@
 									<td><div class="match55Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match55HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match55HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1411,9 +1461,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match55AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match55AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match55DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1424,7 +1475,7 @@
 									<td><div class="match56Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match56HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match56HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1434,9 +1485,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match56AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match56AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match56DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1447,7 +1499,7 @@
 									<td><div class="match57Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match57HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match57HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1457,9 +1509,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match57AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match57AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match57DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1470,7 +1523,7 @@
 									<td><div class="match58Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match58HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match58HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1480,9 +1533,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match58AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match58AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match58DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1493,7 +1547,7 @@
 									<td><div class="match59Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match59HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match59HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1503,9 +1557,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match59AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match59AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match59DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1516,7 +1571,7 @@
 									<td><div class="match60Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match60HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match60HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1526,9 +1581,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match60AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match60AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match60DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1539,7 +1595,7 @@
 									<td><div class="match61Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match61HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match61HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1549,9 +1605,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match61AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match61AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match61DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1562,7 +1619,7 @@
 									<td><div class="match62Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match62HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match62HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1572,9 +1629,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match62AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match62AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match62DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1585,7 +1643,7 @@
 									<td><div class="match63Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match63HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match63HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1595,9 +1653,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match63AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match63AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match63DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1608,7 +1667,7 @@
 									<td><div class="match64Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match64HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match64HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1618,9 +1677,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match64AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match64AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match64DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1631,7 +1691,7 @@
 									<td><div class="match65Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match65HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match65HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1641,9 +1701,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match65AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match65AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match65DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1654,7 +1715,7 @@
 									<td><div class="match66Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match66HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match66HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1664,9 +1725,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match66AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match66AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match66DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1677,7 +1739,7 @@
 									<td><div class="match67Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match67HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match67HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1687,9 +1749,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match67AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match67AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match67DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1700,7 +1763,7 @@
 									<td><div class="match68Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match68HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match68HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1710,9 +1773,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match68AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match68AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match68DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1723,7 +1787,7 @@
 									<td><div class="match69Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match69HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match69HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1733,9 +1797,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match69AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match69AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match69DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1746,7 +1811,7 @@
 									<td><div class="match70Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match70HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match70HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1756,9 +1821,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match70AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match70AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match70DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1769,7 +1835,7 @@
 									<td><div class="match71Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match71HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match71HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1779,9 +1845,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match71AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match71AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match71DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1792,7 +1859,7 @@
 									<td><div class="match72Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match72HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match72HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1802,9 +1869,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match72AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match72AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match72DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1815,7 +1883,7 @@
 									<td><div class="match73Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match73HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match73HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1825,9 +1893,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match73AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match73AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match73DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1838,7 +1907,7 @@
 									<td><div class="match74Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match74HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match74HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1848,9 +1917,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match74AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match74AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match74DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1861,7 +1931,7 @@
 									<td><div class="match75Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match75HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match75HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1871,9 +1941,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match75AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match75AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match75DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1884,7 +1955,7 @@
 									<td><div class="match76Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match76HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match76HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1894,9 +1965,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match76AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match76AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match76DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1907,7 +1979,7 @@
 									<td><div class="match77Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match77HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match77HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1917,9 +1989,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match77AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match77AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match77DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1930,7 +2003,7 @@
 									<td><div class="match78Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match78HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match78HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1940,9 +2013,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match78AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match78AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match78DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1953,7 +2027,7 @@
 									<td><div class="match79Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match79HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match79HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1963,9 +2037,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match79AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match79AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match79DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1976,7 +2051,7 @@
 									<td><div class="match80Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match80HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match80HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -1986,9 +2061,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match80AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match80AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match80DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -1999,7 +2075,7 @@
 									<td><div class="match81Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match81HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match81HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2009,9 +2085,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match81AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match81AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match81DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2022,7 +2099,7 @@
 									<td><div class="match82Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match82HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match82HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2032,9 +2109,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match82AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match82AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match82DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2045,7 +2123,7 @@
 									<td><div class="match83Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match83HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match83HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2055,9 +2133,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match83AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match83AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match83DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2068,7 +2147,7 @@
 									<td><div class="match84Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match84HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match84HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2078,9 +2157,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match84AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match84AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match84DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2091,7 +2171,7 @@
 									<td><div class="match85Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match85HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match85HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2101,9 +2181,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match85AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match85AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match85DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2114,7 +2195,7 @@
 									<td><div class="match86Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match86HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match86HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2124,9 +2205,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match86AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match86AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match86DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2137,7 +2219,7 @@
 									<td><div class="match87Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match87HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match87HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2147,9 +2229,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match87AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match87AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match87DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2160,7 +2243,7 @@
 									<td><div class="match88Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match88HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match88HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2170,9 +2253,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match88AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match88AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match88DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2183,7 +2267,7 @@
 									<td><div class="match89Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match89HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match89HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2193,9 +2277,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match89AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match89AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match89DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2206,7 +2291,7 @@
 									<td><div class="match90Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match90HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match90HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2216,9 +2301,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match90AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match90AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match90DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2229,7 +2315,7 @@
 									<td><div class="match91Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match91HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match91HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2239,9 +2325,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match91AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match91AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match91DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2252,7 +2339,7 @@
 									<td><div class="match92Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match92HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match92HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2262,9 +2349,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match92AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match92AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match92DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2275,7 +2363,7 @@
 									<td><div class="match93Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match93HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match93HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2285,9 +2373,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match93AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match93AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match93DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2298,7 +2387,7 @@
 									<td><div class="match94Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match94HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match94HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2308,9 +2397,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match94AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match94AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match94DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2321,7 +2411,7 @@
 									<td><div class="match95Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match95HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match95HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2331,9 +2421,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match95AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match95AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match95DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2344,7 +2435,7 @@
 									<td><div class="match96Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match96HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match96HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2354,9 +2445,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match96AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match96AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match96DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2367,7 +2459,7 @@
 									<td><div class="match97Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match97HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match97HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2377,9 +2469,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match97AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match97AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match97DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2390,7 +2483,7 @@
 									<td><div class="match98Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match98HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match98HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2400,9 +2493,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match98AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match98AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match98DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2413,7 +2507,7 @@
 									<td><div class="match99Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match99HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match99HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2423,9 +2517,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match99AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match99AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match99DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2436,7 +2531,7 @@
 									<td><div class="match100Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match100HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match100HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2446,9 +2541,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match100AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match100AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match100DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2459,7 +2555,7 @@
 									<td><div class="match101Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match101HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match101HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2469,9 +2565,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match101AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match101AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match101DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2482,7 +2579,7 @@
 									<td><div class="match102Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match102HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match102HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2492,9 +2589,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match102AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match102AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match102DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2505,7 +2603,7 @@
 									<td><div class="match103Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match103HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match103HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2515,9 +2613,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match103AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match103AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match103DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2528,7 +2627,7 @@
 									<td><div class="match104Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match104HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match104HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2538,9 +2637,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match104AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match104AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match104DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2551,7 +2651,7 @@
 									<td><div class="match105Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match105HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match105HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2561,9 +2661,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match105AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match105AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match105DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2574,7 +2675,7 @@
 									<td><div class="match106Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match106HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match106HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2584,9 +2685,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match106AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match106AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match106DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2597,7 +2699,7 @@
 									<td><div class="match107Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match107HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match107HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2607,9 +2709,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match107AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match107AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match107DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2620,7 +2723,7 @@
 									<td><div class="match108Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match108HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match108HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2630,9 +2733,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match108AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match108AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match108DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2643,7 +2747,7 @@
 									<td><div class="match109Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match109HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match109HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2653,9 +2757,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match109AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match109AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match109DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2666,7 +2771,7 @@
 									<td><div class="match110Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match110HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match110HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2676,9 +2781,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match110AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match110AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match110DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2689,7 +2795,7 @@
 									<td><div class="match111Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match111HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match111HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2699,9 +2805,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match111AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match111AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match111DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2712,7 +2819,7 @@
 									<td><div class="match112Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match112HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match112HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2722,9 +2829,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match112AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match112AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match112DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2735,7 +2843,7 @@
 									<td><div class="match113Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match113HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match113HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2745,9 +2853,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match113AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match113AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match113DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2758,7 +2867,7 @@
 									<td><div class="match114Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match114HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match114HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2768,9 +2877,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match114AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match114AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match114DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2781,7 +2891,7 @@
 									<td><div class="match115Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match115HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match115HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2791,9 +2901,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match115AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match115AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match115DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2804,7 +2915,7 @@
 									<td><div class="match116Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match116HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match116HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2814,9 +2925,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match116AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match116AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match116DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2827,7 +2939,7 @@
 									<td><div class="match117Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match117HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match117HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2837,9 +2949,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match117AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match117AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match117DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2850,7 +2963,7 @@
 									<td><div class="match118Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match118HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match118HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2860,9 +2973,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match118AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match118AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match118DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2873,7 +2987,7 @@
 									<td><div class="match119Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match119HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match119HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2883,9 +2997,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match119AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match119AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match119DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2896,7 +3011,7 @@
 									<td><div class="match120Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match120HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match120HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2906,9 +3021,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match120AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match120AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match120DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2919,7 +3035,7 @@
 									<td><div class="match121Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match121HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match121HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2929,9 +3045,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match121AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match121AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match121DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2942,7 +3059,7 @@
 									<td><div class="match122Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match122HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match122HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2952,9 +3069,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match122AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match122AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match122DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2965,7 +3083,7 @@
 									<td><div class="match123Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match123HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match123HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2975,9 +3093,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match123AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match123AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match123DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -2988,7 +3107,7 @@
 									<td><div class="match124Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match124HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match124HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -2998,9 +3117,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match124AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match124AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match124DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3011,7 +3131,7 @@
 									<td><div class="match125Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match125HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match125HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3021,9 +3141,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match125AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match125AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match125DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3034,7 +3155,7 @@
 									<td><div class="match126Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match126HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match126HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3044,9 +3165,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match126AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match126AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match126DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3057,7 +3179,7 @@
 									<td><div class="match127Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match127HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match127HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3067,9 +3189,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match127AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match127AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match127DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3080,7 +3203,7 @@
 									<td><div class="match128Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match128HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match128HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3090,9 +3213,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match128AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match128AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match128DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3103,7 +3227,7 @@
 									<td><div class="match129Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match129HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match129HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3113,9 +3237,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match129AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match129AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match129DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3126,7 +3251,7 @@
 									<td><div class="match130Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match130HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match130HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3136,9 +3261,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match130AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match130AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match130DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3149,7 +3275,7 @@
 									<td><div class="match131Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match131HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match131HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3159,9 +3285,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match131AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match131AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match131DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3172,7 +3299,7 @@
 									<td><div class="match132Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match132HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match132HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3182,9 +3309,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match132AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match132AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match132DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3195,7 +3323,7 @@
 									<td><div class="match133Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match133HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match133HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3205,9 +3333,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match133AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match133AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match133DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3218,7 +3347,7 @@
 									<td><div class="match134Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match134HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match134HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3228,9 +3357,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match134AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match134AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match134DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3241,7 +3371,7 @@
 									<td><div class="match135Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match135HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match135HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3251,9 +3381,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match135AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match135AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match135DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3264,7 +3395,7 @@
 									<td><div class="match136Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match136HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match136HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3274,9 +3405,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match136AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match136AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match136DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3287,7 +3419,7 @@
 									<td><div class="match137Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match137HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match137HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3297,9 +3429,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match137AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match137AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match137DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3310,7 +3443,7 @@
 									<td><div class="match138Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match138HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match138HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3320,9 +3453,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match138AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match138AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match138DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3333,7 +3467,7 @@
 									<td><div class="match139Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match139HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match139HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3343,9 +3477,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match139AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match139AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match139DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3356,7 +3491,7 @@
 									<td><div class="match140Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match140HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match140HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3366,9 +3501,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match140AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match140AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match140DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3379,7 +3515,7 @@
 									<td><div class="match141Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match141HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match141HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3389,9 +3525,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match141AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match141AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match141DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3402,7 +3539,7 @@
 									<td><div class="match142Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match142HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match142HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3412,9 +3549,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match142AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match142AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match142DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3425,7 +3563,7 @@
 									<td><div class="match143Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match143HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match143HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3435,9 +3573,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match143AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match143AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match143DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3448,7 +3587,7 @@
 									<td><div class="match144Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match144HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match144HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3458,9 +3597,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match144AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match144AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match144DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3471,7 +3611,7 @@
 									<td><div class="match145Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match145HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match145HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3481,9 +3621,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match145AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match145AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match145DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3494,7 +3635,7 @@
 									<td><div class="match146Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match146HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match146HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3504,9 +3645,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match146AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match146AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match146DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3517,7 +3659,7 @@
 									<td><div class="match147Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match147HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match147HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3527,9 +3669,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match147AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match147AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match147DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3540,7 +3683,7 @@
 									<td><div class="match148Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match148HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match148HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3550,9 +3693,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match148AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match148AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match148DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3563,7 +3707,7 @@
 									<td><div class="match149Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match149HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match149HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3573,9 +3717,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match149AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match149AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match149DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3586,7 +3731,7 @@
 									<td><div class="match150Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match150HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match150HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3596,9 +3741,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match150AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match150AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match150DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3609,7 +3755,7 @@
 									<td><div class="match151Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match151HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match151HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3619,9 +3765,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match151AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match151AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match151DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3632,7 +3779,7 @@
 									<td><div class="match152Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match152HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match152HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3642,9 +3789,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match152AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match152AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match152DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3655,7 +3803,7 @@
 									<td><div class="match153Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match153HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match153HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3665,9 +3813,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match153AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match153AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match153DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3678,7 +3827,7 @@
 									<td><div class="match154Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match154HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match154HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3688,9 +3837,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match154AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match154AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match154DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3701,7 +3851,7 @@
 									<td><div class="match155Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match155HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match155HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3711,9 +3861,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match155AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match155AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match155DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3724,7 +3875,7 @@
 									<td><div class="match156Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match156HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match156HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3734,9 +3885,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match156AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match156AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match156DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3747,7 +3899,7 @@
 									<td><div class="match157Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match157HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match157HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3757,9 +3909,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match157AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match157AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match157DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3770,7 +3923,7 @@
 									<td><div class="match158Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match158HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match158HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3780,9 +3933,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match158AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match158AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match158DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3793,7 +3947,7 @@
 									<td><div class="match159Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match159HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match159HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3803,9 +3957,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match159AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match159AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match159DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3816,7 +3971,7 @@
 									<td><div class="match160Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match160HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match160HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3826,9 +3981,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match160AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match160AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match160DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3839,7 +3995,7 @@
 									<td><div class="match161Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match161HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match161HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3849,9 +4005,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match161AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match161AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match161DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3862,7 +4019,7 @@
 									<td><div class="match162Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match162HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match162HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3872,9 +4029,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match162AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match162AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match162DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3885,7 +4043,7 @@
 									<td><div class="match163Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match163HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match163HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3895,9 +4053,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match163AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match163AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match163DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3908,7 +4067,7 @@
 									<td><div class="match164Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match164HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match164HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3918,9 +4077,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match164AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match164AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match164DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3931,7 +4091,7 @@
 									<td><div class="match165Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match165HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match165HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3941,9 +4101,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match165AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match165AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match165DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3954,7 +4115,7 @@
 									<td><div class="match166Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match166HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match166HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3964,9 +4125,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match166AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match166AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match166DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -3977,7 +4139,7 @@
 									<td><div class="match167Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match167HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match167HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -3987,9 +4149,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match167AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match167AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match167DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4000,7 +4163,7 @@
 									<td><div class="match168Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match168HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match168HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4010,9 +4173,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match168AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match168AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match168DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4023,7 +4187,7 @@
 									<td><div class="match169Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match169HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match169HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4033,9 +4197,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match169AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match169AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match169DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4046,7 +4211,7 @@
 									<td><div class="match170Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match170HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match170HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4056,9 +4221,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match170AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match170AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match170DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4069,7 +4235,7 @@
 									<td><div class="match171Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match171HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match171HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4079,9 +4245,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match171AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match171AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match171DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4092,7 +4259,7 @@
 									<td><div class="match172Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match172HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match172HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4102,9 +4269,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match172AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match172AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match172DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4115,7 +4283,7 @@
 									<td><div class="match173Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match173HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match173HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4125,9 +4293,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match173AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match173AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match173DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4138,7 +4307,7 @@
 									<td><div class="match174Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match174HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match174HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4148,9 +4317,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match174AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match174AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match174DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4161,7 +4331,7 @@
 									<td><div class="match175Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match175HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match175HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4171,9 +4341,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match175AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match175AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match175DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4184,7 +4355,7 @@
 									<td><div class="match176Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match176HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match176HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4194,9 +4365,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match176AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match176AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match176DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4207,7 +4379,7 @@
 									<td><div class="match177Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match177HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match177HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4217,9 +4389,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match177AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match177AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match177DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4230,7 +4403,7 @@
 									<td><div class="match178Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match178HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match178HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4240,9 +4413,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match178AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match178AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match178DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4253,7 +4427,7 @@
 									<td><div class="match179Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match179HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match179HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4263,9 +4437,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match179AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match179AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match179DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4276,7 +4451,7 @@
 									<td><div class="match180Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match180HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match180HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4286,9 +4461,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match180AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match180AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match180DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4299,7 +4475,7 @@
 									<td><div class="match181Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match181HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match181HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4309,9 +4485,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match181AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match181AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match181DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4322,7 +4499,7 @@
 									<td><div class="match182Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match182HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match182HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4332,9 +4509,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match182AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match182AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match182DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4345,7 +4523,7 @@
 									<td><div class="match183Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match183HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match183HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4355,9 +4533,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match183AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match183AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match183DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4368,7 +4547,7 @@
 									<td><div class="match184Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match184HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match184HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4378,9 +4557,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match184AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match184AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match184DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4391,7 +4571,7 @@
 									<td><div class="match185Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match185HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match185HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4401,9 +4581,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match185AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match185AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match185DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4414,7 +4595,7 @@
 									<td><div class="match186Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match186HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match186HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4424,9 +4605,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match186AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match186AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match186DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4437,7 +4619,7 @@
 									<td><div class="match187Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match187HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match187HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4447,9 +4629,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match187AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match187AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match187DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4460,7 +4643,7 @@
 									<td><div class="match188Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match188HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match188HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4470,9 +4653,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match188AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match188AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match188DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4483,7 +4667,7 @@
 									<td><div class="match189Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match189HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match189HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4493,9 +4677,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match189AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match189AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match189DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4506,7 +4691,7 @@
 									<td><div class="match190Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match190HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match190HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4516,9 +4701,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match190AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match190AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match190DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4529,7 +4715,7 @@
 									<td><div class="match191Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match191HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match191HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4539,9 +4725,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match191AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match191AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match191DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4552,7 +4739,7 @@
 									<td><div class="match192Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match192HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match192HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4562,9 +4749,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match192AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match192AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match192DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4575,7 +4763,7 @@
 									<td><div class="match193Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match193HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match193HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4585,9 +4773,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match193AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match193AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match193DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4598,7 +4787,7 @@
 									<td><div class="match194Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match194HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match194HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4608,9 +4797,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match194AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match194AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match194DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4621,7 +4811,7 @@
 									<td><div class="match195Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match195HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match195HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4631,9 +4821,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match195AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match195AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match195DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4644,7 +4835,7 @@
 									<td><div class="match196Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match196HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match196HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4654,9 +4845,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match196AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match196AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match196DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4667,7 +4859,7 @@
 									<td><div class="match197Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match197HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match197HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4677,9 +4869,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match197AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match197AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match197DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4690,7 +4883,7 @@
 									<td><div class="match198Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match198HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match198HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4700,9 +4893,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match198AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match198AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match198DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4713,7 +4907,7 @@
 									<td><div class="match199Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match199HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match199HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4723,9 +4917,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match199AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match199AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match199DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4736,7 +4931,7 @@
 									<td><div class="match200Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match200HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match200HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4746,9 +4941,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match200AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match200AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match200DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4759,7 +4955,7 @@
 									<td><div class="match201Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match201HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match201HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4769,9 +4965,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match201AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match201AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match201DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4782,7 +4979,7 @@
 									<td><div class="match202Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match202HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match202HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4792,9 +4989,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match202AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match202AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match202DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4805,7 +5003,7 @@
 									<td><div class="match203Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match203HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match203HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4815,9 +5013,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match203AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match203AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match203DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4828,7 +5027,7 @@
 									<td><div class="match204Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match204HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match204HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4838,9 +5037,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match204AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match204AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match204DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4851,7 +5051,7 @@
 									<td><div class="match205Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match205HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match205HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4861,9 +5061,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match205AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match205AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match205DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4874,7 +5075,7 @@
 									<td><div class="match206Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match206HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match206HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4884,9 +5085,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match206AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match206AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match206DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4897,7 +5099,7 @@
 									<td><div class="match207Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match207HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match207HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4907,9 +5109,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match207AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match207AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match207DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4920,7 +5123,7 @@
 									<td><div class="match208Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match208HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match208HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4930,9 +5133,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match208AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match208AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match208DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4943,7 +5147,7 @@
 									<td><div class="match209Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match209HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match209HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4953,9 +5157,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match209AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match209AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match209DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4966,7 +5171,7 @@
 									<td><div class="match210Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match210HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match210HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4976,9 +5181,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match210AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match210AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match210DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -4989,7 +5195,7 @@
 									<td><div class="match211Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match211HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match211HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -4999,9 +5205,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match211AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match211AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match211DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5012,7 +5219,7 @@
 									<td><div class="match212Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match212HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match212HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5022,9 +5229,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match212AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match212AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match212DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5035,7 +5243,7 @@
 									<td><div class="match213Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match213HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match213HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5045,9 +5253,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match213AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match213AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match213DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5058,7 +5267,7 @@
 									<td><div class="match214Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match214HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match214HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5068,9 +5277,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match214AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match214AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match214DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5081,7 +5291,7 @@
 									<td><div class="match215Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match215HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match215HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5091,9 +5301,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match215AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match215AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match215DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5104,7 +5315,7 @@
 									<td><div class="match216Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match216HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match216HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5114,9 +5325,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match216AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match216AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match216DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5127,7 +5339,7 @@
 									<td><div class="match217Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match217HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match217HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5137,9 +5349,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match217AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match217AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match217DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5150,7 +5363,7 @@
 									<td><div class="match218Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match218HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match218HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5160,9 +5373,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match218AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match218AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match218DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5173,7 +5387,7 @@
 									<td><div class="match219Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match219HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match219HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5183,9 +5397,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match219AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match219AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match219DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5196,7 +5411,7 @@
 									<td><div class="match220Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match220HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match220HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5206,9 +5421,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match220AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match220AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match220DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5219,7 +5435,7 @@
 									<td><div class="match221Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match221HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match221HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5229,9 +5445,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match221AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match221AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match221DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5242,7 +5459,7 @@
 									<td><div class="match222Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match222HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match222HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5252,9 +5469,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match222AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match222AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match222DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5265,7 +5483,7 @@
 									<td><div class="match223Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match223HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match223HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5275,9 +5493,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match223AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match223AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match223DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5288,7 +5507,7 @@
 									<td><div class="match224Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match224HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match224HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5298,9 +5517,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match224AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match224AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match224DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5311,7 +5531,7 @@
 									<td><div class="match225Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match225HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match225HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5321,9 +5541,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match225AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match225AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match225DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5334,7 +5555,7 @@
 									<td><div class="match226Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match226HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match226HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5344,9 +5565,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match226AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match226AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match226DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5357,7 +5579,7 @@
 									<td><div class="match227Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match227HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match227HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5367,9 +5589,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match227AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match227AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match227DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5380,7 +5603,7 @@
 									<td><div class="match228Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match228HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match228HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5390,9 +5613,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match228AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match228AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match228DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5403,7 +5627,7 @@
 									<td><div class="match229Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match229HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match229HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5413,9 +5637,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match229AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match229AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match229DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5426,7 +5651,7 @@
 									<td><div class="match230Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match230HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match230HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5436,9 +5661,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match230AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match230AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match230DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5449,7 +5675,7 @@
 									<td><div class="match231Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match231HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match231HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5459,9 +5685,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match231AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match231AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match231DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5472,7 +5699,7 @@
 									<td><div class="match232Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match232HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match232HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5482,9 +5709,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match232AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match232AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match232DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5495,7 +5723,7 @@
 									<td><div class="match233Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match233HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match233HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5505,9 +5733,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match233AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match233AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match233DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5518,7 +5747,7 @@
 									<td><div class="match234Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match234HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match234HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5528,9 +5757,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match234AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match234AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match234DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5541,7 +5771,7 @@
 									<td><div class="match235Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match235HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match235HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5551,9 +5781,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match235AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match235AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match235DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5564,7 +5795,7 @@
 									<td><div class="match236Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match236HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match236HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5574,9 +5805,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match236AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match236AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match236DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5587,7 +5819,7 @@
 									<td><div class="match237Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match237HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match237HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5597,9 +5829,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match237AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match237AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match237DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5610,7 +5843,7 @@
 									<td><div class="match238Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match238HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match238HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5620,9 +5853,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match238AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match238AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match238DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5633,7 +5867,7 @@
 									<td><div class="match239Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match239HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match239HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5643,9 +5877,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match239AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match239AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match239DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5656,7 +5891,7 @@
 									<td><div class="match240Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match240HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match240HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5666,9 +5901,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match240AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match240AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match240DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5679,7 +5915,7 @@
 									<td><div class="match241Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match241HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match241HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5689,9 +5925,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match241AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match241AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match241DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5702,7 +5939,7 @@
 									<td><div class="match242Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match242HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match242HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5712,9 +5949,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match242AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match242AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match242DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5725,7 +5963,7 @@
 									<td><div class="match243Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match243HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match243HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5735,9 +5973,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match243AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match243AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match243DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5748,7 +5987,7 @@
 									<td><div class="match244Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match244HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match244HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5758,9 +5997,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match244AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match244AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match244DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5771,7 +6011,7 @@
 									<td><div class="match245Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match245HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match245HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5781,9 +6021,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match245AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match245AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match245DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5794,7 +6035,7 @@
 									<td><div class="match246Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match246HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match246HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5804,9 +6045,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match246AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match246AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match246DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5817,7 +6059,7 @@
 									<td><div class="match247Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match247HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match247HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5827,9 +6069,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match247AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match247AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match247DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5840,7 +6083,7 @@
 									<td><div class="match248Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match248HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match248HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5850,9 +6093,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match248AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match248AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match248DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5863,7 +6107,7 @@
 									<td><div class="match249Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match249HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match249HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5873,9 +6117,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match249AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match249AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match249DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5886,7 +6131,7 @@
 									<td><div class="match250Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match250HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match250HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5896,9 +6141,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match250AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match250AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match250DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5909,7 +6155,7 @@
 									<td><div class="match251Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match251HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match251HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5919,9 +6165,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match251AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match251AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match251DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5932,7 +6179,7 @@
 									<td><div class="match252Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match252HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match252HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5942,9 +6189,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match252AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match252AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match252DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5955,7 +6203,7 @@
 									<td><div class="match253Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match253HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match253HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5965,9 +6213,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match253AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match253AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match253DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -5978,7 +6227,7 @@
 									<td><div class="match254Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match254HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match254HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -5988,9 +6237,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match254AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match254AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match254DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6001,7 +6251,7 @@
 									<td><div class="match255Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match255HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match255HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6011,9 +6261,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match255AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match255AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match255DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6024,7 +6275,7 @@
 									<td><div class="match256Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match256HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match256HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6034,9 +6285,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match256AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match256AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match256DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6047,7 +6299,7 @@
 									<td><div class="match257Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match257HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match257HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6057,9 +6309,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match257AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match257AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match257DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6070,7 +6323,7 @@
 									<td><div class="match258Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match258HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match258HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6080,9 +6333,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match258AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match258AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match258DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6093,7 +6347,7 @@
 									<td><div class="match259Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match259HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match259HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6103,9 +6357,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match259AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match259AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match259DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6116,7 +6371,7 @@
 									<td><div class="match260Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match260HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match260HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6126,9 +6381,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match260AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match260AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match260DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6139,7 +6395,7 @@
 									<td><div class="match261Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match261HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match261HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6149,9 +6405,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match261AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match261AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match261DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6162,7 +6419,7 @@
 									<td><div class="match262Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match262HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match262HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6172,9 +6429,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match262AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match262AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match262DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6185,7 +6443,7 @@
 									<td><div class="match263Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match263HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match263HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6195,9 +6453,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match263AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match263AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match263DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6208,7 +6467,7 @@
 									<td><div class="match264Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match264HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match264HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6218,9 +6477,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match264AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match264AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match264DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6231,7 +6491,7 @@
 									<td><div class="match265Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match265HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match265HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6241,9 +6501,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match265AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match265AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match265DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6254,7 +6515,7 @@
 									<td><div class="match266Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match266HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match266HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6264,9 +6525,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match266AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match266AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match266DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6277,7 +6539,7 @@
 									<td><div class="match267Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match267HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match267HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6287,9 +6549,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match267AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match267AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match267DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6300,7 +6563,7 @@
 									<td><div class="match268Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match268HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match268HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6310,9 +6573,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match268AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match268AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match268DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6323,7 +6587,7 @@
 									<td><div class="match269Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match269HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match269HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6333,9 +6597,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match269AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match269AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match269DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6346,7 +6611,7 @@
 									<td><div class="match270Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match270HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match270HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6356,9 +6621,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match270AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match270AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match270DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6369,7 +6635,7 @@
 									<td><div class="match271Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match271HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match271HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6379,9 +6645,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match271AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match271AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match271DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6392,7 +6659,7 @@
 									<td><div class="match272Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match272HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match272HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6402,9 +6669,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match272AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match272AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match272DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6415,7 +6683,7 @@
 									<td><div class="match273Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match273HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match273HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6425,9 +6693,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match273AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match273AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match273DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6438,7 +6707,7 @@
 									<td><div class="match274Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match274HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match274HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6448,9 +6717,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match274AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match274AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match274DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6461,7 +6731,7 @@
 									<td><div class="match275Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match275HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match275HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6471,9 +6741,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match275AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match275AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match275DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6484,7 +6755,7 @@
 									<td><div class="match276Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match276HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match276HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6494,9 +6765,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match276AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match276AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match276DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6507,7 +6779,7 @@
 									<td><div class="match277Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match277HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match277HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6517,9 +6789,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match277AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match277AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match277DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6530,7 +6803,7 @@
 									<td><div class="match278Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match278HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match278HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6540,9 +6813,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match278AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match278AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match278DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6553,7 +6827,7 @@
 									<td><div class="match279Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match279HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match279HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6563,9 +6837,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match279AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match279AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match279DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6576,7 +6851,7 @@
 									<td><div class="match280Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match280HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match280HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6586,9 +6861,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match280AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match280AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match280DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6599,7 +6875,7 @@
 									<td><div class="match281Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match281HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match281HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6609,9 +6885,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match281AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match281AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match281DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6622,7 +6899,7 @@
 									<td><div class="match282Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match282HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match282HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6632,9 +6909,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match282AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match282AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match282DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6645,7 +6923,7 @@
 									<td><div class="match283Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match283HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match283HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6655,9 +6933,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match283AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match283AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match283DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6668,7 +6947,7 @@
 									<td><div class="match284Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match284HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match284HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6678,9 +6957,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match284AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match284AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match284DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6691,7 +6971,7 @@
 									<td><div class="match285Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match285HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match285HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6701,9 +6981,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match285AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match285AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match285DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6714,7 +6995,7 @@
 									<td><div class="match286Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match286HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match286HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6724,9 +7005,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match286AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match286AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match286DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6737,7 +7019,7 @@
 									<td><div class="match287Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match287HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match287HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6747,9 +7029,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match287AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match287AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match287DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6760,7 +7043,7 @@
 									<td><div class="match288Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match288HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match288HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6770,9 +7053,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match288AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match288AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match288DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6783,7 +7067,7 @@
 									<td><div class="match289Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match289HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match289HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6793,9 +7077,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match289AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match289AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match289DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6806,7 +7091,7 @@
 									<td><div class="match290Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match290HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match290HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6816,9 +7101,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match290AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match290AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match290DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6829,7 +7115,7 @@
 									<td><div class="match291Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match291HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match291HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6839,9 +7125,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match291AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match291AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match291DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6852,7 +7139,7 @@
 									<td><div class="match292Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match292HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match292HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6862,9 +7149,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match292AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match292AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match292DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6875,7 +7163,7 @@
 									<td><div class="match293Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match293HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match293HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6885,9 +7173,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match293AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match293AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="matchDe293tailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6898,7 +7187,7 @@
 									<td><div class="match294Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match294HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match294HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6908,9 +7197,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match294AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match294AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match294DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6921,7 +7211,7 @@
 									<td><div class="match295Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match295HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match295HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6931,9 +7221,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match295AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match295AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match295DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6944,7 +7235,7 @@
 									<td><div class="match296Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match296HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match296HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6954,9 +7245,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match296AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match296AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match296DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6967,7 +7259,7 @@
 									<td><div class="match297Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match297HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match297HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -6977,9 +7269,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match297AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match297AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match297DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -6990,7 +7283,7 @@
 									<td><div class="match298Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match298HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match298HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7000,9 +7293,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match298AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match298AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match298DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7013,7 +7307,7 @@
 									<td><div class="match299Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match299HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match299HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7023,9 +7317,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match299AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match299AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match299DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7036,7 +7331,7 @@
 									<td><div class="match300Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match300HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match300HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7046,9 +7341,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match300AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match300AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match300DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7059,7 +7355,7 @@
 									<td><div class="match301Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match301HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match301HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7069,9 +7365,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match301AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match301AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match301DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7082,7 +7379,7 @@
 									<td><div class="match302Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match302HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match302HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7092,9 +7389,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match302AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match302AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match302DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7105,7 +7403,7 @@
 									<td><div class="match303Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match303HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match303HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7115,9 +7413,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match303AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match303AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match303DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7128,7 +7427,7 @@
 									<td><div class="match304Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match304HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match304HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7138,9 +7437,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match304AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match304AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match304DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7151,7 +7451,7 @@
 									<td><div class="match305Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match305HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match305HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7161,9 +7461,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match305AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match305AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match305DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7174,7 +7475,7 @@
 									<td><div class="match306Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match306HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match306HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7184,9 +7485,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match306AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match306AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match306DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7197,7 +7499,7 @@
 									<td><div class="match307Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match307HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match307HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7207,9 +7509,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match307AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match307AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match307DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7220,7 +7523,7 @@
 									<td><div class="match308Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match308HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match308HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7230,9 +7533,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match308AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match308AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match308DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7243,7 +7547,7 @@
 									<td><div class="match309Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match309HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match309HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7253,9 +7557,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match309AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match309AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match309DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7266,7 +7571,7 @@
 									<td><div class="match310Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match310HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match310HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7276,9 +7581,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match310AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match310AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match310DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7289,7 +7595,7 @@
 									<td><div class="match311Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match311HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match311HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7299,9 +7605,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match311AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match311AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match311DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7312,7 +7619,7 @@
 									<td><div class="match312Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match312HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match312HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7322,9 +7629,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match312AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match312AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match312DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7335,7 +7643,7 @@
 									<td><div class="match313Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match313HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match313HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7345,9 +7653,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match313AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match313AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match313DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7358,7 +7667,7 @@
 									<td><div class="match314Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match314HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match314HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7368,9 +7677,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match314AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match314AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match314DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7381,7 +7691,7 @@
 									<td><div class="match315Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match315HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match315HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7391,9 +7701,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match315AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match315AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match315DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7404,7 +7715,7 @@
 									<td><div class="match316Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match316HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match316HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7414,9 +7725,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match316AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match316AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match316DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7427,7 +7739,7 @@
 									<td><div class="match317Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match317HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match317HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7437,9 +7749,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match317AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match317AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match317DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7450,7 +7763,7 @@
 									<td><div class="match318Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match318HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match318HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7460,9 +7773,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match318AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match318AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match318DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7473,7 +7787,7 @@
 									<td><div class="match319Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match319HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match319HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7483,9 +7797,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match319AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match319AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match319DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7496,7 +7811,7 @@
 									<td><div class="match320Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match320HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match320HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7506,9 +7821,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match320AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match320AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match320DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7519,7 +7835,7 @@
 									<td><div class="match321Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match321HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match321HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7529,9 +7845,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match321AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match321AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match321DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7542,7 +7859,7 @@
 									<td><div class="match322Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match322HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match322HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7552,9 +7869,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match322AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match322AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match322DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7565,7 +7883,7 @@
 									<td><div class="match323Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match323HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match323HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7575,9 +7893,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match323AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match323AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match323DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7588,7 +7907,7 @@
 									<td><div class="match324Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match324HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match324HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7598,9 +7917,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match324AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match324AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match324DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7611,7 +7931,7 @@
 									<td><div class="match325Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match325HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match325HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7621,9 +7941,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match325AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match325AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match325DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7634,7 +7955,7 @@
 									<td><div class="match326Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match326HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match326HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7644,9 +7965,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match326AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match326AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match326DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7657,7 +7979,7 @@
 									<td><div class="match327Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match327HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match327HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7667,9 +7989,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match327AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match327AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match327DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7680,7 +8003,7 @@
 									<td><div class="match328Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match328HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match328HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7690,9 +8013,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match328AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match328AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match328DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7703,7 +8027,7 @@
 									<td><div class="match329Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match329HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match329HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7713,9 +8037,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match329AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match329AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match329DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7726,7 +8051,7 @@
 									<td><div class="match330Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match330HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match330HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7736,9 +8061,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match330AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match330AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match330DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7749,7 +8075,7 @@
 									<td><div class="match331Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match331HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match331HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7759,9 +8085,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match331AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match331AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match331DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7772,7 +8099,7 @@
 									<td><div class="match332Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match332HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match332HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7782,9 +8109,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match332AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match332AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match332DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7795,7 +8123,7 @@
 									<td><div class="match333Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match333HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match333HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7805,9 +8133,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match333AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match333AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match333DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7818,7 +8147,7 @@
 									<td><div class="match334Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match334HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match334HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7828,9 +8157,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match334AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match334AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match334DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7841,7 +8171,7 @@
 									<td><div class="match335Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match335HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match335HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7851,9 +8181,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match335AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match335AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match335DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7864,7 +8195,7 @@
 									<td><div class="match336Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match336HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match336HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7874,9 +8205,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match336AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match336AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match336DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7887,7 +8219,7 @@
 									<td><div class="match337Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match337HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match337HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7897,9 +8229,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match337AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match337AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match337DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7910,7 +8243,7 @@
 									<td><div class="match338Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match338HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match338HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7920,9 +8253,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match338AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match338AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match338DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7933,7 +8267,7 @@
 									<td><div class="match339Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match339HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match339HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7943,9 +8277,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match339AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match339AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match339DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7956,7 +8291,7 @@
 									<td><div class="match340Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match340HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match340HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7966,9 +8301,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match340AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match340AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match340DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -7979,7 +8315,7 @@
 									<td><div class="match341Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match341HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match341HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -7989,9 +8325,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match341AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match341AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match341DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8002,7 +8339,7 @@
 									<td><div class="match342Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match342HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match342HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8012,9 +8349,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match342AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match342AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match342DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8025,7 +8363,7 @@
 									<td><div class="match343Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match343HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match343HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8035,9 +8373,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match343AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match343AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match343DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8048,7 +8387,7 @@
 									<td><div class="match344Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match344HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match344HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8058,9 +8397,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match344AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match344AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match344DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8071,7 +8411,7 @@
 									<td><div class="match345Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match345HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match345HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8081,9 +8421,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match345AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match345AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match345DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8094,7 +8435,7 @@
 									<td><div class="match346Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match346HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match346HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8104,9 +8445,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match346AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match346AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match346DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8117,7 +8459,7 @@
 									<td><div class="match347Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match347HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match347HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8127,9 +8469,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match347AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match347AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match347DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8140,7 +8483,7 @@
 									<td><div class="match348Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match348HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match348HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8150,9 +8493,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match348AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match348AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match348DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8163,7 +8507,7 @@
 									<td><div class="match349Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match349HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match349HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8173,9 +8517,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match349AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match349AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match349DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8186,7 +8531,7 @@
 									<td><div class="match350Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match350HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match350HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8196,9 +8541,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match350AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match350AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match350DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8209,7 +8555,7 @@
 									<td><div class="match351Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match351HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match351HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8219,9 +8565,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match351AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match351AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match351DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8232,7 +8579,7 @@
 									<td><div class="match352Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match352HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match352HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8242,9 +8589,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match352AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match352AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match352DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8255,7 +8603,7 @@
 									<td><div class="match353Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match353HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match353HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8265,9 +8613,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match353AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match353AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match353DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8278,7 +8627,7 @@
 									<td><div class="match354Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match354HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match354HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8288,9 +8637,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match354AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match354AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match354DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8301,7 +8651,7 @@
 									<td><div class="match355Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match355HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match355HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8311,9 +8661,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match355AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match355AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match355DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8324,7 +8675,7 @@
 									<td><div class="match356Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match356HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match356HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8334,9 +8685,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match356AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match356AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match356DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8347,7 +8699,7 @@
 									<td><div class="match357Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match357HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match357HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8357,9 +8709,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match357AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match357AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match357DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8370,7 +8723,7 @@
 									<td><div class="match358Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match358HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match358HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8380,9 +8733,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match358AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match358AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match358DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8393,7 +8747,7 @@
 									<td><div class="match359Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match359HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match359HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8403,9 +8757,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match359AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match359AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match359DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8416,7 +8771,7 @@
 									<td><div class="match360Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match360HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match360HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8426,9 +8781,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match360AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match360AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match360DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8439,7 +8795,7 @@
 									<td><div class="match361Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match361HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match361HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8449,9 +8805,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match361AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match361AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match361DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8462,7 +8819,7 @@
 									<td><div class="match362Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match362HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match362HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8472,9 +8829,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match362AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match362AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match362DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8485,7 +8843,7 @@
 									<td><div class="match363Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match363HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match363HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8495,9 +8853,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match363AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match363AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match363DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8508,7 +8867,7 @@
 									<td><div class="match364Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match364HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match364HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8518,9 +8877,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match364AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match364AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match364DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8531,7 +8891,7 @@
 									<td><div class="match365Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match365HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match365HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8541,9 +8901,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match365AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match365AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match365DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8554,7 +8915,7 @@
 									<td><div class="match366Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match366HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match366HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8564,9 +8925,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match366AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match366AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match366DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8577,7 +8939,7 @@
 									<td><div class="match367Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match367HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match367HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8587,9 +8949,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match367AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match367AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match367DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8600,7 +8963,7 @@
 									<td><div class="match368Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match368HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match368HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8610,9 +8973,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match368AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match368AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match368DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8623,7 +8987,7 @@
 									<td><div class="match369Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match369HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match369HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8633,9 +8997,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match369AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match369AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match369DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8646,7 +9011,7 @@
 									<td><div class="match370Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match370HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match370HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8656,9 +9021,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match370AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match370AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match370DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8669,7 +9035,7 @@
 									<td><div class="match371Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match371HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match371HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8679,9 +9045,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match371AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match371AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match371DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8692,7 +9059,7 @@
 									<td><div class="match372Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match372HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match372HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8702,9 +9069,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match372AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match372AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match372DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8715,7 +9083,7 @@
 									<td><div class="match373Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match373HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match373HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8725,9 +9093,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match373AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match373AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match373DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8738,7 +9107,7 @@
 									<td><div class="match374Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match374HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match374HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8748,9 +9117,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match374AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match374AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match374DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8761,7 +9131,7 @@
 									<td><div class="match375Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match375HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match375HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8771,9 +9141,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match375AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match375AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match375DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8784,7 +9155,7 @@
 									<td><div class="match376Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match376HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match376HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8794,9 +9165,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match376AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match376AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match376DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8807,7 +9179,7 @@
 									<td><div class="match377Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match377HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match377HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8817,9 +9189,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match377AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match377AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match377DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8830,7 +9203,7 @@
 									<td><div class="match378Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match378HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match378HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8840,9 +9213,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match378AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match378AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match378DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 							<tbody class="mt-8 text-xs">
@@ -8853,7 +9227,7 @@
 									<td><div class="match379Status flex justify-center bg-slate-200 rounded-2xl"></div></td>
 									<td>
 										<div class="flex">
-											<div class="match379HomeLogo w-8 h-8 ml-2"></div>
+											<div class="match379HomeLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
 									<td class="flex">
@@ -8863,9 +9237,10 @@
 									</td>
 									<td>
 										<div class="flex">
-											<div class="match379AwayLogo w-8 h-8 ml-2"></div>
+											<div class="match379AwayLogo w-8 h-8 ml-1"></div>
 										</div>
 									</td>
+									<td><div class="match379DetailByFixtureId"></div></td>
 								</tr>
 							</tbody>
 						</table>

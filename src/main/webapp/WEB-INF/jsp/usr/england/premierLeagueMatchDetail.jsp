@@ -77,7 +77,7 @@
 			var startXINumStr;
 			startXINumStr = null;
 			
-			for (i = 0; i < 11; i++) {
+			for (i = 0; i < response.response[0].lineups[0].startXI.length; i++) {
 				startXINumInt = i;
 				startXINumStr = String(i);
 				
@@ -96,7 +96,7 @@
 			var substitutesNumStr;
 			substitutesNumStr = null;
 			
-			for (i = 0; i < 9; i++) {
+			for (i = 0; i < response.response[0].lineups[0].substitutes.length; i++) {
 				substitutesNumInt = i;
 				substitutesNumStr = String(i);
 				

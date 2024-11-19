@@ -77,7 +77,7 @@
 			var startXINumStr;
 			startXINumStr = null;
 			
-			for (i = 0; i < 11; i++) {
+			for (i = 0; i < response.response[0].lineups[0].startXI.length; i++) {
 				startXINumInt = i;
 				startXINumStr = String(i);
 				
@@ -88,13 +88,13 @@
 				$(".matchAwayStartXI" + startXINumStr + "Number").append(response.response[0].lineups[1].startXI[startXINumInt].player.number);
 			}
 			
-			/* var substitutesNumInt;
+			var substitutesNumInt;
 			substitutesNumInt = null;
 			
 			var substitutesNumStr;
 			substitutesNumStr = null;
 			
-			for (i = 0; i < 9; i++) {
+			for (i = 0; i < response.response[0].lineups[0].substitutes.length; i++) {
 				substitutesNumInt = i;
 				substitutesNumStr = String(i);
 				
@@ -103,7 +103,7 @@
 				
 				$(".matchAwaySubstitutes" + substitutesNumStr + "Name").append(response.response[0].lineups[1].substitutes[substitutesNumInt].player.name);
 				$(".matchAwaySubstitutes" + substitutesNumStr + "Number").append(response.response[0].lineups[1].substitutes[substitutesNumInt].player.number);
-			} */
+			}
 			
 			/* $(".matchHomeShotsOnGoalValue").append(response.response[0].statistics[0].statistics[0].value);
 			$(".matchHomeTotalShotsValue").append(response.response[0].statistics[0].statistics[2].value);

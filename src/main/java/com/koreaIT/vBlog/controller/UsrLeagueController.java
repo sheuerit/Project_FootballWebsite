@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-public class UsrFootballController {
+public class UsrLeagueController {
 
 	public String fixtureId;
 	
