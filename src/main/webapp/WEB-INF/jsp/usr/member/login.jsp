@@ -32,11 +32,11 @@
 					<table class="table table-lg">
 						<tr>
 							<th>아이디</th>
-							<td><input class="input input-bordered input-info w-9/12" name="loginId" type="text" placeholder="아이디를 입력해주세요" /></td>
+							<td><input class="input input-bordered input-info w-9/12" name="loginId" type="text" placeholder="아이디를 입력해주세요" autocomplete="off"/></td>
 						</tr>
 						<tr>
 							<th>비밀번호</th>
-							<td><input class="input input-bordered input-info w-9/12" name="loginPw" type="text" placeholder="비밀번호를 입력해주세요" /></td>
+							<td><input class="input input-bordered input-info w-9/12" name="loginPw" type="text" placeholder="비밀번호를 입력해주세요" autocomplete="off"/></td>
 						</tr>
 						<tr>
 							<td class="text-center" colspan="2"><button class="btn btn-wide btn-outline btn-sm">로그인</button></td>

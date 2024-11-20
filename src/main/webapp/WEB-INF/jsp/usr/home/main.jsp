@@ -123,16 +123,21 @@
 		</div>
 		
 		<div class="w-1/4 border-2 border-slate-50 border-l-slate-200">
-			<div class="m-16">
-				<a href="https://www.kitbag.com/ko/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/5f/Goal_Website_Logo.svg/1920px-Goal_Website_Logo.svg.png" alt="" /></a>
+			<div class="m-2 h-20 bg-slate-800">
+				<a href="https://play.coupang.com/" target="_blank"><img class="p-6" src="https://assets.coupangplay.com/images/logo_coupangplay_footer2.webp" alt="" /></a>
 			</div>
-			<div class="m-16">
-				<a href="https://www.kitbag.com/ko/" target="_blank"><img src="https://www.kitbag.com/content/assets/__0-596386953475.3036.svg" alt="" /></a>
+			<div class="m-2 h-20 bg-slate-800">
+				<a href="https://www.spotvnow.co.kr/" target="_blank"><img class="p-7" src="https://cdn.spotvnow.co.kr/dist/asset/now-logo.png?1b0de03b28b974e5d9a35bdc9e3016ad" alt="" /></a>
 			</div>
-			<div class="m-16">
-				<a href="https://fconline.nexon.com/main/index" target="_blank"><img src="https://file.nexon.com/NxFile/Download/FileDownloader.aspx?oidFile=5413419214155286064" alt="" /></a>
+			<div class="m-2 h-20 border-2 border-slate-800">
+				<a href="https://www.goal.com/kr/" target="_blank"><img class="w-auto h-full p-2 px-8" src="https://upload.wikimedia.org/wikipedia/en/thumb/5/5f/Goal_Website_Logo.svg/1920px-Goal_Website_Logo.svg.png" alt="" /></a>
 			</div>
-
+			<div class="m-2 h-20 border-2 border-slate-800">
+				<a href="https://www.kitbag.com/ko/" target="_blank"><img class="w-auto h-full p-2 px-12" src="https://www.kitbag.com/content/assets/__0-596386953475.3036.svg" alt="" /></a>
+			</div>
+			<div class="m-2 h-20 border-2 border-slate-800">
+				<a href="https://fconline.nexon.com/main/index" target="_blank"><img class="w-auto h-full p-2 px-16" src="https://file.nexon.com/NxFile/Download/FileDownloader.aspx?oidFile=5413419214155286064" alt="" /></a>
+			</div>
 		</div>	
 	</section>
 

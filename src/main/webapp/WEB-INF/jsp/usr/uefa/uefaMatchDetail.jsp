@@ -70,6 +70,30 @@
 			$(".matchAwayCoachPhoto").append('<img src="' + response.response[0].lineups[1].coach.photo + '"/>');
 			$(".matchAwayFormation").append(response.response[0].lineups[1].formation);
 			
+			$(".matchHomeShotsOnGoalValue").append(response.response[0].statistics[0].statistics[0].value);
+			$(".matchHomeTotalShotsValue").append(response.response[0].statistics[0].statistics[2].value);
+			$(".matchHomeFoulsValue").append(response.response[0].statistics[0].statistics[6].value);
+			$(".matchHomeCornersValue").append(response.response[0].statistics[0].statistics[7].value);
+			$(".matchHomeOffsidesValue").append(response.response[0].statistics[0].statistics[8].value);
+			$(".matchHomeBallPossessionValue").append(response.response[0].statistics[0].statistics[9].value);
+			$(".matchHomeYellowCardsValue").append(response.response[0].statistics[0].statistics[10].value);
+			$(".matchHomeRedCardsValue").append(response.response[0].statistics[0].statistics[11].value);
+			$(".matchHomeGoalkeeperSavesValue").append(response.response[0].statistics[0].statistics[12].value);
+			$(".matchHomePassesPersentValue").append(response.response[0].statistics[0].statistics[15].value);
+			$(".matchHomeExpected_goalsValue").append(response.response[0].statistics[0].statistics[16].value);
+			
+			$(".matchAwayShotsOnGoalValue").append(response.response[0].statistics[1].statistics[0].value);
+			$(".matchAwayTotalShotsValue").append(response.response[0].statistics[1].statistics[2].value);
+			$(".matchAwayFoulsValue").append(response.response[0].statistics[1].statistics[6].value);
+			$(".matchAwayCornersValue").append(response.response[0].statistics[1].statistics[7].value);
+			$(".matchAwayOffsidesValue").append(response.response[0].statistics[1].statistics[8].value);
+			$(".matchAwayBallPossessionValue").append(response.response[0].statistics[1].statistics[9].value);
+			$(".matchAwayYellowCardsValue").append(response.response[0].statistics[1].statistics[10].value);
+			$(".matchAwayRedCardsValue").append(response.response[0].statistics[1].statistics[11].value);
+			$(".matchAwayGoalkeeperSavesValue").append(response.response[0].statistics[1].statistics[12].value);
+			$(".matchAwayPassesPersentValue").append(response.response[0].statistics[1].statistics[15].value);
+			$(".matchAwayExpected_goalsValue").append(response.response[0].statistics[1].statistics[16].value);
+			
 			var startXINumInt;
 			startXINumInt = null;
 			
@@ -105,30 +129,6 @@
 				$(".matchAwaySubstitutes" + substitutesNumStr + "Name").append(response.response[0].lineups[1].substitutes[substitutesNumInt].player.name);
 				$(".matchAwaySubstitutes" + substitutesNumStr + "Number").append(response.response[0].lineups[1].substitutes[substitutesNumInt].player.number);
 			}
-			
-			$(".matchHomeShotsOnGoalValue").append(response.response[0].statistics[0].statistics[0].value);
-			$(".matchHomeTotalShotsValue").append(response.response[0].statistics[0].statistics[2].value);
-			$(".matchHomeFoulsValue").append(response.response[0].statistics[0].statistics[6].value);
-			$(".matchHomeCornersValue").append(response.response[0].statistics[0].statistics[7].value);
-			$(".matchHomeOffsidesValue").append(response.response[0].statistics[0].statistics[8].value);
-			$(".matchHomeBallPossessionValue").append(response.response[0].statistics[0].statistics[9].value);
-			$(".matchHomeYellowCardsValue").append(response.response[0].statistics[0].statistics[10].value);
-			$(".matchHomeRedCardsValue").append(response.response[0].statistics[0].statistics[11].value);
-			$(".matchHomeGoalkeeperSavesValue").append(response.response[0].statistics[0].statistics[12].value);
-			$(".matchHomePassesPersentValue").append(response.response[0].statistics[0].statistics[15].value);
-			$(".matchHomeExpected_goalsValue").append(response.response[0].statistics[0].statistics[16].value);
-			
-			$(".matchAwayShotsOnGoalValue").append(response.response[0].statistics[1].statistics[0].value);
-			$(".matchAwayTotalShotsValue").append(response.response[0].statistics[1].statistics[2].value);
-			$(".matchAwayFoulsValue").append(response.response[0].statistics[1].statistics[6].value);
-			$(".matchAwayCornersValue").append(response.response[0].statistics[1].statistics[7].value);
-			$(".matchAwayOffsidesValue").append(response.response[0].statistics[1].statistics[8].value);
-			$(".matchAwayBallPossessionValue").append(response.response[0].statistics[1].statistics[9].value);
-			$(".matchAwayYellowCardsValue").append(response.response[0].statistics[1].statistics[10].value);
-			$(".matchAwayRedCardsValue").append(response.response[0].statistics[1].statistics[11].value);
-			$(".matchAwayGoalkeeperSavesValue").append(response.response[0].statistics[1].statistics[12].value);
-			$(".matchAwayPassesPersentValue").append(response.response[0].statistics[1].statistics[15].value);
-			$(".matchAwayExpected_goalsValue").append(response.response[0].statistics[1].statistics[16].value);
 			
 		});
 	</script>

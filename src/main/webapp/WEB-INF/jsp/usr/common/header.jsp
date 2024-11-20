@@ -23,16 +23,15 @@
 <body>
 	<div class="h-20 container mx-auto text-2xl flex">
 		<div>
-			<a class="h-full px-20 flex items-center" href="/"><i class="fa-sharp fa-solid fa-futbol mr-2"></i>FOOTSCOPE</a>
+			<a class="h-full px-20 flex items-center" href="/">INFO<i class="fa-sharp fa-solid fa-futbol fa-bounce p-1"></i>TBALL</a>
 		</div>
 		<div class="flex-grow"></div>
+		<div>
+			<script async src="https://cse.google.com/cse.js?cx=a3314046e33d84fc9"></script>
+			<div class="gcse-search"></div>
+		</div>
 		<ul class="flex">
 			<c:if test="${rq.loginedMemberId == 0 }">
-				<div>
-					<script async src="https://cse.google.com/cse.js?cx=a3314046e33d84fc9"></script>
-					<div class="gcse-search"></div>
-				</div>
-			
 				<li class="hover:underline"><a class="h-full px-3 flex items-center" href="/usr/member/join">회원가입</a></li>
 				<li class="hover:underline"><a class="h-full px-3 flex items-center" href="/usr/member/login">로그인</a></li>
 			</c:if>
@@ -51,6 +50,9 @@
 					<li class="mx-3 btn btn-outline btn-sm"><a class="h-full px-3 flex items-center" href="/usr/notice/list"><i class="mr-2 fas fa-bell"></i>공지사항</a></li>
 					<li class="mx-3 btn btn-outline btn-sm"><a class="h-full px-3 flex items-center" href="/usr/article/list"><i class="mr-2 fas fa-clipboard-list"></i>자유게시판</a></li>
 					<li class="mx-3 btn btn-outline btn-sm"><a class="h-full px-3 flex items-center" href="/usr/coinShop/list"><i class="mr-2 fas fa-shopping-cart"></i>코인샵</a></li>
+					<c:if test="${rq.loginedMemberId != 0 }">
+						<li class="mx-3 btn btn-outline btn-sm"><a class="h-full px-3 flex items-center" href="/"><i class="mr-2 fa-solid fa-circle-check"></i>출석체크</a></li>
+					</c:if>
 				</ul>
 			</div>
 		</div>	
