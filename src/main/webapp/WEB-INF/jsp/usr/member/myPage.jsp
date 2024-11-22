@@ -40,12 +40,25 @@
 						<th>이메일</th>
 						<td>${member.email }</td>
 					</tr>
+					<tr>
+						<th>코인</th>
+						<td>
+							<div class="flex">
+								${member.coin } 
+								<i class="fa-solid fa-coins ml-1 mt-1"></i>
+								<form action="doPresentCheck">
+									<input type="hidden" name="coin" value="20"/>
+									<button class="btn btn-outline btn-sm ml-4"><i class="mr-2 fa-solid fa-circle-check"></i>출석체크</button>
+								</form>
+							</div>
+						</td>
+					</tr>
 				</table>
 			</div>
 
 			<div class="btns mt-2">
 				<div class="flex justify-between">
-					<button class="btn-text-color btn btn-outline btn-sm" onclick="history.back();">뒤로가기</button>
+					<button class="btn-text-color btn btn-outline btn-sm" onclick="location.href='/usr/home/main'">뒤로가기</button>
 					
 					<a class="btn-text-color btn btn-outline btn-sm" href="checkPassword?loginId=${member.loginId }">회원정보수정</a>
 				</div>

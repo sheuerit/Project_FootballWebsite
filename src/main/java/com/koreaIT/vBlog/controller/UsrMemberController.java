@@ -127,6 +127,15 @@ public class UsrMemberController {
 		
 		return "/usr/member/myPage";
 	}
+	
+	@RequestMapping("/usr/member/doPresentCheck")
+	@ResponseBody
+	public String doPresentCheck(int coin) {
+		
+		memberService.doPresentCheck(rq.getLoginedMemberId(),coin);
+		
+		return Util.jsReplace("출석 확인! +20coin", "myPage");
+	}
 
 	@RequestMapping("/usr/member/checkPassword")
 	public String checkPassword(Model model, String loginId) {
@@ -295,5 +304,5 @@ public class UsrMemberController {
 		return Util.jsReplace(notifyTempLoginPwByEmailRd.getMsg(), "login");
 
 	}
-
+	
 }

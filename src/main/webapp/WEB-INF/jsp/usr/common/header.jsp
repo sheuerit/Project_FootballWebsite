@@ -50,9 +50,6 @@
 					<li class="mx-3 btn btn-outline btn-sm"><a class="h-full px-3 flex items-center" href="/usr/notice/list"><i class="mr-2 fas fa-bell"></i>공지사항</a></li>
 					<li class="mx-3 btn btn-outline btn-sm"><a class="h-full px-3 flex items-center" href="/usr/article/list"><i class="mr-2 fas fa-clipboard-list"></i>자유게시판</a></li>
 					<li class="mx-3 btn btn-outline btn-sm"><a class="h-full px-3 flex items-center" href="/usr/coinShop/list"><i class="mr-2 fas fa-shopping-cart"></i>코인샵</a></li>
-					<c:if test="${rq.loginedMemberId != 0 }">
-						<li class="mx-3 btn btn-outline btn-sm"><a class="h-full px-3 flex items-center" href="/"><i class="mr-2 fa-solid fa-circle-check"></i>출석체크</a></li>
-					</c:if>
 				</ul>
 			</div>
 		</div>	

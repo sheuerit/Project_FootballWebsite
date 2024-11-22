@@ -100,4 +100,9 @@ public class MemberService {
 		memberDao.deleteMember(id);
 	}
 
+	public void doPresentCheck(int id, int coin) {
+		memberDao.doPresentCheck(id, coin);
+		
+	}
+
 }

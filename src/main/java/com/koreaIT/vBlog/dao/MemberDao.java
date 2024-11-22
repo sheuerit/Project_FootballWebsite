@@ -147,4 +147,11 @@ public interface MemberDao {
 			""")
 	public void deleteMember(int id);
 
+	@Update("""
+			UPDATE `member`
+				SET coin = coin + #{coin}
+				WHERE id = #{id}
+			""")
+	public void doPresentCheck(int id, int coin);
+
 }

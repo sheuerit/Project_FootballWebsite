@@ -34,5 +34,7 @@ public class Member {
 		}
 		return delDate.substring(2, 16);
 	}
+	
+	private int coin;
 
 }
