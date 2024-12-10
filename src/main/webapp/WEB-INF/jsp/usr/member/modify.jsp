@@ -93,21 +93,21 @@
 						</tr>
 						<tr>
 							<th>이름</th>
-							<td><input class="input input-bordered input-primary w-9/12" name="name" type="text" value="${member.name }" placeholder="이름을 입력해주세요" /></td>
+							<td><input class="input input-bordered input-primary w-9/12" name="name" type="text" value="${member.name }" placeholder="이름을 입력해주세요" autocomplete="off"/></td>
 							<!-- input 태그, <name>name에 , <type>텍스트 입력, <value>{EL, doCheckPassword() 메서드에서 전달받은 member(key)에서 변수 name }(회원 이름)을 저장 <placeholder>안내문구 -->
 							
 						</tr>
 						<tr>
 							<th>닉네임</th>
-							<td><input class="input input-bordered input-primary w-9/12" name="nickname" type="text" value="${member.nickname }" placeholder="닉네임을 입력해주세요" /></td>
+							<td><input class="input input-bordered input-primary w-9/12" name="nickname" type="text" value="${member.nickname }" placeholder="닉네임을 입력해주세요" autocomplete="off"/></td>
 						</tr>
 						<tr>
 							<th>전화번호</th>
-							<td><input class="input input-bordered input-primary w-9/12" name="cellphoneNum" type="text" value="${member.cellphoneNum }" placeholder="전화번호를 입력해주세요" /></td>
+							<td><input class="input input-bordered input-primary w-9/12" name="cellphoneNum" type="text" value="${member.cellphoneNum }" placeholder="전화번호를 입력해주세요" autocomplete="off"/></td>
 						</tr>
 						<tr>
 							<th>이메일</th>
-							<td><input class="input input-bordered input-primary w-9/12" name="email" type="text" value="${member.email }" placeholder="이메일을 입력해주세요" /></td>
+							<td><input class="input input-bordered input-primary w-9/12" name="email" type="text" value="${member.email }" placeholder="이메일을 입력해주세요" autocomplete="off"/></td>
 						</tr>
 						<tr>
 							<td class="text-center" colspan="2"><button class="btn-text-color btn btn-wide btn-outline">수정</button></td>

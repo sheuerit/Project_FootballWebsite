@@ -35,6 +35,11 @@ public class MemberService {
 	public Member getMemberById(int id) {
 		return memberDao.getMemberById(id);
 	}
+	
+	public int getLastInsertId() {
+		
+		return memberDao.getLastInsertId();
+	}
 
 	public Member getMemberByLoginId(String loginId) {
 		return memberDao.getMemberByLoginId(loginId);
@@ -100,8 +105,8 @@ public class MemberService {
 		memberDao.deleteMember(id);
 	}
 
-	public void doPresentCheck(int id, int coin) {
-		memberDao.doPresentCheck(id, coin);
+	public void doPresentCheck(int id) {
+		memberDao.doPresentCheck(id);
 		
 	}
 

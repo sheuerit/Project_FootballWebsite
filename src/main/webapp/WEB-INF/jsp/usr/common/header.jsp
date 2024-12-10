@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>FOOTSCOPE</title>
+<title>INFOOTBALL</title>
 
 <link rel="shortcut icon" href="/resource/images/favicon.ico" />
 

@@ -4,6 +4,18 @@
 
 	<%@ include file="../common/header.jsp" %>
 
+	<script>
+	    var btn = document.querySelector("#btn");
+	    btn.addEventListener("click", function (e) {
+	        var vm = this;
+	        this.setAttribute("disabled", "disabled");
+	
+	        setTimeout(function () {
+	            vm.removeAttribute("disabled")
+	        }, 5000)
+	    })
+	</script>
+
 	<section class="mt-8 text-xl">
 		<div class="container mx-auto px-3">
 			<div class="table-box-type">
@@ -47,8 +59,7 @@
 								${member.coin } 
 								<i class="fa-solid fa-coins ml-1 mt-1"></i>
 								<form action="doPresentCheck">
-									<input type="hidden" name="coin" value="20"/>
-									<button class="btn btn-outline btn-sm ml-4"><i class="mr-2 fa-solid fa-circle-check"></i>출석체크</button>
+									<button id="btn" class="btn btn-outline btn-sm ml-4"><i class="mr-2 fa-solid fa-circle-check"></i>출석체크</button>
 								</form>
 							</div>
 						</td>

@@ -48,19 +48,19 @@
 					<table class="table table-lg">
 						<tr>
 							<th>로그인 아이디</th>
-							<td><input class="input input-bordered input-primary w-9/12" name="loginId" type="text" placeholder="아이디를 입력해주세요"/></td>
+							<td><input class="input input-bordered input-primary w-9/12" name="loginId" type="text" placeholder="아이디를 입력해주세요" autocomplete="off"/></td>
 						</tr>
 						<tr>
 							<th>이름</th>
-							<td><input class="input input-bordered input-primary w-9/12" name="name" type="text" placeholder="이름을 입력해주세요"/></td>
+							<td><input class="input input-bordered input-primary w-9/12" name="name" type="text" placeholder="이름을 입력해주세요" autocomplete="off"/></td>
 						</tr>
 						<tr>
 							<th>이메일</th>
-							<td><input class="input input-bordered input-primary w-9/12" name="email" type="text" placeholder="이메일을 입력해주세요" /></td>
+							<td><input class="input input-bordered input-primary w-9/12" name="email" type="text" placeholder="이메일을 입력해주세요" autocomplete="off"/></td>
 						</tr>
 						<tr>
 							<th>전화번호</th>
-							<td><input class="input input-bordered input-primary w-9/12" name="cellphoneNum" type="text" placeholder="전화번호를 입력해주세요" /></td>
+							<td><input class="input input-bordered input-primary w-9/12" name="cellphoneNum" type="text" placeholder="전화번호를 입력해주세요" autocomplete="off"/></td>
 						</tr>
 						<tr>
 							<td class="text-center" colspan="2"><button class="btn-text-color btn btn-wide btn-outline">비밀번호 찾기</button></td>

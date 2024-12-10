@@ -68,12 +68,12 @@
 					<table class="table table-lg">
 						<tr>
 							<th>새 비밀번호</th>
-							<td><input class="input input-bordered input-primary w-9/12" name="loginPw" type="text" placeholder="비밀번호를 입력해주세요"/></td>
+							<td><input class="input input-bordered input-primary w-9/12" name="loginPw" type="text" placeholder="비밀번호를 입력해주세요" autocomplete="off"/></td>
 							<!-- input 태그, <name>loginPw에 수정한 비밀번호 저장, <type>텍스트 입력, <placeholder>안내문구 -->
 						</tr>
 						<tr>
 							<th>새 비밀번호 확인</th>
-							<td><input class="input input-bordered input-primary w-9/12" name="loginPwChk" type="text" placeholder="비밀번호 확인을 입력해주세요" /></td>
+							<td><input class="input input-bordered input-primary w-9/12" name="loginPwChk" type="text" placeholder="비밀번호 확인을 입력해주세요" autocomplete="off"/></td>
 						</tr>
 						<tr>
 							<td class="text-center" colspan="2"><button class="btn-text-color btn btn-wide btn-outline">변경</button></td>

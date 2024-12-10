@@ -125,33 +125,33 @@
 						<tr height="110">
 							<th>아이디</th>
 							<td>
-								<input class="input input-bordered input-info w-9/12" name="loginId" type="text" placeholder="아이디를 입력해주세요" onblur="loginIdDupChk(this);"/>
+								<input class="input input-bordered input-info w-9/12" name="loginId" type="text" placeholder="아이디를 입력해주세요" onblur="loginIdDupChk(this);" autocomplete="off"/>
 								<div id="loginIdDupChkMsg" class="mt-2 text-sm h-5"></div>
 							</td>
 						</tr>
 						<tr>
 							<th>비밀번호</th>
-							<td><input class="input input-bordered input-info w-9/12" name="loginPw" type="text" placeholder="비밀번호를 입력해주세요" /></td>
+							<td><input class="input input-bordered input-info w-9/12" name="loginPw" type="text" placeholder="비밀번호를 입력해주세요" autocomplete="off"/></td>
 						</tr>
 						<tr>
 							<th>비밀번호 확인</th>
-							<td><input class="input input-bordered input-info w-9/12" name="loginPwChk" type="text" placeholder="비밀번호 확인을 입력해주세요" /></td>
+							<td><input class="input input-bordered input-info w-9/12" name="loginPwChk" type="text" placeholder="비밀번호 확인을 입력해주세요" autocomplete="off"/></td>
 						</tr>
 						<tr>
 							<th>이름</th>
-							<td><input class="input input-bordered input-info w-9/12" name="name" type="text" placeholder="이름을 입력해주세요" /></td>
+							<td><input class="input input-bordered input-info w-9/12" name="name" type="text" placeholder="이름을 입력해주세요" autocomplete="off"/></td>
 						</tr>
 						<tr>
 							<th>닉네임</th>
-							<td><input class="input input-bordered input-info w-9/12" name="nickname" type="text" placeholder="닉네임을 입력해주세요" /></td>
+							<td><input class="input input-bordered input-info w-9/12" name="nickname" type="text" placeholder="닉네임을 입력해주세요" autocomplete="off"/></td>
 						</tr>
 						<tr>
 							<th>전화번호</th>
-							<td><input class="input input-bordered input-info w-9/12" name="cellphoneNum" type="text" placeholder="전화번호를 입력해주세요" /></td>
+							<td><input class="input input-bordered input-info w-9/12" name="cellphoneNum" type="text" placeholder="전화번호를 입력해주세요" autocomplete="off"/></td>
 						</tr>
 						<tr>
 							<th>이메일</th>
-							<td><input class="input input-bordered input-info w-9/12" name="email" type="text" placeholder="이메일을 입력해주세요" /></td>
+							<td><input class="input input-bordered input-info w-9/12" name="email" type="text" placeholder="이메일을 입력해주세요" autocomplete="off"/></td>
 						</tr>
 						<tr>
 							<td class="text-center" colspan="2"><button class="btn btn-wide btn-outline btn-sm">회원가입</button></td>

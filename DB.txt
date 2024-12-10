@@ -13,6 +13,17 @@ CREATE TABLE article(
 
 ALTER TABLE article ADD COLUMN hitCnt INT UNSIGNED NOT NULL DEFAULT 0;
 
+CREATE TABLE notice(
+	id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	regDate DATETIME NOT NULL,
+	updateDate DATETIME NOT NULL,
+	memberId INT UNSIGNED NOT NULL,
+	title VARCHAR(100) NOT NULL,
+	`body` TEXT NOT NULL
+);
+
+ALTER TABLE notice ADD COLUMN hitCnt INT UNSIGNED NOT NULL DEFAULT 0;
+
 CREATE TABLE `member`(
 	id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	regDate DATETIME NOT NULL,
@@ -27,6 +38,8 @@ CREATE TABLE `member`(
     delStatus INT UNSIGNED NOT NULL DEFAULT 0 COMMENT '탈퇴 여부 (탈퇴 전 = 0, 탈퇴 후 = 1)',
     delDate DATETIME COMMENT '탈퇴 날짜'
 );
+
+ALTER TABLE `member` ADD COLUMN coin INT UNSIGNED NOT NULL DEFAULT 0;
 
 CREATE TABLE recommendPoint(
 	id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -46,32 +59,35 @@ CREATE TABLE reply(
 	`body` TEXT NOT NULL
 );
 
-INSERT INTO article
+INSERT INTO notice
 SET regDate = NOW(),
 updateDate = NOW(),
 memberId = 1,
 title = '공지1',
-`body` = '공지1';
+`body` = '공지내용1';
+
+INSERT INTO article
+SET regDate = NOW(),
+updateDate = NOW(),
+memberId = 2,
+title = '제목1',
+`body` = '내용1';
+
 INSERT INTO article
 SET regDate = NOW(),
 updateDate = NOW(),
 memberId = 2,
 title = '제목2',
 `body` = '내용2';
-INSERT INTO article
-SET regDate = NOW(),
-updateDate = NOW(),
-memberId = 2,
-title = '제목3',
-`body` = '내용3';
 
 INSERT INTO `member`
 SET regDate = NOW(),
 updateDate = NOW(),
 loginId = 'admin',
-loginPw = 'admin',
+loginPw = SHA2('admin', 256),
+authLevel = 1,
 `name` = '관리자',
-nickname = '관리자',
+nickname = 'admin',
 cellphoneNum = '010-0000-0000',
 email = 'admin@admin.com';
 
@@ -79,44 +95,46 @@ INSERT INTO `member`
 SET regDate = NOW(),
 updateDate = NOW(),
 loginId = 'test1',
-loginPw = 'test1',
-`name` = '테스트1',
-nickname = '테스트1',
+loginPw = SHA2('test1', 256),
+authLevel = 2,
+`name` = '유저1',
+nickname = 'user1',
 cellphoneNum = '010-1111-1111',
-email = 'test1@test.com';
+email = 'test1@test1.com';
 
 INSERT INTO `member`
 SET regDate = NOW(),
 updateDate = NOW(),
 loginId = 'test2',
-loginPw = 'test2',
-`name` = '테스트2',
-nickname = '테스트2',
+loginPw = SHA2('test2', 256),
+authLevel = 2,
+`name` = '유저2',
+nickname = 'user2',
 cellphoneNum = '010-2222-2222',
-email = 'test2@test.com';
+email = 'test2@test2.com';
 
-# 2번 회원이 1번 게시물에 좋아요
+# 2번 회원이 1번 글에 좋아요
 INSERT INTO recommendPoint
 SET memberId = 2,
 relTypeCode = 'article',
 relId = 1,
 `point` = 1;
 
-# 2번 회원이 3번 게시물에 좋아요
+# 2번 회원이 3번 글에 좋아요
 INSERT INTO recommendPoint
 SET memberId = 2,
 relTypeCode = 'article',
 relId = 3,
 `point` = 1;
 
-# 3번 회원이 2번 게시물에 좋아요
+# 3번 회원이 2번 글에 좋아요
 INSERT INTO recommendPoint
 SET memberId = 3,
 relTypeCode = 'article',
 relId = 2,
 `point` = 1;
 
-# 3번 회원이 1번 게시물에 좋아요
+# 3번 회원이 1번 글에 좋아요
 INSERT INTO recommendPoint
 SET memberId = 3,
 relTypeCode = 'article',
@@ -159,10 +177,13 @@ relTypeCode = 'article',
 relId = 2,
 `body` = '댓글4';
 
+SELECT * FROM notice;
 SELECT * FROM article;
 SELECT * FROM `member`;
 SELECT * FROM recommendPoint;
 SELECT * FROM reply;
+
+SELECT LAST_INSERT_ID();
 
 /*
 insert into article

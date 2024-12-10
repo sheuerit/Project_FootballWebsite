@@ -31,6 +31,9 @@ public interface MemberDao {
 				WHERE id = #{id}
 			""")
 	public Member getMemberById(int id);
+	
+	@Select("SELECT LAST_INSERT_ID()")
+	public int getLastInsertId();
 
 	@Select("""
 			SELECT *
@@ -149,9 +152,9 @@ public interface MemberDao {
 
 	@Update("""
 			UPDATE `member`
-				SET coin = coin + #{coin}
+				SET coin = coin + 20
 				WHERE id = #{id}
 			""")
-	public void doPresentCheck(int id, int coin);
+	public void doPresentCheck(int id);
 
 }

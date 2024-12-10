@@ -100,8 +100,12 @@ public class UsrMemberController {
 			return Util.jsHistoryBack(Util.f("%s은(는) 존재하지 않는 아이디입니다", loginId));
 		}
 		
-		if (member.getLoginPw().equals(loginPw) == false) {
+		if (member.getLoginPw().equals(Util.sha256(loginPw)) == false) {
 			return Util.jsHistoryBack("비밀번호를 확인해주세요");
+		}
+		
+		if (member.getDelStatus() == 1) {
+			return Util.jsHistoryBack("사용할 수 없는 계정입니다");
 		}
 		
 		rq.login(member);
@@ -130,9 +134,9 @@ public class UsrMemberController {
 	
 	@RequestMapping("/usr/member/doPresentCheck")
 	@ResponseBody
-	public String doPresentCheck(int coin) {
+	public String doPresentCheck() {
 		
-		memberService.doPresentCheck(rq.getLoginedMemberId(),coin);
+		memberService.doPresentCheck(rq.getLoginedMemberId());
 		
 		return Util.jsReplace("출석 확인! +20coin", "myPage");
 	}
